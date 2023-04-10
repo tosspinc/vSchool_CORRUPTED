@@ -1,0 +1,21 @@
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+h3{
+    text-align:center;
+    color: red;
+}
+
+#squareOrange{
+    margin: auto;  /*automatically set the margin boundaries and centers the item*/
+    border-style: double;
+    Width: 192px; /* sets width of square*/
+    Height: 192px; /* sets height of square*/
+    background-color: orange;
+}
+
