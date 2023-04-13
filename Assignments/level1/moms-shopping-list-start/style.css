@@ -26,6 +26,13 @@
     margin: 10px;
 }
 
+.buttons {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+}
+
 #list {
     flex-direction: column;
     display: flex;
@@ -40,3 +47,4 @@
     margin-bottom: 10px;
     text-align: center;
 }
+
