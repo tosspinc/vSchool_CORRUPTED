@@ -4,8 +4,8 @@ const form = document.addItem;     // selects the HTML form element addItem and 
 const addListItems = form.addEventListener("submit", event => { //adds an event listener to the forms submit event.
     event.preventDefault(); //this clears the HTML text input box upon hitting enter
 
-const createNewItem = document.createElement("div"); // creates new HTML li item. 
-const itemName = document.createElement("p"); // creates new HTML div item.
+const createNewItem = document.createElement("div"); // creates new HTML div item. 
+const itemName = document.createElement("p"); // creates new HTML p item.
 const itemValue = document.getElementById("title"); // assigns the value entered in input field to the id of title in HTML.
 itemName.textContent = form.title.value;  // sets text content for div element to itemName.
 itemName.setAttribute("id", "itemNameDiv"); // adds an id attribute to itemNameDiv to the itemName Div.
@@ -34,19 +34,11 @@ createNewItem.appendChild(deleteButton); //this allows items to be deleted from 
 
 
 const groceryItem = document.getElementById("list"); // gets HTML element with id of list from ul in HTML document.
-const myJSON = JSON.stringify(momsShoppingList); //converts momsShppingListItems array to a JSON String.
-localStorage.setItem("momsShoppingList", myJSON); //this stores the JSON string in the browsers memory under NewShoppingList.
 
-// deleteButton.addEventListener("click", event => { //adds an event listener event for when the delete button is clicked on.
-//     // event.target.parentNode.remove(); // this removes the list item once the button is selected.
-//     // localStorage.removeItem(event.target.parentNode); //this removes the list item information from local storage memory.
-//     createNewItem.remove()
-// });
 
 deleteButton.addEventListener('click', function(){
     createNewItem.remove()
 })
-
 
 function editButtonEvent(event){ //create the edit button function.
     console.log(localStorage); //shows in console tab and stores info in local storage memory.
