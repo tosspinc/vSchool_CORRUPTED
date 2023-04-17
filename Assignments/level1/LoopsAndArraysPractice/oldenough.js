@@ -28,10 +28,12 @@ const peopleWhoWantToSeeMadMaxFuryRoad = [      //declares peopleWhoWantToSeeMad
    }
 ];
 
-for(i=0; i < peopleWhoWantToSeeMadMaxFuryRoad.length; i++){         //declares start of for loop.
-    if (peopleWhoWantToSeeMadMaxFuryRoad[i].age >= 18) {            //checks to see which individuals are equal to or over 18 and stores to local memory.
-        console.log(peopleWhoWantToSeeMadMaxFuryRoad[i].name + " is old enough to see Mad Max.");   //if equal to or over 18 displays message and name to console.
-            } else if (peopleWhoWantToSeeMadMaxFuryRoad[i].age < 18) {  //checks to see which individuals are under the age of 18 and stores to local memory.
-                console.log(peopleWhoWantToSeeMadMaxFuryRoad[i].name + " is not old enough to see Mad Max.")    //if under 18 displays message and name to console.
-            }
-    };
+for (i = 0; i < peopleWhoWantToSeeMadMaxFuryRoad.length; i++) {                 //establishes the for loop.
+    var person = peopleWhoWantToSeeMadMaxFuryRoad[i];                           //declares person as a variable and assigns peopleWhoWantToSeeMadMaxFuryRoad to it.
+    if (person.age >= 18) {                                                     //validates if person is 18 or older.
+      console.log(person.name + " is old enough to see Mad Max Fury Road.");    //displays sentence in quotes and adds the persons name.
+    } else {
+      console.log(person.name + " is not old enough to see Mad Max Fury Road, don't let them in."); //if person is under 18 then it displays sentence with their name attached that are under 18.
+    }
+  }
+   
