@@ -28,20 +28,6 @@ function solvingGame(){
         playGame = 'endGame';                                   //assigns endGame to playGame.
       };
 };
-//   console.log('solvingGame', playGame, playGame.toUpperCase());  
-//   if(playGame.toUpperCase() == 'FIND'){                        //if user chooses #1 then goes to winGame.
-//     foundKey = true;                                          //changes foundKey to true so if selected after wrong choices made it runs program.
-//     playGame = ("winGame");                                   //assigns winGame to playGame.
-//   } else if (playGame.toUpperCase() === 'OPEN'){                //if user chooses #2 then message below will be displayed.
-//       console.log(`SORRY ${userName}, the door is locked. You need to find the key to get out.`);
-//       incorrectAttempts++;                                    //recoreds the number of attempts tried answering correctly.
-//   } else if (playGame.toUpperCase() === 'EXPLORE'){             //if user chooses #3 displays message below and continues on to asking questions.
-//       console.log(`Sorry ${userName}, NOTHING EXCITING in the hole. BORED YET and READY TO ESCAPE from the room? hmmm: THINK, WHAT is needed to get out.  Possibly a KEY!!. Let's try again.`);  
-//       incorrectAttempts++;                                    //recoreds the number of attempts tried answering correctly.
-//   } else if(playGame.toUpperCase() == "QUIT"){                 //if user decides they don't want to play the game they can just choose Q to end game.
-//       playGame = 'endGame';                                   //assigns endGame to playGame.
-//         return;                                               //exits the game without calling solvingGame function.
-//   };
 
 //   startTurn()
 // };
