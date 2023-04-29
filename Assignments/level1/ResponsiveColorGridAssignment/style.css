@@ -1,0 +1,104 @@
+* {                                 /*sets defaults*/
+    box-sizing: border-box;         /*includes padding and border in an elements total width and height. */    
+    font-size: 0px;                 /*sets the initial font size to 0*. /
+    margin: 0px;                    /*sets the initial margin size to 0. */
+    padding: 0;                     /*sets the initial padding size to 0. */
+}
+
+body {                              /*sets data for the body portion of the html document. */
+    background-color: Teal;       /*sets the background color of the website to teal. */           
+}
+
+#box1 {                             /*declares settings for box1 in the html document. */
+    display: inline-block;          /*sets the display of the box to inline-block. */
+    background-color: #F5C6D6;    /*sets the background color for the individual block. */
+    border: 3px solid white;      /*sets the border width, type and color of the box. */
+    width: 93%;                     /*sets the width of the box size in relation to the size of the viewing screen. */
+    height: 150px;                  /*sets the height of the box. */
+    margin: 30px 5px 5px 30px;      /*sets the margin around the box: top, right, bottom and left for the box. */
+}
+
+#box2 {                             /*declares settings for box2 in the html document. */
+    display: inline-block;          /*set the display of the box to inline-block. */
+    border: 3px solid white;      /*sets the border width, type and color for the individual block. */
+    background-color: #EE2E84;    /*sets the background color of the box. */
+    width: 22%;                     /*sets the width of the box in relation to the size of the viewing screen. */
+    height: 150px;                  /*sets the height of the box. */
+    margin: 5px 5px 5px 30px;       /*sets the margins around the box: top, right, bottom and left for the box. */
+}
+
+#box3 {                             /*declares settings for box3 in the html document. */
+    display: inline-block;          /*set the display of the box to inline-block. */
+    border: 3px solid white;      /*sets the border width, type and color for the individual block. */
+    background-color: #EE2E84;    /*sets tje background color of the box. */
+    width: 22%;                     /*sets the width of the box in relation to the size of the viewing screen. */
+    height: 150px;                  /*sets the height of the box. */
+    margin: 5px;                    /*sets the margin around the box equal on all sides. */
+}
+
+#box4 {                             /*declares settings for box4 in the html document. */ 
+    display: inline-block;          /*set the display of the box to inline-block. */
+    border: 3px solid white;      /*sets the border width, type and color for the individual block. */
+    background-color: #EE2E84;    /*sets the background color of the box. */
+    width: 22%;                     /*sets the width of the box in relation to the size of the viewing screen. */
+    height: 150px;                  /*sets the height of the box. */
+    margin: 5px;                    /*sets the margin around the box equal on all sides. */
+}
+
+#box5 {                             /*declares settings for box5 in the html document. */
+    display: inline-block;          /*set the display of the box to inline-block. */
+    border: 3px solid white;      /*sets the border width, type and color for the individual block. */
+    background-color: #EE2E84;    /*sets the background color of the box. */
+    width: 22%;                     /*sets the width of the box in relation to the viewing size of the screen. */
+    height: 150px;                  /*sets the height of the box. */
+    margin: 5px 47px 5px 5px;       /*sets the margins around the box: top, right, bottom and left. */
+}
+
+#box6 {                             /*declares settings for box6 in the html document. */
+    display: inline-block;          /*set the display of the box to inline-block. */
+    border: 3px solid white;      /*sets the border width, type and color for the individual block. */
+    background-color: #85CFD8;    /*sets the background color of the box. */
+    height: 150px;                  /*sets the height of the box. */
+    width: 45.5%;                   /*sets the width of the box in relation to the viewing size of the screen size. */
+    margin: 5px 2px 5px 30px;       /*sets the margin size around the box: top, right, bottom and left. */
+}
+
+#box7 {                             /*declares settings for box7 in the html document. */
+    display: inline-block;          /*set the display of the box to inline-block. */
+    border: 3px solid white;      /*sets the border width, type and color for the individual block. */
+    background-color: #85CFD8;    /*sets the background color for the box. */
+    height: 150px;                  /*sets the height of the box. */
+    width: 45.5%;                   /*sets the width of the box in relation to the size of the viewing screen. */
+    margin: 5px 5px 5px 10px;       /*sets the margins around the box: top, right, bottom and left. */
+
+}
+
+
+#box8 {                             /*declares settings for box8 in the html document. */
+    display: inline-block;          /*set the display of the box to inline-block. */
+    border: 3px solid white;      /*sets the border width, type and color for the individual block. */
+    background-color: #8DC63F;    /*sets the background color of the box. */
+    height: 150px;                  /*sets the height of the box. */
+    width: 68%;                     /*sets the width of the box in relation to the size of the viewing screen. */
+    Margin: 5px 5px 5px 30px;       /*sets the margins around the box: top, right, bottom and left. */
+}
+
+#box9 {                             /*declares settings for box9 in the html document. */
+    display: inline-block;          /*set the display of the box to inline-block. */
+    border: 3px solid white;      /*sets the border width, type and color for the individual block. */
+    background-color: #E76E34;    /*sets the background color of the box. */
+    height: 150px;                  /*sets the height of the box. */
+    width: 23.5%;                   /*sets the width of the box in relation to the size of the viewing screen. */
+    Margin: 5px;                    /*sets the margins around the box to equal on all sides. */
+}
+		
+@media screen and (max-width: 768px) {   /*sets the website be able to be seen on various sized mobile devices that have a viewing screen under 768px  */
+    #box1 {                              /*sets paratmeters for box1 in the html document. */
+        width: 100%;                     /*sets the parameters of box1 to be displayed across the full width of the screen. */ 
+        margin: 30px 0px 5px 0px;        /*sets the margins of box1 on mobile devices to: top, right, bottom and left. can not combine all in one line of code as the margin at the top of the page is different. */
+    }
+    #box2, #box3, #box4, #box5, #box6, #box7, #box8, #box9{  /*sets the website parameters for boxes 2 through 9. */
+        width: 100%;                                         /*sets the website to be viewed across the full width of the mobile device. */
+        margin: 5px 0px;                                     /*sets the margins of boxes 2-9 to be 5px for top & bottom, 0px for left & right sides of boxes. */
+    }
+}
