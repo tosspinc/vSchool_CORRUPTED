@@ -1,0 +1,38 @@
+html, body {
+    margin: 0;                          /*sets the initial margin of the document to 0. */
+    padding: 0;                         /*sets the initial padding of the document to 0. */
+};
+
+#flex-container {
+    border: 1px solid black;          /* set the border around the flex box to 1px thich with a solid black line. */
+    height: 200 px;                     /* sets the height of the flex box to 200px; */
+    display: flex;                      /* this automaticaly sets the contents of the box to horizontal. */
+    /*flex-direction: row;              /* changes the orientation of what is in the flex box from row to column display. */
+    flex-direction: column;             /* changes the orientation of the flexboxes inside the main box to column display. */
+    /*flex-direction: row-reverse;      /* changes the orientation of the 3 boxes in the flexbox to goin in reverse order box3, 2, 1 and they are in contact with one another.*/
+    /*justify-content: space-evenly;    /* Spaces the boxes evenly apart from one another starting from the left edge on the row they are located.*/
+    /*justify-content: space-around;    /* Spaces the 3 boxes evently apare with an equal amount of space on the left and on the right sides. */
+    justify-content: center;            /* cemters the boxes from on the html page in the center of the flexbox. */
+    /*justify-content: flex-start;      /* Aligns the 3 boxes by default one after the other starting on the left side.*/
+    /*justify-content: flex-end;        /* Aligns the 3 boxes next to one another starting on the right side of the flexbox. */
+    align-items: flex-end;              /* Aligns the 3 boxes evenly along the right side of the flexbox. */
+    margin: 0px 10px;                   /* Sets the boxes withing the container have a space of 0 pixels from the top of the container and 10 pixes from the right edge. */ 
+};
+
+#flex-container > div:nth-child(1) {
+    background-color: dodgerblue;   /*makes the background color of the first flex box to dogerblue. */
+    height: 30px;                     /* sets the height of the first flexbox to 30 pixels. */
+    margin: 0px 10px;                 /* gives a space of 0 pixels at the top of the box and 30 pixels from the right edge of the box it is contained in.*/
+};
+
+#flex-container > div:nth-child(2){
+    background-color: firebrick;    /*makes the background color of the second flex box to firebrick red. */
+    height: 30px;                     /* sets the height of the first flexbox to 30 pixels. */
+    margin: 0px 10px;                 /* gives a space of 0 pixels at the top of the box and 30 pixels from the right edge of the box it is contained in.*/
+};
+
+#flex-container > div:nth-child(3){
+    background-color: violet;       /*makes the background color of the third flex box to violet. */
+    height: 30px;                     /* sets the height of the first flexbox to 30 pixels. */
+    margin: 0px 10px;                 /* gives a space of 0 pixels at the top of the box and 30 pixels from the right edge of the box it is contained in.*/
+};
