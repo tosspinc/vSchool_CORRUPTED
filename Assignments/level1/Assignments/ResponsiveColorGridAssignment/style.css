@@ -1,6 +1,6 @@
 * {                                 /*sets defaults*/
     box-sizing: border-box;         /*includes padding and border in an elements total width and height. */    
-    font-size: 0px;                 /*sets the initial font size to 0*. /
+    font-size: 0px;                 /*sets the initial font size to 0. */
     margin: 0px;                    /*sets the initial margin size to 0. */
     padding: 0;                     /*sets the initial padding size to 0. */
 }
@@ -70,7 +70,6 @@ body {                              /*sets data for the body portion of the html
     height: 150px;                  /*sets the height of the box. */
     width: 45.5%;                   /*sets the width of the box in relation to the size of the viewing screen. */
     margin: 5px 5px 5px 10px;       /*sets the margins around the box: top, right, bottom and left. */
-
 }
 
 
@@ -94,8 +93,9 @@ body {                              /*sets data for the body portion of the html
 		
 @media screen and (max-width: 768px) {   /*sets the website be able to be seen on various sized mobile devices that have a viewing screen under 768px  */
     #box1 {                              /*sets paratmeters for box1 in the html document. */
-        width: 100%;                     /*sets the parameters of box1 to be displayed across the full width of the screen. */ 
-        margin: 30px 0px 5px 0px;        /*sets the margins of box1 on mobile devices to: top, right, bottom and left. can not combine all in one line of code as the margin at the top of the page is different. */
+    width: 100%;                     /*sets the parameters of box1 to be displayed across the full width of the screen. */ 
+    width: 100%;                     /*sets the parameters of box1 to be displayed across the full width of the screen. */ 
+    margin: 30px 0px 5px 0px;        /*sets the margins of box1 on mobile devices to: top, right, bottom and left. can not combine all in one line of code as the margin at the top of the page is different. */
     }
     #box2, #box3, #box4, #box5, #box6, #box7, #box8, #box9{  /*sets the website parameters for boxes 2 through 9. */
         width: 100%;                                         /*sets the website to be viewed across the full width of the mobile device. */
