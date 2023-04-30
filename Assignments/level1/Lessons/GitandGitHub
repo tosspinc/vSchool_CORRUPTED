@@ -1,0 +1,7 @@
+GitHub is a control system: a place on-line where you can save or upload and download your information to for future or current use. Also it is a good repository for storing samples of 
+your coding projects that you can share with your employer or potential employer to view for examples of your work.
+
+when uploading data or code to git hub you use the following commands.
+git add -A   : this allows you for get your file ready for uploading to GitHub.
+git commit -m "notes are needed and put here in parenthesis related to your code. I use the date at then end of my line so I know when I last saved and updated my code, in case I need to use it
+    and I dont have to try and figure out which version I completed last. I am going to also time stamp it. in case I do several updates in a single day.
