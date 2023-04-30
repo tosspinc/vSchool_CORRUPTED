@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+};
+
+#flex-container {
+    border: 1px solid black;      /* set the border around the flex box to 1px thich with a solid black line. */
+    height: 200 px;                 /* sets the height of the flex box to 200px; */
+    display: flex;                  /* this automaticaly sets the contents of the box to horizontal. */
+    flex-direction: column;         /* changes the orientation of what is in the flex box from row to column display. */ 
+};
