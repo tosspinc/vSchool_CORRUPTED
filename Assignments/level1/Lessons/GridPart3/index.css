@@ -1,0 +1,69 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+#grid-container {
+    display: grid;
+    grid-gap: grid;
+    /*grid-template-columns: repeat(6, 100px);*/
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr);
+    grid-template-columns: repeat(4, 100px); 
+}
+
+/*  assignment is to swap grids around
+    9 - 1 : reversing them
+    swap 4 for 6
+    swap 7 - 3 
+    swap 7 - 2 */
+
+#box1 {
+    background-color: blue;
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+};
+
+#box2 {
+    background-color: red;
+};
+
+#box3 {
+    background-color: yellow;
+};
+
+#box4 {
+    background-color: green;
+};
+
+#box5 {
+    background-color: purple;
+};
+
+#box6 {
+    background-color: grey;
+};
+
+#box7 {
+    background-color: teal;
+};
+
+#box8 {
+    background-color: violet;
+};
+
+#box9 {
+    background-color: orange;
+};
+
+
+
+/* styling for the 12 divs. */
+#grid-container > div {
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+};
