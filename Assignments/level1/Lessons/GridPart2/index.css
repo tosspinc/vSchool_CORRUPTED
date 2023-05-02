@@ -5,32 +5,35 @@ html, body {
 }
 
 #grid-container {
-    display: grid;
-    grid-template-columns: repeat(12, ifr); /* this sets up 3 columns at 100 px wide each. */
+    display: grid;                          /* sets the container to be displayed in a grid format. */
+    grid-template-columns: repeat(1, 1fr);  /* this sets up 3 columns at 100 px wide each. */
 }
 
 header {
-    font-size: 22px;
-    background-color: dodgerblue;
-    text-align: center;
-    grid-column: 1 / 13;
+    font-size: 22px;                  /* sets the font size of header to 22 pixels. */
+    background-color: dodgerblue;   /* sets the background color of header to dogerblue. */
+    text-align: center;               /* aligns the text in the header to be centered. */
+    grid-column: 1 / 13;              /* sets the header in the first column of the container which has 13 sections. */
 }
 
+/* video on reactive navigation bar on youtube; https://www.google.com/search?q=navbar+in+a+grid+html+css&rlz=1C1RXQR_enUS1054US1054&sxsrf=APwXEdes5ZOeu0gxZKKnTwD-BaR-74I1Qw%3A1683014022860&ei=hsFQZPaZNJTAkPIPwaG2qAc&oq=navbar+in+a+gridcss&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAxgBMgoIIRCgARDDBBAKMgoIIRCgARDDBBAKOgoIABBHENYEELADOgoIABCKBRCwAxBDOgcIIxCwAhAnOgcIABANEIAEOgYIABAHEB46CAgAEIoFEJECOggIABAIEAcQHjoGCAAQCBAeOggIABCKBRCGAzoICCEQoAEQwwQ6BQghEKsCSgQIQRgAUMIWWLs2YIJQaANwAXgAgAGhAYgBmAeSAQM2LjSYAQCgAQHIAQrAAQE&sclient=gws-wiz-serp#fpstate=ive&vld=cid:9504c340,vid:DEag8l7GcCE,st:24 */
 nav {
-    background-color: darkorchid;
-    grid-column: 1 / 5;
+    background-color: darkorchid;   /* sets the background color of the navigational bar to dark orchid purple. */
+    grid-column: 1 / 1;               /* sets the navigational bar in the 1 grid of the five spaces. */
 }
 
 nav > div {
     border: 1px solid black;
-    border-radius: 3px;
-    text-align: center;
+    border-radius: 4px;
+    text-align: left;
+    grid-row: 1fr;
 }
 
 main {
-    background-color: darkgreen;
+    background-color: darkgreen;    /* sets the background color of the main part of the navigational bar to dark green. */
     grid-column: 6 / 13;
-    grid-row: 2 / 3;
+    grid-row: 2 / 12;
+    text-align: center;
 }
 
 footer {
@@ -38,5 +41,5 @@ footer {
     background-color: darkslateblue;
     text-align: center;
     grid-column: 1 / span 12;
-    
+
 }  

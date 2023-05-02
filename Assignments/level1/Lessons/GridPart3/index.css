@@ -1,15 +1,22 @@
 html, body {
-    margin: 0px;
-    padding: 0px;
-    font-family: sans-serif;
+    margin: 0px;              /* sets the default margin for page to be at 0. */
+    padding: 0px;             /* sets the default padding of the page to be at 0. */
+    font-family: sans-serif;  /* sets the text to be sans-serif. */
 }
 
 #grid-container {
     display: grid;
-    grid-gap: grid;
-    /*grid-template-columns: repeat(6, 100px);*/
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr);
-    grid-template-columns: repeat(4, 100px); 
+    grid-template-columns: repeat(3, 1fr); /*give 3 columns and automatically sets each box equally (1fr)*/
+    /*grid-gap: 1px;*/              /*places a gap between the boxes */
+    /*grid-template-columns: repeat(6, 100px);*/   /*grid template with 6 rows and boxes are 100px high each*/
+    /*grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));*/ /*auto fits the boxes in a row*/
+}
+
+#grid-container > div {
+    border: 1px solid black;        /*assigns a border of specified pixes in thickness with a solid black line to each box.*/
+    display: flex;
+    justify-content: center;          /*assigns the content of each box to be centered*/ 
+    font-size: 20px;                  /*assigns the text in each box to be 20 pixels. */
 }
 
 /*  assignment is to swap grids around
@@ -20,50 +27,38 @@ html, body {
 
 #box1 {
     background-color: blue;
-    grid-column: 3 / 4;
-    grid-row: 3 / 4;
-};
+    grid-column: 2 / 1;
+    grid-row: 1 / 1;
+}
 
 #box2 {
     background-color: red;
-};
+}
 
 #box3 {
     background-color: yellow;
-};
+}
 
 #box4 {
     background-color: green;
-};
+}
 
 #box5 {
     background-color: purple;
-};
+}
 
 #box6 {
     background-color: grey;
-};
+}
 
 #box7 {
     background-color: teal;
-};
+}
 
 #box8 {
     background-color: violet;
-};
+}
 
 #box9 {
     background-color: orange;
-};
-
-
-
-/* styling for the 12 divs. */
-#grid-container > div {
-    border: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 25px;
-};
+}
