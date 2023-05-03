@@ -1,7 +1,8 @@
 html, body {
     margin: 0px;
     padding: 0px;
-}
+}   
+
 #gridContainer {
     display: grid;                          /* sets the display for the container to grid format. */
     height: 100vh;                          /* sets the height of the display to 100% of the browser or viewport. */
@@ -9,7 +10,7 @@ html, body {
     grid-template-rows: 1fr 1fr 1fr;        /*sets up 3 rows and makes them equal within the container. */
     grid-template-areas: "one one one one"  /* the one (4x) make the first box take up the entire row. */
     "two two three three"                   /* the two two makes the second box take up half of the third row and three three makes the third box take up the second half of the row. */
-     "two two four five";                   /* the two two makes the second box take up half the row. four and five makes their respective boxes take up 1/4 of a row each. */
+    "two two four five";                   /* the two two makes the second box take up half the row. four and five makes their respective boxes take up 1/4 of a row each. */
 }
 
 #gridContainer > div {
@@ -41,3 +42,30 @@ html, body {
     background-color: teal;
     grid-area: five;
 }
+
+@media only screen and (max-width: 600px) { /*will dispaly only up to a screen size of 600px. */
+    #gridContainer {
+        width: 100%;                        /* sets width to 100% of viewable screen size. */
+        grid-template-columns: 1fr;         /* sets to display columns only 1 column in display. */
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr; /* defines five rows evenly divided in viewing screen. */
+        grid-template-areas:    /* sets box display order box one, two, three, etc. */
+        "one"       /*box 1 is assigned to the 1st row of the viewable screen area. */
+        "two"       /*box 2 is assigned to the 2nd row of the viewable screen area. */
+        "three"     /*box 3 is assigned to the 3rd row of the viewable screen area. */
+        "four"      /*box 4 is assigned to the 4th row of the viewable screen area. */
+        "five";     /*box 5 is assigned to the 5th row of the viewable screen area. */
+        } 
+    }
+
+@media only screen and (min-width: 601px) and (max-width: 900px) { /* displays only when viewing screen size is between 601px and 900px. */
+    #gridContainer {
+        width: 100%;                            /* displays main grid box to 100% of viewable screen area. */
+        grid-template-columns: 1fr 1fr 1fr;     /*defines 3 columns across viewable screen. */
+        grid-template-rows: 1fr 1fr 1fr;        /* defines 3 rows in viewable screen area. */
+        grid-template-areas: 
+        "one one one"       /* places box one 3x in the viewable screen area. */
+        "two three four"    /* places box 2 in column 1 of the second row in the viewable screen area. places 3 in the column 2 of the 2nd row of the veiwable screen area. places box 4 in the third column of the 2nd row of the viewable screen area. */
+        "five five five"    /* places box 5 in each of the 3 available columns in last row of viewable screen area. */
+    }
+}
+
