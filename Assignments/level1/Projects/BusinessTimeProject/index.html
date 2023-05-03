@@ -8,24 +8,34 @@
         <link rel="stylesheet" href="./style.css">
     </Head>
      <body>
-        <div id="logo">
-            <img src="IMG/Tosspi_logo_3.png">    
-            <div class="wrapper">
-                <header>Header</header>
-                <nav>Nav
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Products</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
-                <article>Main Content</article>
-                <aside>Sidebar</aside>
-                <footer>Footer</footer>
+        <nav>
+            <div class="logo">
+                <img src="IMG/Tosspi_logo_3.png"> 
             </div>
+            <div class="search">
+                <form>
+                    <select id="search.category">
+                    <option value="All">All</option>
+                    <option value="Beauty and Cosmetics">Beauty and Cosmetics</option>
+                    <option value="Books">Books</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Pets">Pets</option>
+                    <option value="Shoes">Shoes</option>
+                    </select>
+                    <input type="text" id="search-query" placeholder="Search Tosspi";>
+                    <button type="Submit">Go</button>
+                </form>
+            </div>
+            <div class="nav-links">
+                <a href="Link 1">Link 1</a>
+                <a href="https:\\www.tosspi.com" class="active">Link 2</a>
+                <a href="Link 3"></a>
+                <a href="Link 4"></a>
+            </div>
+        </nav>
+        
 
-        </div>
         <script src="index.js"></script>
     </body>
 </html>
