@@ -1,32 +1,91 @@
-/* video on editing site https://www.youtube.com/watch?v=DEag8l7GcCE */
-/* course on website development: https://www.udemy.com/course/responsive-website-template-from-scratch-html-css/ */
-
-body{
-    background-color: teal;
-}
-
 nav {
-display: flex;
-justify-content: space-between;
-align-items: center;
-height: 60px;
-background-color: black;
-color: white;
-padding: 0 5px;
-}
-
-.logo img{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: black;
+    color: white;
+    padding: 0 5px;
+  }
+  
+  .logo img {
     position: left;
     height: 40px;
     width: 100px;
-}
+  }
+  
+  nav.second-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    background-color: #000000;
+    border-top: 1px solid black;
+    margin-top: 1px; /* add margin to position second nav below the first one */
+  }
+  
+  h1, h2 {
+    display:block;
+    justify-content: center;
+    text-align: center;
+  }
 
-.search form {
+  
+
+ /* .second-nav .dropdown {
     display: flex;
     align-items: center;
-}
+    list-style: none;
+    padding: 0;
+    margin-right: auto;
+  }
+  
+  .second-nav .dropdown a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .second-nav .dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: black;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2)
+  }
+  
+  .second-nav .dropdown .dropdown-menu {
+    display: block;
+  }
 
-.search select {
+  .second-nav .dropdown .dropdown-menu li {
+    margin: 0;
+  }
+  
+  .second-nav .dropdown .dropdown-menu a {
+    display: block;
+    padding: 8px 16px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .second-nav .dropdown .dropdown-menu {
+    display: block;
+  }*/
+  
+  .location {
+    font-size: 15px;
+  }
+  
+  .search form {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search select {
     width: 200px;
     height: 30px;
     border: none;
@@ -35,18 +94,18 @@ padding: 0 5px;
     margin-right: 8px;
     background-color: teal;
     color: white;
-}
-
-.search input[type="text"] {
+  }
+  
+  .search input[type="text"] {
     width: 300px;
     height: 30px;
     border: none;
     border-radius: 5px;
     padding: 5px;
     margin-right: 8px;
-}
-
-.search button[type="Submit"] {
+  }
+  
+  .search button[type="Submit"] {
     height: 30px;
     padding: 0 10px;
     background-color: teal;
@@ -55,19 +114,24 @@ padding: 0 5px;
     color: white;
     font-weight: bold;
     cursor: pointer;
-}
-
-.nav-links a {
-    color: white;
-    margin: 0 10px;
+  }
+  
+  .nav-links a {              /* allows for formatting of links in nav-links. */
+    color: white;           /* sets the text color to white. */
+    margin: 0 10px;           /* sets a top margin of 0 and 10 pixel spacing between words. */
     text-decoration: none;
-}
+  }
+  
+  .nav-links a.active {       /*makes the links in nav-links active.
+    font-weight: bold;        /*makes the words stand out (bolded). */
+  } 
+  
+  .second-nav a {
+    color: white;           /*text color is white. */
+    margin: 0 20px;           /*top margin is set at 0 and there is a 20 pixel spacing between links. */
+    text-decoration: none;    /*removes the underscore line for the hyperlink. */
+  }
 
-.nav-links a.active {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-@media screen and (max-width: 768px) {
-    
-}
+  .second-nav a.active {      /*makes the links in second-nav active. */
+    font-weight: bold;        /*makes the words stand out (bolded them). */
+  }
