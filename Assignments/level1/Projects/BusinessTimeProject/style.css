@@ -1,0 +1,75 @@
+/* video on editing site https://www.youtube.com/watch?v=DEag8l7GcCE */
+/* course on website development: https://www.udemy.com/course/responsive-website-template-from-scratch-html-css/ */
+* {
+    box-sizing: border-box; /* updates items in boxes to be full screen. */
+
+}
+
+nav ul {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+justify-content: center;
+justify-items: center;
+list-style-type: none;
+margin: 0;
+padding: 10px;
+}
+
+nav ul li {                       /* defines the parameters for the list items in the nav bar. */
+    text-decoration: none;        /* removes underline of text in box. */
+    background-color: teal;     /* sets the background color of the box to teal. */
+    width: 95%;                   /* sets the size of the box to 95% of its cell width. */
+    text-align: center;
+    list-style: none;
+    line-height: 50px;
+
+}
+
+.wrapper{
+display: grid;
+grid-template-rows: 20% 50px 350px 100px; /* sets the dimensions for the header, nav bar, main content area and footer. */
+grid-template-columns: 3fr 1fr;
+grid-gap: 3px;
+}
+
+.wrapper > * {
+    border: 1px solid black;    /* sets a border of 1px in thickness with a solid black line. */
+    padding: 1em;                 /* sets spacing around text within the boxes. */
+}
+
+.wrapper > header{
+    background-color: blue;
+    grid-column: 1 / 3;
+    
+}
+
+.wrapper > nav{
+    background-color: blue;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.wrapper > article{
+    background-color: orange;
+}
+
+.wrapper > aside{                   /* this is the side bar. */
+     background-color: purple;
+}
+
+.wrapper > footer{
+    background-color: black;
+    color: white;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#logo{
+    position:fixed;
+    top: 0;
+    left: 0;
+}
+
+body{
+    background-color: teal;
+}
