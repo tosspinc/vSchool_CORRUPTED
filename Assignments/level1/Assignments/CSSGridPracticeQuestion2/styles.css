@@ -1,0 +1,43 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+}
+#gridContainer {
+    display: grid;                          /* sets the display for the container to grid format. */
+    height: 100vh;                          /* sets the height of the display to 100% of the browser or viewport. */
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* sets the colums to 4 and makes them equal. */
+    grid-template-rows: 1fr 1fr 1fr;        /*sets up 3 rows and makes them equal within the container. */
+    grid-template-areas: "one one one one"  /* the one (4x) make the first box take up the entire row. */
+    "two two three three"                   /* the two two makes the second box take up half of the third row and three three makes the third box take up the second half of the row. */
+     "two two four five";                   /* the two two makes the second box take up half the row. four and five makes their respective boxes take up 1/4 of a row each. */
+}
+
+#gridContainer > div {
+    margin: 10px 10px;          /* give all of the boxes in the container a margin of 10 pixels from top and on the right side. */
+    border-radius: 10px; /*rounds the corners of each box in the container to a radius of 10 pixels. */
+}
+
+#one {
+    background-color: lightsalmon;
+    grid-area: one;
+}
+
+#two {
+    background-color: lightblue;
+    grid-area: two;
+}
+
+#three {
+    background-color: lightgreen;
+    grid-area: three;
+}
+
+#four {
+    background-color: lightcoral;
+    grid-area: four;
+}
+
+#five {
+    background-color: teal;
+    grid-area: five;
+}
