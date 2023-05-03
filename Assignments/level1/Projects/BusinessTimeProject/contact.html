@@ -65,7 +65,7 @@
             <h2>Our goal at Tosspi is to offer new and used quality products that everyone can afford.</h2>
             <h3>How to contact us:</h3>
             <div class="contactBox">
-                <form id="contact-form">
+                <form id="contact-form" action="mailto:tosspinc@gmail.com" method="post" enctype="text/plain">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="Enter your name" required>
                     <label for="address">Address</label>
@@ -82,7 +82,7 @@
                     <input type="email" id="email" name="email" placeholder="Enter your email" required>
                     <label for="reason">Reason for Contacting</label>
                     <textarea id="reason" name="reason" placeholder="Enter the reason for contacting" required></textarea>
-                    <button type="submit">Submit</button>
+                    <button type="submit" value="send">Submit</button>
                 </form>
             </div>
         </Main>

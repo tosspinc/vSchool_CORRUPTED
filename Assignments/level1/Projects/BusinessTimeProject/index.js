@@ -50,7 +50,7 @@ function sendForm() {                                               /* declares 
     const email = document.getElementById("email").value;           /* declares address as a email variable. */
     const reason = document.getElementById("reason").value;         /* declares address as a reason variable. */
     
-    /* Construct the email body*/
+    /* Construct the email body and uses template literal which embeds or shortens the length of code.*/
     const body = `
         Name: ${name}
         Address: ${address}                 
@@ -68,8 +68,8 @@ function sendForm() {                                               /* declares 
     window.open('mailto:email@email')
     location.href = `mailto:tosspinc@gmail.com?subject=${name}&body=${name}`;
 };
-
-
+   
+</form>
     
 
     
