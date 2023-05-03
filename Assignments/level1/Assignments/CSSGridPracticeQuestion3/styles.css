@@ -48,12 +48,12 @@ html, body {
         width: 100%;                        /* sets width to 100% of viewable screen size. */
         grid-template-columns: 1fr;         /* sets to display columns only 1 column in display. */
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr; /* defines five rows evenly divided in viewing screen. */
-        grid-template-areas:    /* sets box display order box one, two, three, etc. */
-        "one"       /*box 1 is assigned to the 1st row of the viewable screen area. */
-        "two"       /*box 2 is assigned to the 2nd row of the viewable screen area. */
-        "three"     /*box 3 is assigned to the 3rd row of the viewable screen area. */
-        "four"      /*box 4 is assigned to the 4th row of the viewable screen area. */
-        "five";     /*box 5 is assigned to the 5th row of the viewable screen area. */
+        grid-template-areas:                /* sets box display order box one, two, three, etc. */
+        "one"                               /*box 1 is assigned to the 1st row of the viewable screen area. */
+        "two"                               /*box 2 is assigned to the 2nd row of the viewable screen area. */
+        "three"                             /*box 3 is assigned to the 3rd row of the viewable screen area. */
+        "four"                              /*box 4 is assigned to the 4th row of the viewable screen area. */
+        "five";                             /*box 5 is assigned to the 5th row of the viewable screen area. */
         } 
     }
 
