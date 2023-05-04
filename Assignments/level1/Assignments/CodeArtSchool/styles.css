@@ -1,0 +1,40 @@
+body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: yellow;
+    background-color: seagreen ;
+}
+
+.navbar li {
+    display: inline-block;
+    background-color: Black
+}
+
+.welcome {
+    text-decoration: underline;
+    color: white;
+    
+}
+
+h1.welcome {
+    background-color: blue
+}
+
+.code-photo {
+    max-width: 700px;
+    float: left;
+}
+
+.list {
+    clear: both;
+    background-color: darkblue;
+    color: white;
+}
+
+.fake-link {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+p {
+    background-color: orange;
+}
