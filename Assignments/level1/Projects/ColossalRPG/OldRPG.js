@@ -160,18 +160,17 @@ playGame();
 function playGame() {
     displayGrid()                       // puts grid at top of each running function, need to call in each function..
     while (true) {
-    const list = readlineSync.keyInSelect(gameOptions, `${playerName}, What would you like to do? `);
+    const list = readlineSync.keyInSelect(gameOptions, `${playerName}, What would you like to do? `, {cancel: false});
  
-       if (gameOptions[list] == 'walk'){
-            console.log(`${playerName}, choose where you would like to go in the village?: `);
-            villageChoices();
-        } else if(gameOptions[list] == 'print'){
-            console.log(`${playerName}\n playerHealth: ${playerHealth}\n inventory: ${inventory}`);
-        } else if (gameOptions[list] == 'quit'){
-            return playerHealth = 0; 
-        }
-    };
-};
+    if (gameOptions[list] == 'walk') {
+      console.log(`${playerName}, choose where you would like to go in the village?: `);
+      villageChoices();
+    } else if (gameOptions[list] == 'print') {
+      console.log(`${playerName}\n playerHealth: ${playerHealth}\n inventory: ${inventory}`);
+    } else if (gameOptions[list] == 'quit') {
+      return playerHealth = 0; 
+    }
+  };
 
 
 //boxing kangaroo enemy fights in zoo.
@@ -304,6 +303,7 @@ function villageChoices(){
             selectedEnemy.hitPoints = enemyThree.hitPoints;     //assigns enemyThree to selectedEnemy.
         };
     };
+  };
 };
 villageChoices(); 
 console.log("The enemy lays a critical hit on you. So long partner, you have died! Game Over!");
