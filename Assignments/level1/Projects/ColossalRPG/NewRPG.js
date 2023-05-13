@@ -1,6 +1,10 @@
 const readlineSync = require('readline-sync');                  //imports the readlinesync module.
-
 const aeDecision = ['Attack', 'Escape', 'Print', 'End Game'];   //declares aeDecision as constant array with decisions for player to choose from.
+
+let battleCount = 0;                                                    //sets variable battleCount value to zero.
+let gameOver = false;                                                   //sets variable gameOver to false.
+let defeatedEnemies = 0;
+
 
 //declares player function constructor.
 function Explorer(name, attackPoints, health, hitPoints) {      //declares Explorer constructor and handle four arguments. 
@@ -39,8 +43,6 @@ const enemyCounters = {
 'Chicken': 0,
 };
 
-let battleCount = 0;                                                    //sets variable battleCount value to zero.
-let gameOver = false;                                                   //sets variable gameOver to false.
 
 //meets game requirements.
 while (player.health > 0 && walkingEnemies.length > 0) {            //intiates while loop as player and enemy are alive.
@@ -58,11 +60,21 @@ while (player.health > 0 && walkingEnemies.length > 0) {            //intiates w
     }
 };
 
+
 function playGame(enemy) {
-    let enemyCounter = enemyCounters[enemy.inventoryItem];
     
+  let enemyCounter = enemyCounters[enemy.inventoryItem];
+    
+    for (let i = 0; i < defeatedEnemies; i++) {
+      const defeatedEnemy = walkingEnemies[i];
+      if (defeatedEnemy.inventoryItem === enemy.inventoryItem) {
+        enemyCounter++;
+      }
+    };
     
     while (player.health > 0 && enemy.health > 0 && battleCount < 15 && enemyCounter < 3) {    //checks to ensure both enemy and player health points are more than zero. checks there are no more than 15 battles and makes sure the number of enemies defeated are under 4.
+        enemy = walkingEnemies[Math.floor(Math.random() * walkingEnemies.length)]; //chooses a new enemy each time.
+        enemyCounter = enemyCounters[enemy.inventoryItem]; //resets the enemy counter for the new enemy.
         battleCount++;
         console.log(`\nWhile out exploring on your walk you have encountered a ${enemy.name}! They have attacked you and you received ${enemy.hitPoints} hit points.\n`);
   
@@ -87,10 +99,12 @@ function playGame(enemy) {
               enemyCounter++;                                   //counts the number of enemies defeated. 
               player.health += 50;                              //adds 50 health points to the player after defeating an enemy.
               player.inventory += `, ${enemy.inventoryItem}`;
+              enemyCounters[enemy.inventoryItem]++;
+              defeatedEnemies++;
               console.log(`You have acquired a ${enemy.inventoryItem}.`);
-              walkingEnemies.splice(walkingEnemies.indexOf(enemy), 1);  //removes an enemy from array once defeated.
+              walkingEnemies.splice(walkingEnemies.indexOf(enemy), 0);  //removes an enemy from array once defeated.
               
-              if (defeatedEnemies == 3) {                   //checks to verify if all 3 enemies have been defeated.
+              if (defeatedEnemies === 3) {                   //checks to verify if all 3 enemies have been defeated.
                 console.log(`Congratulations ${player.name}! You have defeated all three enemies!`);
                 console.log(`Player: ${player.name}\nHealth: ${player.health}\nInventory: ${player.inventory}`);
                 gameOver = true;
@@ -118,13 +132,12 @@ function playGame(enemy) {
         player.inventory = enemy.inventoryItem;                 //assigns enemy inventoryItem to player inventory.
         enemyCounters[enemy.inventoryItem]++;
         defeatedEnemies++;
-        walkingEnemies.splice(walkingEnemies.indexOf(enemy), 1);    //removes enemy defeated from enemy array.
+        walkingEnemies.splice(walkingEnemies.indexOf(enemy), 0);    //removes enemy defeated from enemy array.
     } else if (player.health <= 0) {                                //if player health points less than zero player loses.
         console.log(`You have been defeated by the ${enemy.name}.`);
         gameOver = true;
     } else if (battleCount >= 15 || enemyCounter >= 10) {   //if battlCount is higher than 15 or enemyCounter is higher than 10 then verifies is true and runs the line of code below.           
         console.log(`You have fought long enough against the ${enemy.name}.`);
-        walkingEnemies.splice(walkingEnemies.indexOf(enemy), 1); //removes current enemy battling from enemy array.
+        walkingEnemies.splice(walkingEnemies.indexOf(enemy), 0); //removes current enemy battling from enemy array.
     };
-
 };
