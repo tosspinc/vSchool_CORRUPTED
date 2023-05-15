@@ -1,4 +1,6 @@
+//need to learn new ES Module: import { question, keyInSelect } from 'readline-sync'; 
 const readlineSync = require('readline-sync');                  //imports the readlinesync module.
+
 const aeDecision = ['Attack', 'Escape', 'Print', 'End Game'];   //declares aeDecision as constant array with decisions for player to choose from.
 const initialGameOptions = ['walk', 'print', 'quit'];                      //assigns Walk, Print and Quit as game options and meets RPG Requirements.
 
@@ -75,7 +77,7 @@ function playGame(enemy) {
     console.log(`\nWhile out exploring on your walk you have encountered a ${enemy.name}! They have attacked you and you received ${enemy.hitPoints} hit points.\n`);
    
     const innerGameDecision = ["Attack", "Escape"];     //declares innerGameDecision as a constant variable with only two options.
-    while (enemy.health > 0 && player.health > 0 && !escaped) {  //game continues as long as enemy and player health points are > zero.
+    while (enemy.health > 0 && player.health > 0) {  //game continues as long as enemy and player health points are > zero.
           const decision = readlineSync.keyInSelect(innerGameDecision, "What do you want to do?", { cancel: false }); //removes the cancel option from the list.
           if (innerGameDecision[decision] == 'Attack') {  //attack portion of game initiates when user selects attack option.
           console.clear();
@@ -93,22 +95,23 @@ function playGame(enemy) {
             player.inventory += `, ${enemy.inventoryItem}`;         //concatenates the inventory and adds the enemy inventory to the current players inventory list.
             console.log(`You have acquired a ${enemy.inventoryItem}.`);
           } if (defeatedEnemies === walkingEnemies.length) {                   //checks to verify if all 3 enemies have been defeated.
-            console.clear();
+              console.clear();
             console.log(`Congratulations ${player.name}! You have defeated all three enemies!`);
             console.log(`Player: ${player.name}\nHealth: ${player.health}\nInventory: ${player.inventory}`);
+          };
           } else if (innerGameDecision[decision] == 'Escape') { //verifies if player selects option to escape in game.
-          const randomChance = Math.random() < 0.5;            //calculatea a 50% chance for player to escape enemy when selected.
+             const randomChance = Math.random() < 0.5;            //calculatea a 50% chance for player to escape enemy when selected.
           if (randomChance) {                                 //if player is able to escape then this runs.
             console.log(`\n${player.name}, You were able to successfuly escape from the ${enemy.name}.`);
             escaped = true;
             break;
           }else {                                             //if player is not able to escape enemy this code runs.
-            console.log(`\n${player.name}, You were unable to escape from the ${enemy.name}. The ${enemy.name} has attacked you  and you have received ${enemy.attackPoints} hit points.`);
+            console.log(`\n${player.name}, You were unable to escape from the ${enemy.name}. The ${enemy.name} has attacked you and you have received ${enemy.attackPoints} hit points.`);
             player.health = player.health - enemy.attackPoints;
             console.log(`\n${player.name}, You have ${player.health} health points left.`);
           };
           
-        };
+        
       };      
     };
   };
