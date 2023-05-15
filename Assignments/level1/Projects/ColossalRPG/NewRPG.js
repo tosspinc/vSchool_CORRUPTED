@@ -78,38 +78,37 @@ function playGame(enemy) {
    
     const innerGameDecision = ["Attack", "Escape"];     //declares innerGameDecision as a constant variable with only two options.
     while (enemy.health > 0 && player.health > 0) {  //game continues as long as enemy and player health points are > zero.
-          const decision = readlineSync.keyInSelect(innerGameDecision, "What do you want to do?", { cancel: false }); //removes the cancel option from the list.
-          if (innerGameDecision[decision] == 'Attack') {  //attack portion of game initiates when user selects attack option.
-          console.clear();
-          console.log(`You attacked the ${enemy.name} back and the ${enemy.name} received ${player.attackPoints} hit points.`);
-          enemy.health = enemy.health - player.attackPoints;  //subtracks player attack points from enemy health points.
-          if (enemy.health > 0) { //runs as long as enemy health points are above zero.
+      const decision = readlineSync.keyInSelect(innerGameDecision, "What do you want to do?", { cancel: false }); //removes the cancel option from the list.
+      if (innerGameDecision[decision] == 'Attack') {  //attack portion of game initiates when user selects attack option.
+        console.clear();
+        console.log(`You attacked the ${enemy.name} back and the ${enemy.name} received ${player.attackPoints} hit points.`);
+        enemy.health = enemy.health - player.attackPoints;  //subtracks player attack points from enemy health points.
+        if (enemy.health > 0) { //runs as long as enemy health points are above zero.
           console.log(`The ${enemy.name} has ${enemy.health} health points left.`);
           console.log(`The ${enemy.name} attacked you back and you received ${enemy.hitPoints} hit points.`);
           player.health = player.health - enemy.hitPoints; //subtracts enemy hit points from player health points.
           console.log(`You have ${player.health} health points left.`); //displays the players current health points.
-          } if (player.health > 0 && enemy.health <= 0) {               //verifies that player health points are higher than enemy health points.
-            console.log(`You have defeated the ${enemy.name}!`);
-            walkingEnemies.splice(walkingEnemies.indexOf(enemy), 1);  //removes an enemy from array once defeated.
-            player.health += 30;                                    //adds points to the players health points after defeating the enemy.
-            player.inventory += `, ${enemy.inventoryItem}`;         //concatenates the inventory and adds the enemy inventory to the current players inventory list.
-            console.log(`You have acquired a ${enemy.inventoryItem}.`);
-          } if (defeatedEnemies === walkingEnemies.length) {                   //checks to verify if all 3 enemies have been defeated.
-              console.clear();
-            console.log(`Congratulations ${player.name}! You have defeated all three enemies!`);
-            console.log(`Player: ${player.name}\nHealth: ${player.health}\nInventory: ${player.inventory}`);
+        } if (player.health > 0 && enemy.health <= 0) {               //verifies that player health points are higher than enemy health points.
+          console.log(`You have defeated the ${enemy.name}!`);
+          walkingEnemies.splice(walkingEnemies.indexOf(enemy), 1);  //removes an enemy from array once defeated.
+          player.health += 30;                                    //adds points to the players health points after defeating the enemy.
+          player.inventory += `, ${enemy.inventoryItem}`;         //concatenates the inventory and adds the enemy inventory to the current players inventory list.            console.log(`You have acquired a ${enemy.inventoryItem}.`);
+        } if (defeatedEnemies === walkingEnemies.length) {                   //checks to verify if all 3 enemies have been defeated.
+          console.clear();
+          console.log(`Congratulations ${player.name}! You have defeated all three enemies!`);
+          console.log(`Player: ${player.name}\nHealth: ${player.health}\nInventory: ${player.inventory}`);
           };
-          } else if (innerGameDecision[decision] == 'Escape') { //verifies if player selects option to escape in game.
-             const randomChance = Math.random() < 0.5;            //calculatea a 50% chance for player to escape enemy when selected.
-          if (randomChance) {                                 //if player is able to escape then this runs.
-            console.log(`\n${player.name}, You were able to successfuly escape from the ${enemy.name}.`);
-            escaped = true;
-            break;
-          }else {                                             //if player is not able to escape enemy this code runs.
-            console.log(`\n${player.name}, You were unable to escape from the ${enemy.name}. The ${enemy.name} has attacked you and you have received ${enemy.attackPoints} hit points.`);
-            player.health = player.health - enemy.attackPoints;
-            console.log(`\n${player.name}, You have ${player.health} health points left.`);
-          };
+        } else if (innerGameDecision[decision] == 'Escape') { //verifies if player selects option to escape in game.
+          const randomChance = Math.random() < 0.5;            //calculatea a 50% chance for player to escape enemy when selected.
+        if (randomChance) {                                 //if player is able to escape then this runs.
+          console.log(`\n${player.name}, You were able to successfuly escape from the ${enemy.name}.`);
+          escaped = true;
+          break;
+        }else {                                             //if player is not able to escape enemy this code runs.
+          console.log(`\n${player.name}, You were unable to escape from the ${enemy.name}. The ${enemy.name} has attacked you and you have received ${enemy.attackPoints} hit points.`);
+          player.health = player.health - enemy.attackPoints;
+          console.log(`\n${player.name}, You have ${player.health} health points left.`);
+        };
           
         
       };      
