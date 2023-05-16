@@ -62,10 +62,10 @@ function playGame(enemy) {
     
   let enemyCounter = enemyCounters[enemy.inventoryItem];
     
-  for (let i = 0; i < defeatedEnemies; i++) {
-    const defeatedEnemy = walkingEnemies[i];
-    if (defeatedEnemy.inventoryItem === enemy.inventoryItem) {
-    enemyCounter++;
+  for (let i = 0; i < defeatedEnemies; i++) {       //iterates between the defeated enemies stored array data.
+      const defeatedEnemy = walkingEnemies[i];      //decares a constant variable called defeatedEnemy and assigns walkingEnemies to the variable.
+    if (defeatedEnemy.inventoryItem === enemy.inventoryItem) { //compares defeatd enemy inventory against current fighting enemy. 
+    enemyCounter++;     //keeps track of the number of enemies defeated and if the 
    }
   };
 
@@ -97,10 +97,10 @@ function playGame(enemy) {
           console.clear();
           console.log(`Congratulations ${player.name}! You have defeated all three enemies!`);
           console.log(`Player: ${player.name}\nHealth: ${player.health}\nInventory: ${player.inventory}`);
-          };
+        };
         } else if (innerGameDecision[decision] == 'Escape') { //verifies if player selects option to escape in game.
-          const randomChance = Math.random() < 0.5;            //calculatea a 50% chance for player to escape enemy when selected.
-        if (randomChance) {                                 //if player is able to escape then this runs.
+          const randomChance = Math.random() < 0.5;           //calculatea a 50% chance for player to escape enemy when selected.
+        if (randomChance) {                                   //if player is able to escape then this runs.
           console.log(`\n${player.name}, You were able to successfuly escape from the ${enemy.name}.`);
           escaped = true;
           break;

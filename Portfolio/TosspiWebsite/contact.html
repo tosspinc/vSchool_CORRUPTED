@@ -11,7 +11,7 @@
     <body>
         <nav>
             <div class="logo">
-                <img src="../IMG/Tosspi_logo_3.png" title="Home" alt="homepage"> 
+                <img src="IMG/Tosspi_logo_3.png" title="Home" alt="homepage"> 
             </div>
             
             <div class="location">
@@ -43,8 +43,8 @@
         </nav>
         
         <nav class="second-nav">
+            <a href="index.html">Home</a>
             <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
             <a href="products.html">Products</a>
             <!--<ul class="dropdowwn">
                 <li><a href = "#">Dropdown</a>
@@ -63,23 +63,28 @@
         <Main>
             <H1>Welcome to Tosspi: The One Stop Shopping Place.</H1>
             <h2>Our goal at Tosspi is to offer new and used quality products that everyone can afford.</h2>
-            
-              
-            <div class="image-box">
-                <div class="image-container">
-                  <img src="IMG/clothing.jpg">
-                  <p>We will offer various type of new and previously owned clothing</p>
-                </div>
-                <div class="image-container">
-                  <img src="IMG/shoes.jpg">
-                  <p>We will offer a variety of styles of new and previously owned shoes.</p>
-                </div>
-                <div class="image-container">
-                  <img src="IMG/petToys.jpg">
-                  <p>We will offer a variety of new and previously owned pet products.</p>
-                </div>
-              </div>
-              
+            <h3>How to contact us:</h3>
+            <div class="contactBox">
+                <form id="contact-form" action="mailto:tosspinc@gmail.com" method="post" enctype="text/plain">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" placeholder="Enter your address" required>
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" placeholder="Enter your city" required>
+                    <label for="state">State</label>
+                    <input type="text" id="state" name="state" placeholder="Enter your state" required>
+                    <label for="zip">Zip Code</label>
+                    <input type="text" id="zip" name="zip" placeholder="Enter your zip code" required>
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <label for="reason">Reason for Contacting</label>
+                    <textarea id="reason" name="reason" placeholder="Enter the reason for contacting" required></textarea>
+                    <button type="submit" value="send">Submit</button>
+                </form>
+            </div>
         </Main>
         
         <script src="index.js"></script>

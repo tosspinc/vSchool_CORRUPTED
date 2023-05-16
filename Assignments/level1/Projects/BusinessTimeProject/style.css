@@ -194,6 +194,44 @@ button[type="submit"]:hover {   /* when hover over the submit button it changes 
   height: auto;
 }
 
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust as needed */
+  overflow: hidden;
+}
+
+.carousel-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(carousel-background.jpg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6; /* Adjust as needed */
+}
+
+.product-images {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.product-images img {
+  width: calc(25% - 10px); /* Adjust as needed */
+  height: auto;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+
 /* allows the logo and the website to automatically adjust by reducing the contents or enlarging the contents as the veiwing screen changes. This allows for less coding of the @media format. */
 
 /* Styles for screens smaller than 768px (i.e. mobile devices) */
