@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <title>Simple Calculator</title>
+        <meta charset="UTF-8">
+        <meta name="Simple Calculator that adds, subtracts and multiplies">
+    </head>
+    <body>
+        <div class = 'container'>
+            <h1>Simple Calculator</h1>
+            <div id='displayResults' class='display results'>
+            <h2><input type='text' placeholder='' id='calculatorResults'></h2></div>
+        
+            <div id = 'add' class="add method">
+                <h2>Addition</h2>
+                <input type='text' placeholder='' id='addFirstNumber'>
+                <input type='text' placeholder='' id='addSecondNumber'>
+                <input type="button" name="add" value="+"/> 
+            </div>
+
+            <div id='subtract' class="subtract method">
+                <h2>Subtraction</h2>
+                <input type='text' placeholder='' id='subtractFirstNumber'>
+                <input type='text' placeholder='' id='subtractSecondNumber'>
+                <input type='button' name='subtract' value='-'/>
+                <div class="resultsContainer">
+            </div>
+
+            <div id='multiply' class="multiply method">
+                <h2>Multiplication</h2>
+                <input type='text' placeholder='' id='multiplyFirstNumber'>
+                <input type='text' placeholder='' id='mulitiplySecondNumber'>
+                <input type="button" name="multiply" value="x"/>
+            </div>
+        </div>
+    </body>
+        
+    <script src="index.js"></script>
+    </body>
+</html>
