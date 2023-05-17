@@ -1,0 +1,52 @@
+body {
+        background-color: #f2f2f2;            /*sets the background color of the html page to white.*/
+    font-family: Arial, sans-serif;             /*determines the type of text on the html page.*/
+}
+
+h1 {
+    text-align: center;                          /*centers the h1 text in each of the viewable calculator sections.*/
+    font-style: italic;                           /*italic style.*/
+}
+
+.section {
+    background-color: teal;                     /*sets the background color of each section*/
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    border-radius: 10px;                           /*rounds the corners of each of the 3 calculator screens*/
+    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);   /*gives a showdow around the main calculator viewable area.*/
+}
+
+h2 {
+    margin-top: 0;                                /*sets header 2 at top of viewable area of each container box.*/
+    font-style: italic;                           /*italic style.*/
+}
+
+input[type="number"] {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;        /*puts a margin of 10 pixes between all the container boxes.*/
+    padding: 5px;               /*pads the textbox*/
+    width: calc(100% - 20px);   /*centers textbox in container and gives it equal spacing on the left and right sides.*/
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #CC5500;  /*background color of buttons*/
+    color: black;               /*assigns the color of the text of the buttons.*/
+    font-weight: strong;          /*bolds the text.*/
+    font-style: italic;           /*makes text itailcized.*/
+    border: none;                 /*assigns no border around the buttons*/
+    border-radius: 10px;          /*rounds the button corners.*/
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+p {
+    font-weight: bold;
+    margin-top: 10px;
+}
