@@ -1,67 +1,50 @@
-html, body {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: Teal;
+* {
     margin: 0;
     padding: 0;
-}
-
-.container {
-    height: 50vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: 25px;
-    background-color: black;
-    text-align: center;
-    color: white;
+    overflow: hidden;
 }
 
 .simpleCalculator {
-    height: 70vh;
-    width: 70vh;
-    display: grid;
-    margin: 50px;
-    grid-template-columns: repeat(1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 10px;
-    padding: 30px;
-    text-align: center;
-    color: white;
-    box-sizing: border-box;
-}
-
-h1 {
-    text-align: center;
-}
-
-.resultscontainer h3 {
-    margin: 0;
-}
-
-.results-container input[type='text'] {
+    background-color: Teal;
+    height: 100vh;
     width: 100%;
-
-}
-.display.results {          /*calls the results display results class for the results textbox.*/
-    width: 100%;            /*sets the display to 100 percent of viewable area.*/
-    margin-top: 0;          /*sets top margin to 0 pixels.*/
-    margin-left: 50px;      /*gives a margin of 50 pixels on the left of the result textbox.*/
-    margin-right: 50px;     /*gives a margin of 50 pixels on the right of the result textbox.*/
-}
-
-#calculatorResults {        /*calls the calculatorResults id method*/
-    width: 80%;             /*sets the length of the text box to 80% of display area.*/
-    height: 25px;           /*sets the height of the textbox to 25 pixels.*/
-    border-radius: 10px;    /*sets the corners of the textbox to have a radious of 10 pixels.*/
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    "calculatorResults calculatorResults calculatorResults calculatorResults"
+    "percent clearEverything clear delete"
+    "seven eight nine mult"
+    "four five six min"
+    "one two three add"
+    "plusMinus zero period equal";
+    gap: 0.2rem;
 }
 
-.add.method {
-    margin-top: 0;
-    margin-left: 25px;
-    margin-right: 25px;
+#calculatorResults {
+    grid-area: calculatorResults;
+    padding:  2%;   
+}
+
+#calculatorResults input {
+    width: 100%;
+    height: 100%;
+    text-align: right;
+    font-size: larger;
+    color: black;
+    font-weight: bolder;  
+}
+
+.buttons {
+    padding: 2%;
+}
+
+.buttons input {
+    width: 90%;
+    height: 90%;
+    background-color: maroon;
+    color: whitesmoke;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: larger;
 }
