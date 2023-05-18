@@ -1,0 +1,136 @@
+body {
+    background-color: tan;
+}
+
+nav {
+    display: flex;                    /* automatically adjusts the viewing alignment such as rows as columns on the page for the display screen. */
+    justify-content: space-between;   /* defines how the display adjusts or distributes spacing around the contents in the nav bar. */
+    align-items: center;              /* centers the items in the nav bar. */
+    height: 110px;                     /* assigns the height of the nav bar to 60 pixels. */
+    background-color: whitesmoke;        /* assigns the color black to fill the nav bar. */
+    color: Blue;                   /* text color. */
+    padding: 0 5px;                   /* 0 padding at the top and bottom and 5 pixels on both sides. */
+    border-top: 4px solid red;
+    border-bottom: 4px solid red;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {                           /* assigns img to the logo class. */
+  /*position: left;                     /* places the logo image to the far left side of the nav bar and makes it 40 pixels high and 100 pixes wide. */
+  height: 100px;
+  width: 100px;
+}
+  
+.mpcContainer {
+    flex-grow: 1;               /*allows container to expand and fill remaining space.*/
+    text-align: center;         /*centers text*/
+    font-size: 60px;
+}
+
+.ppBaddiesContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 130px auto;
+    border: 2px solid Black; background-color: whitesmoke   ;
+    height: 425px;
+    width: 800px;
+}
+
+.ppBaddiesContainer img {
+    margin: 10px;
+    height: 120px;
+    width: auto;
+    border: 1px solid black;
+}
+
+.baddieItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.baddieItem img {
+    margin-top: 30px;
+    height: 125px;
+    width: 125px;
+}
+
+.baddieItem span {
+    text-align: center;
+}
+
+.totalCaughtInput {
+    width: 40px;
+}
+
+.totalAmountOwed {
+    width: 40px;
+}
+
+.invoiceContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    border: 2px solid black;
+    padding: 20px;
+    background-color: whitesmoke;
+    width: 500px;
+}
+
+.invoiceContainer h2 {
+    margin-bottom: 10px;
+}
+
+.invoiceContainer .baddieItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.invoiceContainer .baddieItem input {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.invoiceContainer .totalItem {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.invoiceContainer button {
+    margin-top: 10px;
+}
+
+.footer {
+    background-color: red;
+    border-top: 2px solid blue; 
+    border-bottom: 2px solid blue;
+    color: blue;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    position: fixed;
+    left: 0;
+    bottom: 5px;                   /*sets the bottom of the footer 10 pixels up from the edge.*/                      
+    width: 100%;                    /*footer displays across entire display*/
+}
+
+.footer a {
+    text-decoration: none;  /*removes links from all items in footer.*/
+    color: white;
+}
+
+.footer.hover {
+    text-decoration: underline; /*add underline on hover for links in footer.*/
+}
