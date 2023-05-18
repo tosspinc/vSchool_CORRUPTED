@@ -10,28 +10,25 @@
     <body onload="detectLanguage()">                              <!--upon browser loading webpage verifies what user language is and translates content to language.-->
         <h1>Tosspi Airways</h1>
         <h2>Passenger Information</h2>
-
+        
         
         <div id="travelFormContainer">                          <!--container box that holds form information-->
             <div class="passengerInputBox">          <!--assign class name of passengerOneInputBox for the first passenger input box-->
                 <div class="passengerDetails">       <!--assign class name of passengerOneDetails for details first passenger-->
                     <label for="passengerCount">Number of Passengers:</label>
                     <select id="passengerCount" onchange="tosspiPassengerCount()">
-                        <option value="1">How many passengers are traveling?</option>
-                        <option value="2">1 passenger</option>
-                        <option value="3">2 passengers</option>
+                        <option value="">How many passengers are traveling?</option>
+                        <option value="1">1 passenger</option>
+                        <option value="2">2 passengers</option>
                     </select>
                 </div>
             </div>
 
             <form id='passengerForm' name='passengerTravelInformation'>        <!--assigns name passengerTravelInformation to the passengers travel form.-->
-                <div class="passengerInputBox">
-                    <span class=""
-
+                <div id='passengerInfoContainer'>
                 </div>
             </form>
-            
-        </div>
+        
         <script src="app.js"></script>
     </body>
 </html>

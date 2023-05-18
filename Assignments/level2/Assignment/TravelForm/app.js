@@ -7,95 +7,140 @@ function detectLanguage() {                     //declares detectLanguage functi
 }
 
 function tosspiPassengerCount() {
-    var passengerCount = document.getElementById("passengerCount").value;
-    var passengerForm = document.getElementById("passengerForm");
+    var passengerCount = parseInt(document.getElementById("passengerCount").value);
+    var passengerInfoContainer = document.getElementById("passengerInfoContainer");
 
-    passengerForm.innerHTML = "";
+    passengerInfoContainer.innerHTML = "";
+    if (passengerCount > 0) {
+        for(i = 0; i < passengerCount; i++) {
+            var passengerNumber = i + 1;
 
-    for(i = 0; i < passengerCount; i++) {
-        var passengerNumber = i + 1;
+            var passengerFieldset = document.createElement('fieldset');
+            passengerFieldset.innerHTML = '<legend>Passenger ' + passengerNumber + '</legend>';
 
-        var passengerFieldset = document.createElement('fieldset');
-        passengerFieldset.innerHTML = '<legend>Passenger ' + passengerNumber + '</legend>';
+            var firstNameLabel = document.createElement('label');
+            passengerFieldset.appendChild(document.createElement('br'));
+            firstNameLabel.textContent = 'First Name: ';
+            passengerFieldset.appendChild(firstNameLabel);
 
-        var firstNameInput = document.createElement('input');
-        firstNameInput.setAttribute('type', 'text');
-        firstNameInput.setAttribute('placeholder', 'First Name');
-        firstNameInput.setAttribute('name', 'firstName' + passengerNumber);
-        passengerFieldset.appendChild(firstNameInput);a
-        var lastNameInput = document.createElement('input');
-        lastNameInput.setAttribute('type', 'text');
-        lastNameInput.setAttribute('placeholder', 'Last Name');
-        lastNameInput.setAttribute('name', 'lastName' + passengerNumber);
-        passengerFieldset.appendChild(lastNameInput);
+            var firstNameInput = document.createElement('input');
+            firstNameInput.setAttribute('type', 'text');
+            firstNameInput.setAttribute('placeholder', 'First Name');
+            firstNameInput.setAttribute('name', 'firstName' + passengerNumber);
+            firstNameInput.classList.add('input-field');
+            passengerFieldset.appendChild(firstNameInput);
+
+            var lastNameLabel = document.createElement('label');
+            lastNameLabel.textContent = 'Last Name: ';
+            passengerFieldset.appendChild(lastNameLabel);
+            
+            var lastNameInput = document.createElement('input');
+            lastNameInput.setAttribute('type', 'text');
+            lastNameInput.setAttribute('placeholder', 'Last Name');
+            lastNameInput.setAttribute('name', 'lastName' + passengerNumber);
+            lastNameInput.classList.add('input-field');
+            passengerFieldset.appendChild(lastNameInput);
+
+            var ageInputLabel = document.createElement('label');
+            passengerFieldset.appendChild(document.createElement('br'));
+            passengerFieldset.appendChild(document.createElement('br'));
+            ageInputLabel.textContent = 'Age: ';
+            passengerFieldset.appendChild(ageInputLabel);
+
+
+            var ageInput = document.createElement('input');
+            ageInput.setAttribute('type', 'number');
+            ageInput.setAttribute('placeholder', 'Age');
+            ageInput.setAttribute('name', 'age', min='1', max='99', + passengerNumber);
+            ageInput.classList.add('input-field');
+            passengerFieldset.appendChild(ageInput);
+
+            var genderLabel = document.createElement('label');
+            genderLabel.textContent = 'Gender: ';
+            passengerFieldset.appendChild(genderLabel);
+   
+            var femaleRadio = document.createElement('input');
+            femaleRadio.setAttribute('type', 'radio');
+            femaleRadio.setAttribute('name', 'gender ' + passengerNumber);
+            femaleRadio.setAttribute('value', 'female');
+            genderLabel.appendChild(femaleRadio);
+            genderLabel.appendChild(document.createTextNode('Female'));
  
-    //    // var genderLabel = document.createElement('label');
-    //     genderLabel.textContent = 'Gender: ';
-    //     passengerFieldset.appendChild(genderLabel);
+            var maleRadio = document.createElement('input');
+            maleRadio.setAttribute('type', 'radio');
+            maleRadio.setAttribute('name', 'gender ' + passengerNumber);
+            maleRadio.setAttribute('value', 'male');
+            genderLabel.appendChild(maleRadio);
+            genderLabel.appendChild(document.createTextNode('Male'));
 
-    //     var femaleRadio = document.createElement('input');
-    //     femaleRadio.setAttribute('type', 'radio');
-    //     femaleRadio.setAttribute('name', 'gender ' + passengerNumber);
-    //     femaleRadio.setAttribute('value', 'female');
-    //     genderLabel.appendChild(femaleRadio);
-    //     genderLabel.appendChild(document.createTextNode('Female'));
- 
-    //     var maleRadio = document.createElement('input');
-    //     maleRadio.setAttribute('type', 'radio');
-    //     maleRadio.setAttribute('name', 'gender ' + passengerNumber);
-    //     maleRadio.setAttribute('value', 'male');
-    //     genderLabel.appendChild(maleRadio);
-    //     genderLabel.appendChild(document.createTextNode('Male'));
+            var destinationSelectLabel = document.createElement('label');
+            passengerFieldset.appendChild(document.createElement('br'));
+            passengerFieldset.appendChild(document.createElement('br'));
+            destinationSelectLabel.textContent = 'Destination: ';
+            passengerFieldset.appendChild(destinationSelectLabel);
 
-    //     var ageInput = document.createElement('input');
-    //     ageInput.setAttribute('type', 'number');
-    //     ageInput.setAttribute('placeholder', 'Age');
-    //     ageInput.setAttribute('name', 'age' + passengerNumber);
-    //     passengerFieldset.appendChild(ageInput);
+            var destinationSelect = document.createElement("select");
+            destinationSelect.setAttribute("name", "destination" + passengerNumber);
 
-    //     var dietLabel = document.createElement("label");
-    //     dietLabel.textContent = "Dietary Preference: ";
-    //     passengerFieldset.appendChild(dietLabel);
+            var destinations = ["Miami, FL", "New York City, NY", "Los Angelos, CA", "Salt Lake City, UT", "Portland, OR", "Honolulu, HI"];
+            for (var j = 0; j < destinations.length; j++) {
+                var option = document.createElement("option");
+                option.setAttribute("value", destinations[j]);
+                option.textContent = destinations[j];
+                destinationSelect.appendChild(option);
+            };
+        
+            passengerFieldset.appendChild(destinationSelect);
+            passengerFieldset.appendChild(document.createElement('br'));
+            passengerFieldset.appendChild(document.createElement('br'));
+            var dietLabel = document.createElement("label");
+            dietLabel.textContent = "Dietary Preference: ";
+            passengerFieldset.appendChild(dietLabel);
 
-    //     var noRestrictionsCheckbox = document.createElement("input");
-    //     noRestrictionsCheckbox.setAttribute("type", "checkbox");
-    //     noRestrictionsCheckbox.setAttribute("name", "diet" + passengerNumber);
-    //     noRestrictionsCheckbox.setAttribute("value", "no_restrictions");
-    //     dietLabel.appendChild(noRestrictionsCheckbox);
-    //     dietLabel.appendChild(document.createTextNode("No Restrictions"));
+            var noRestrictionsCheckbox = document.createElement("input");
+            noRestrictionsCheckbox.classList.add('checkbox'); // Add this line to add a class to the checkbox element
+            noRestrictionsCheckbox.setAttribute("type", "checkbox");
+            noRestrictionsCheckbox.setAttribute("name", "diet" + passengerNumber);
+            noRestrictionsCheckbox.setAttribute("value", "no_restrictions");
+            dietLabel.appendChild(noRestrictionsCheckbox);
+            dietLabel.appendChild(document.createTextNode("No Restrictions"));
+            dietLabel.appendChild(document.createTextNode(", \u00A0")); // Add a space character between the text nodes
 
-    //     var vegetarianCheckbox = document.createElement("input");
-    //     vegetarianCheckbox.setAttribute("type", "checkbox");
-    //     vegetarianCheckbox.setAttribute("name", "diet" + passengerNumber);
-    //     vegetarianCheckbox.setAttribute("value", "vegetarian");
-    //     dietLabel.appendChild(vegetarianCheckbox);
-    //     dietLabel.appendChild(document.createTextNode("Vegetarian"));
+            var vegetarianCheckbox = document.createElement("input");
+            vegetarianCheckbox.classList.add('checkbox'); // Add this line to add a class to the checkbox element
+            vegetarianCheckbox.setAttribute("type", "checkbox");
+            vegetarianCheckbox.setAttribute("name", "diet" + passengerNumber);
+            vegetarianCheckbox.setAttribute("value", "vegetarian");
+            vegetarianCheckbox.classList.add('checkbox'); // Add this line to add a class to the checkbox element
+            dietLabel.appendChild(vegetarianCheckbox);
+            dietLabel.appendChild(document.createTextNode("Vegetarian"));
+            dietLabel.appendChild(document.createTextNode(", \u00A0")); // Add a space character between the text nodes
+            
+            var veganCheckbox = document.createElement("input");
+            veganCheckbox.setAttribute("type", "checkbox");
+            veganCheckbox.setAttribute("name", "diet" + passengerNumber);
+            veganCheckbox.setAttribute("value", "vegan");
+            veganCheckbox.classList.add('checkbox'); // Add this line to add a class to the checkbox element
+            dietLabel.appendChild(veganCheckbox);
+            dietLabel.appendChild(document.createTextNode("Vegan"));
+            dietLabel.appendChild(document.createTextNode(", \u00A0")); // Add a space character between the text nodes
+    
+            var paleoCheckbox = document.createElement("input");
+            paleoCheckbox.setAttribute("type", "checkbox");
+            paleoCheckbox.setAttribute("name", "diet" + passengerNumber);
+            paleoCheckbox.setAttribute("value", "paleo");
+            paleoCheckbox.classList.add('checkbox');
+            dietLabel.appendChild(paleoCheckbox);
+            dietLabel.appendChild(document.createTextNode("Paleo"));
+            
+            passengerFieldset.appendChild(dietLabel);
+            passengerInfoContainer.appendChild(passengerFieldset);
+            passengerInfoContainer.appendChild(document.createElement('br'));
+        };
+        var submitButton = document.createElement("input");
+        submitButton.setAttribute('type', 'submit');
+        submitButton.setAttribute('value', "Submit");
+        passengerInfoContainer.appendChild(submitButton);
 
-    //     var veganCheckbox = document.createElement("input");
-    //     veganCheckbox.setAttribute("type", "checkbox");
-    //     veganCheckbox.setAttribute("name", "diet" + passengerNumber);
-    //     veganCheckbox.setAttribute("value", "vegan");
-    //     dietLabel.appendChild(veganCheckbox);
-    //     dietLabel.appendChild(document.createTextNode("Vegan"));
-
-    //     var paleoCheckbox = document.createElement("input");
-    //     paleoCheckbox.setAttribute("type", "checkbox");
-    //     paleoCheckbox.setAttribute("name", "diet" + passengerNumber);
-    //     paleoCheckbox.setAttribute("value", "paleo");
-    //     dietLabel.appendChild(paleoCheckbox);
-    //     dietLabel.appendChild(document.createTextNode("Paleo"));
-
-    //     var destinationSelect = document.createElement("select");
-    //     destinationSelect.setAttribute("name", "destination" + passengerNumber);
-    //     var destinations = ["Destination 1", "Destination 2", "Destination 3", "Destination 4"];
-    //     for (var j = 0; j < destinations.length; j++) {
-    //       var option = document.createElement("option");
-    //       option.setAttribute("value", destinations[j]);
-    //       option.textContent = destinations[j];
-    //       destinationSelect.appendChild(option);
-    //     };
-  //      passengerFieldset.appendChild(destinationSelect);
-
-        passengerForm.appendChild(passengerFieldset);
     };
 };

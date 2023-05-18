@@ -47,6 +47,7 @@ h2 {                                        /*styling of title of form.*/
     border: 1.5px solid  black;
     background-color: burlywood;
     height:  480px;
+    font-size: 22px;
 
 }
 
@@ -57,4 +58,15 @@ h2 {                                        /*styling of title of form.*/
     border: 3px solid burlywood; 
 }
 
+.input {
+    text-align: center;
+     margin-top: 40px;
+     margin-bottom: 15px;
+     font-size: 30px;
+     font-style: italic;
+     font-weight: lighter;
+}
 
+.input-field {
+    margin-: 15px;
+}
