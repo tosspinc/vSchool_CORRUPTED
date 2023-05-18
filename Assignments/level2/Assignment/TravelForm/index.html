@@ -5,30 +5,30 @@
         <meta charset="utf-8">                                  <!--assigns uniform text bit size of 8: contains most characters-->
         <meta name="viewport" content="width = device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"> <!--controls the viewing area for the browser. width is set to current monitor allowable width. height is set to current monitor veiwable height. initial scale sets text to not be zoomed. maximum sets the allowabe zoom for the monitor. scalable=no does not allow user to manually zoom in or out. fit allows the page to be seen with screens that use notches.-->
         <meta name="description", content="Travel Form Assignment"> <!--describes the page for the browser.-->
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css">                    <!--references the style.css page that correlates to the html document for styling.-->
     </head>
     <body onload="detectLanguage()">                              <!--upon browser loading webpage verifies what user language is and translates content to language.-->
-        <h1>Tosspi Airways</h1>
-        <h2>Passenger Information</h2>
+        <h1>Tosspi Airways</h1>                                     <!--creates an h1 as assigns the sting Tosspi Airways to it--> 
+        <h2>Passenger Information</h2>                              <!--creates an h2 as assigns the sting Passenger Information to it-->
         
         
         <div id="travelFormContainer">                          <!--container box that holds form information-->
             <div class="passengerInputBox">          <!--assign class name of passengerOneInputBox for the first passenger input box-->
                 <div class="passengerDetails">       <!--assign class name of passengerOneDetails for details first passenger-->
-                    <label for="passengerCount">Number of Passengers:</label>
-                    <select id="passengerCount" onchange="tosspiPassengerCount()">
-                        <option value="">How many passengers are traveling?</option>
-                        <option value="1">1 passenger</option>
-                        <option value="2">2 passengers</option>
+                    <label for="passengerCount">Number of Passengers: </label>   <!--label for dropdown menu and assigned string of Number of Passengers.-->
+                    <select id="passengerCount" onchange="tosspiPassengerCount()">  <!--creates a dropdown menu list and allows tosspiPassengerCount() to change when an element in the list is selected.-->
+                        <option value=" ">How many passengers are traveling?</option>    <!--default setting and has not value - can not be selected-->
+                        <option value="1">1 passenger</option>  <!--a single passenger element is selected-->
+                        <option value="2">2 passengers</option> <!--this elements is assigned passenger number 2 when selected.-->
                     </select>
                 </div>
             </div>
 
             <form id='passengerForm' name='passengerTravelInformation'>        <!--assigns name passengerTravelInformation to the passengers travel form.-->
-                <div id='passengerInfoContainer'>
+                <div id='passengerInfoContainer'>                               <!--assigns and empty divsion and assigns passengerInfoContainer to it. this is where the dynamically called function in javascript file displays the different input elements. allows to shorten html coding. this is activated when choice from passenger dropdown list is chosen.-->
                 </div>
             </form>
         
-        <script src="app.js"></script>
+        <script src="app.js"></script>                          <!--calls the javascript page associated to the html document.-->
     </body>
 </html>

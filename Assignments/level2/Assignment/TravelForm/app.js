@@ -1,3 +1,4 @@
+//gets data from travelFormContainer entered on html document and assigns to passengerForm.
 const passengerForm = document.getElementById('travelFormContainer');      //defines form as a constant variable and assigns travelFormContainer to it.
 
 function detectLanguage() {                     //declares detectLanguage function so browser will automatically detect users language.
@@ -6,29 +7,29 @@ function detectLanguage() {                     //declares detectLanguage functi
     document.documentElement.lang = lang;                                   //assigns lang to the html main document page declaration of <html lang="xx".
 }
 
-function tosspiPassengerCount() {
-    var passengerCount = parseInt(document.getElementById("passengerCount").value);
-    var passengerInfoContainer = document.getElementById("passengerInfoContainer");
+function tosspiPassengerCount() {                                           //declares tosspiPassengerCount as a function.
+    var passengerCount = parseInt(document.getElementById("passengerCount").value); //get the value from passengerCount dropdown list and assigns to passengerCount.
+    var passengerInfoContainer = document.getElementById("passengerInfoContainer"); //gets the data from passengerContainer entere on html document and assigns to passengerInfoContainer box.
     
     passengerInfoContainer.innerHTML = "";      //clears out the passengerInfoContainer box data when choosing from drop down menu.
-    if (passengerCount > 0) {
-        for(i = 0; i < passengerCount; i++) {
-            var passengerNumber = i + 1;
+    if (passengerCount > 0) {                   //verifies if passengerCount is greater than zero and if it is runs for loop.
+        for(i = 0; i < passengerCount; i++) {   //iterates through each of the passengers selected from dropdown menu that are travelling.
+            var passengerNumber = i + 1;        //adds one to the passengerNumber as 0 has no value.  starts with first passenger.
 
-            var passengerFieldset = document.createElement('fieldset');
-            passengerFieldset.innerHTML = '<legend>Passenger ' + passengerNumber + '</legend>';
+            var passengerFieldset = document.createElement('fieldset');     //gets data from html document and groups it all together as a collective.
+            passengerFieldset.innerHTML = '<legend>Passenger ' + passengerNumber + '</legend>'; //sets the legend or number of passengers and assigns to passengerFielset from data in html document.
 
-            var firstNameLabel = document.createElement('label');
-            passengerFieldset.appendChild(document.createElement('br'));
-            firstNameLabel.textContent = 'First Name: ';
+            var firstNameLabel = document.createElement('label');       //sets firstNameLabel as a variable and assigns the label data in the html document to it.
+            passengerFieldset.appendChild(document.createElement('br'));    //puts a line in between the names allows for better viewability for user.
+            firstNameLabel.textContent = 'First Name: ';                    //assigns the string First Name to firstNameLabel.
             passengerFieldset.appendChild(firstNameLabel);
 
-            var firstNameInput = document.createElement('input');
-            firstNameInput.setAttribute('type', 'text');
-            firstNameInput.setAttribute('placeholder', 'First Name');
-            firstNameInput.setAttribute('name', 'firstName' + passengerNumber);
-            firstNameInput.classList.add('input-field');
-            passengerFieldset.appendChild(firstNameInput);
+            var firstNameInput = document.createElement('input');           //assigns firstNameInput as a variable and assigns input data from user to it.
+            firstNameInput.setAttribute('type', 'text');                    //defines the type of input box as a textbox.
+            firstNameInput.setAttribute('placeholder', 'First Name');       //assigns the string First Name to be displayed in the name textbox for user.
+            firstNameInput.setAttribute('name', 'firstName' + passengerNumber); //assigns data entered in the text box to the first passenger or passenger 1.
+            firstNameInput.classList.add('input-field');                    //assigns input-field to correlate with css file so can be styled appropriately.
+            passengerFieldset.appendChild(firstNameInput);                  //this nests the firstNameInput inside of passengerFieldset and ensures it is displayed as part of the form.
 
             var lastNameLabel = document.createElement('label');
             lastNameLabel.textContent = 'Last Name: ';
@@ -38,7 +39,7 @@ function tosspiPassengerCount() {
             lastNameInput.setAttribute('type', 'text');
             lastNameInput.setAttribute('placeholder', 'Last Name');
             lastNameInput.setAttribute('name', 'lastName' + passengerNumber);
-            lastNameInput.classList.add('input-field');
+            lastNameInput.classList.add('input-field');                 //assigns input-field to correlate with css file so can be styled appropriately.
             passengerFieldset.appendChild(lastNameInput);
 
             var ageInputLabel = document.createElement('label');
@@ -51,37 +52,42 @@ function tosspiPassengerCount() {
             var ageInput = document.createElement('input');
             ageInput.setAttribute('type', 'number');
             ageInput.setAttribute('placeholder', 'Age');
-            ageInput.setAttribute('name', 'age', min='1', max='99', + passengerNumber);
-            ageInput.classList.add('input-field');
+            ageInput.setAttribute('name', 'age' + passengerNumber); //assigns name and age as part of ageInput and assigns to correct passenger number.
+            ageInput.setAttribute('min', '1');                      //allows for the minimum age to be entered as 1 for the age.
+            ageInput.setAttribute('max', '105');                    //allows for the maiximum age to be enetered as 105 for the age. 
+            ageInput.classList.add('input-field');                  //assigns input-field to correlate with css file so can be styled appropriately.
             passengerFieldset.appendChild(ageInput);
 
-            var genderLabel = document.createElement('label');
-            genderLabel.textContent = 'Gender: ';
+            var genderLabel = document.createElement('label');      //declares genderLabel as a variable and dynamically creates label in html document.
+            genderLabel.textContent = 'Gender: ';                   //assigns description string Gender: to the label.
             passengerFieldset.appendChild(genderLabel);
    
-            var femaleRadio = document.createElement('input');
-            femaleRadio.setAttribute('type', 'radio');
-            femaleRadio.setAttribute('name', 'gender ' + passengerNumber);
-            femaleRadio.setAttribute('value', 'female');
-            genderLabel.appendChild(femaleRadio);
-            genderLabel.appendChild(document.createTextNode('Female'));
+            var femaleRadio = document.createElement('input');      //declares the input button dynamically in the html document.
+            femaleRadio.setAttribute('type', 'radio');              //declares the type of dynamically created input button as a radio button.
+            femaleRadio.setAttribute('name', 'gender ' + passengerNumber);  //assigns name and gender to the appropriate passengerNumber created.
+            femaleRadio.setAttribute('value', 'female');            // assigns the value of female to the radio button.
+            femaleRadio.appendChild(document.createTextNode(", \u00A0")); // Add a space character between the text nodes
+            genderLabel.appendChild(femaleRadio);                   
+            genderLabel.appendChild(document.createTextNode('Female, '));  //assigns the string Female to the radio button created.
  
-            var maleRadio = document.createElement('input');
-            maleRadio.setAttribute('type', 'radio');
-            maleRadio.setAttribute('name', 'gender ' + passengerNumber);
-            maleRadio.setAttribute('value', 'male');
-            genderLabel.appendChild(maleRadio);
-            genderLabel.appendChild(document.createTextNode('Male'));
+            var maleRadio = document.createElement('input');                //creates the input button dynamically on the html document.
+            maleRadio.setAttribute('type', 'radio');                        //declares the type of dynamically created button as a radio button.
+            maleRadio.setAttribute('name', 'gender ' + passengerNumber);    //assigns name and gender dynamically to assigned passenger number.
+            maleRadio.setAttribute('value', 'male');                        //value for selected radio button is male.
+            
+            genderLabel.appendChild(maleRadio); 
+            genderLabel.appendChild(document.createTextNode('Male '));       //assigns the string Male to the radio button created.
 
-            var destinationSelectLabel = document.createElement('label');
-            passengerFieldset.appendChild(document.createElement('br'));
-            passengerFieldset.appendChild(document.createElement('br'));
-            destinationSelectLabel.textContent = 'Destination: ';
+            var destinationSelectLabel = document.createElement('label');   //creates a label element dynamically in the HTML document and .
+            passengerFieldset.appendChild(document.createElement('br'));    //adds a new line.
+            passengerFieldset.appendChild(document.createElement('br'));    //adds a new line.
+            destinationSelectLabel.textContent = 'Destination: ';           //assigns the text Destination: to the label created.
             passengerFieldset.appendChild(destinationSelectLabel);
 
             var destinationSelect = document.createElement("select");
             destinationSelect.setAttribute("name", "destination" + passengerNumber);
 
+            //list of city and states that are destinations that airline flies to.
             var destinations = ["Miami, FL", "New York City, NY", "Los Angelos, CA", "Salt Lake City, UT", "Portland, OR", "Honolulu, HI"];
             for (var j = 0; j < destinations.length; j++) {
                 var option = document.createElement("option");
@@ -154,25 +160,25 @@ function tosspiPassengerCount() {
             passengerData[pair[0]] = pair[1];
         }
 
-        var alertMessage = "Passenger Information:\n";
-        for (var i = 0; i < passengerCount; i++) {
-          var passengerNumber = i + 1;
-          alertMessage += "\nPassenger " + passengerNumber + ":";
-          alertMessage += "\nFirst Name: " + passengerData["firstName" + passengerNumber];
-          alertMessage += "\nLast Name: " + passengerData["lastName" + passengerNumber];
-          alertMessage += "\nAge: " + passengerData["age"];
-          alertMessage += "\nGender: " + passengerData["gender " + passengerNumber];
-          alertMessage += "\nLocation: " + passengerData["destination" + passengerNumber];
+        var alertMessage = "Passenger Information:\n";      //sets alertMessage as a variable and assigns passenger information to it.
+        for (var i = 0; i < passengerCount; i++) {          //stores data from each element of the object.
+          var passengerNumber = i + 1;                      //checks for number of passengers and validates info has been captured for each.
+          alertMessage += "\nPassenger " + passengerNumber + ":";       //displays passenger number for each passenger.
+          alertMessage += "\nFirst Name: " + passengerData["firstName" + passengerNumber];  //adds passenger first name after First Name on a new line.
+          alertMessage += "\nLast Name: " + passengerData["lastName" + passengerNumber];    //adds passenger last name after Last Name: on a new line.
+          alertMessage += "\nAge: " + passengerData["age"];                                 //adds age of passenger after Age: on a new line.
+          alertMessage += "\nGender: " + passengerData["gender " + passengerNumber];        //add gender of passenger after Gender: on a new line.
+          alertMessage += "\nLocation: " + passengerData["destination" + passengerNumber];  //adds travel location for passenger after Location: on a new line.
           
-          var dietaryRestrictions = document.querySelectorAll('input[name="diet' + passengerNumber + '"]:checked');
-          var restrictionsArray = Array.from(dietaryRestrictions).map(function(checkbox) {
-            return checkbox.value;
+          var dietaryRestrictions = document.querySelectorAll('input[name="diet' + passengerNumber + '"]:checked'); //validate which dietary checkbox was selected and prints on a new line for each passenger.
+          var restrictionsArray = Array.from(dietaryRestrictions).map(function(checkbox) {  //assigns data mapped or grabbed from dietaryRestictions choice and assigne it to restrictionsArray.
+            return checkbox.value;      //validate which checkbox selected and displays in alertbox.
           });
-          alertMessage += "\nDietary restrictions: " + restrictionsArray.join(", ");
-          alertMessage += "\n";
+          alertMessage += "\nDietary restrictions: " + restrictionsArray.join(", ");        //displays the dietary array.
+          alertMessage += "\n";         //adds a new line at end of alert message.
         }
         
-        alert(alertMessage);
+        alert(alertMessage);        //give alert message.
         
 
         });
