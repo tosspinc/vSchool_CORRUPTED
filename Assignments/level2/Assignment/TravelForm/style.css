@@ -1,0 +1,60 @@
+* {                                         /*sets initial setting for entire website.*/
+    margin: 0;                              /*sets initial page margin at zero.*/
+    padding: 0;                             /*sets initial page padding at zero.*/
+    box-sizing: border-box;                 /*sets initial border and padding at 0 for display box on page.*/
+    align-items: center;                    /*aligns items in the center of the page.*/
+    overflow: hidden;                       /*hides overflow data showing in a textbox.*/
+}
+
+h1 {                                    /*styling of title of form.*/
+    padding-top: 30px;                          /*places the text 50 pixels from the top.*/
+    margin-bottom: 0;
+    text-align: center;                     /*centers the text on the page.*/
+    text-shadow: 2px 2px 2px teal;
+    font-weight: bold;                      /*bolds the text*/
+    font-style: italic;                     /*italicizes the text.*/
+    font-size: 40px;                        /*set the font size to 40 pixels in height.*/
+    
+}
+
+h2 {                                        /*styling of title of form.*/
+    margin-top: 0;
+    padding: 10px;                          /*places the text 50 pixels from the top.*/
+    text-align: center;                     /*centers the text on the page.*/
+    text-shadow: 2px 2px 2px teal;
+    font-weight: bold;                      /*bolds the text*/
+    font-style: italic;                     /*italicizes the text.*/
+    font-size: 40px;                        /*set the font size to 40 pixels in height.*/
+}
+
+#travelFormContainer {                      /*styling of the main conatiner box of passenger information*/
+    padding: 20px;
+    border: 2px solid black;
+    background-color: teal;
+    margin: 10px 20px 10px 20px;
+    height: 600px;
+    text-align: center;
+    text-shadow: 2px 2px 2px burlywood;
+    font-size: 40px;
+
+}
+
+.passengerDetails {
+    margin-bottom: 20px;
+}
+
+#passengerForm {
+    border: 1.5px solid  black;
+    background-color: burlywood;
+    height:  480px;
+
+}
+
+#passengerCount {
+    text-align: center;
+    font-size: 20px;   
+    border-radius: 10px;
+    border: 3px solid burlywood; 
+}
+
+

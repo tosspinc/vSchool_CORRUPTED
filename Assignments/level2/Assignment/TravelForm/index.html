@@ -1,0 +1,37 @@
+<!DOCTYPE html>                 <!--Validate to the browser that it is for the most current version of HTML-->
+<html lang="en">                <!--sets the default language of the page to english-->
+    <head >
+        <!--meta advises the browser how the page should be displayed.-->
+        <meta charset="utf-8">                                  <!--assigns uniform text bit size of 8: contains most characters-->
+        <meta name="viewport" content="width = device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"> <!--controls the viewing area for the browser. width is set to current monitor allowable width. height is set to current monitor veiwable height. initial scale sets text to not be zoomed. maximum sets the allowabe zoom for the monitor. scalable=no does not allow user to manually zoom in or out. fit allows the page to be seen with screens that use notches.-->
+        <meta name="description", content="Travel Form Assignment"> <!--describes the page for the browser.-->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body onload="detectLanguage()">                              <!--upon browser loading webpage verifies what user language is and translates content to language.-->
+        <h1>Tosspi Airways</h1>
+        <h2>Passenger Information</h2>
+
+        
+        <div id="travelFormContainer">                          <!--container box that holds form information-->
+            <div class="passengerInputBox">          <!--assign class name of passengerOneInputBox for the first passenger input box-->
+                <div class="passengerDetails">       <!--assign class name of passengerOneDetails for details first passenger-->
+                    <label for="passengerCount">Number of Passengers:</label>
+                    <select id="passengerCount" onchange="tosspiPassengerCount()">
+                        <option value="1">How many passengers are traveling?</option>
+                        <option value="2">1 passenger</option>
+                        <option value="3">2 passengers</option>
+                    </select>
+                </div>
+            </div>
+
+            <form id='passengerForm' name='passengerTravelInformation'>        <!--assigns name passengerTravelInformation to the passengers travel form.-->
+                <div class="passengerInputBox">
+                    <span class=""
+
+                </div>
+            </form>
+            
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
