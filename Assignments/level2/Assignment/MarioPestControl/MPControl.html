@@ -17,42 +17,44 @@
             </div>
         </nav> 
 
-        <div class = "ppBaddiesContainer">
+        <div class = "BaddiesContainer">
             <div class="baddieItem">
                 <img src="../IMG/bob_boom.png" alt="boboombsBaddies">
                 <span>Bob-Boom Baddie</span>
-                <span>Price: 7 Coins</span>
-                <p>Total Caught: <input type="number" class="totalCaughtInput" id="boboombsQtyTotal" value="0"></p>
-                <p>Total Price: $ <input type="number" class="totalAmountOwed" id="boboombsTotalPrice" value= "0" readonly></p>
+                <p>Bob-Boom Cost: <input type="number" class="boboombsValueCost" id="bQtyCost" value="7"></p>
+                <p>Total Caught: <input type="number" class="totalCaughtInput" id="boboombsQtyTotalCaught" value="0"></p>
+                <p>Total Owed: $ <input type="number" class="totalAmountOwed" id="boboombsTotalPriceOwed" value= "0" readonly></p>
             </div>
             <div class="baddieItem">
                 <img src="../IMG/cheep_cheep.png" alt="cheepCheapBaddies">
                 <span>Cheep-Cheep Baddie</span>
-                <span>Price: 11 Coins</span>
-                <p>Total Caught: <input type="number" class="totalCaughtInput" id="cheepCheepsQtyTotal" value="0"></p>
-                <p>Total Price: $ <input type="number" class="totalAmountOwed" id="cheepCheepsTotalPrice" value= "0" readonly></p>
+                <p>Cheep Cheep Cost: <input type="number" class="cheepCheepsValueCost" id="cQtyCost" value="11"></p>
+                <p>Total Caught: <input type="number" class="totalCaughtInput" id="cheepCheepsQtyTotalCaught" value="0"></p>
+                <p>Total Owed: $ <input type="number" class="totalAmountOwed" id="cheepCheepsTotalPriceOwed" value= "0" readonly></p>
             </div>
             <div class="baddieItem">
                 <img src="../IMG/goomba.png" alt="goombaBaddies">
                 <span>Goomba Baddie</span>
-                <span>Price: 5 Coins</span>
-                <p>Total Caught: <input type="number" class="totalCaughtInput" id="goombaQtyTotal" value="0"></p>
-                <p>Total Price: $ <input type="number" class="totalAmountOwed" id="goombaTotalPrice" value= "0" readonly></p>
+                <p>Goomba Cost: <input type="number" class="goombaValueCost" id="gQtyCost" value="5"></p>
+                <p>Total Caught: <input type="number" class="totalCaughtInput" id="goombaQtyTotalCaught" value="0"></p>
+                <p>Total Owed: $ <input type="number" class="totalAmountOwed" id="goombaTotalPriceOwed" value= "0" readonly></p>
             </div>
-        </div>
+            <div class="totalBaddies">
+                <p> Total baddies Mario caught: <input type="number" id="tBaddiesCaught" value= "0" readonly></p>
+                <button id="button">Submit Invoice</button>
+            </div> 
+            
 
-        <button id="totalInvoiceSubmit">Submit Invoice</button>
-
-        <div class="footer" id="footer">
-            <div class="websiteURL">
-                <a href="https://www.universalstudioshollywood.com/web/en/us/things-to-do/lands/super-nintendo-world" target='_blank'>Mario's website</a>
-            </div>
-            <div class="email">Mario@MarioPestControl.net</div>
-            <div class="address">100 Universal City Plaza, Universal City, CA 90068</div>
+            <div id="totalInvoiceAmount"></div>
         </div>
 
         
 
-   	<script src="MPControl.js"></script>
+        <div class="footer" id="footer">
+                <a href="https://www.universalstudioshollywood.com/web/en/us/things-to-do/lands/super-nintendo-world" target='_blank'>Mario's website</a>
+            <div class="email">Mario@MarioPestControl.net</div>
+            <div class="address">100 Universal City Plaza, Universal City, CA 90068</div>
+        </div>
+        <script src="MPControl.js"></script>
     </body>
 </html>

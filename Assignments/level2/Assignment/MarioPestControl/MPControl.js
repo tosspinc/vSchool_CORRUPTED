@@ -1,94 +1,72 @@
-const totalInvoiceSubmit = document.getElementById('totalInvoiceSubmit');
-const clearInvoiceSubmit = document.getElementById('clearInvoice');
+const tBaddiesCaught = document.getElementById('tBaddiesCaught');
+const totalInvoiceSubmit = document.getElementById('button'); 
+const clearInvoiceSubmit = document.getElementById('clearInvoice'); 
+const totalInvoiceAmount = document.getElementById('totalInvoiceAmount'); 
 
-const goombaQtyAdd = document.getElementById('goombaQtyAdd');
-const boboombsQtyAdd = document.getElementById('boboombsQtyAdd');
-const cheepCheepsQtyAdd = document.getElementById('cheepCheepsQtyAdd');
+const totalBaddies = document.getElementById('tBaddiesCaught');
 
-const goombaQtyTotal = document.getElementById('goombaQtyTotal');
-const boboombsQtyTotal = document.getElementById('boboombsQtyTotal');
-const cheepCheepsQtyTotal = document.getElementById('cheepCheepsQtyTotal');
+const goombaQty = document.getElementById('goombaQtyTotalCaught'); 
+const boboombsQty = document.getElementById('boboombsQtyTotalCaught'); 
+const cheepCheepsQty = document.getElementById('cheepCheepsQtyTotalCaught'); 
 
-const goombaCoinsOwed = document.getElementById('goombaCoinsOwed');
-const boboombsCoinsOwed = document.getElementById('boboombsCoinsOwed');
-const cheepCheepsCoinsOwed = document.getElementById('cheepCheepsCoinsOwed');
+const goombaTotalPriceOwed = document.getElementById('goombaTotalPriceOwed'); 
+const boboombsTotalPriceOwed = document.getElementById('boboombsTotalPriceOwed'); 
+const cheepCheepsTotalPriceOwed = document.getElementById('cheepCheepsTotalPriceOwed'); 
 
-const gQtyPrice = document.getElementById('gQtyPrice');
-const bQtyPrice = document.getElementById('bQtyPrice');
-const cQtyPrice = document.getElementById('cQtyPrice');
+const goombaQtyPrice = document.getElementById('gQtyCost'); 
+const boboombsQtyPrice = document.getElementById('bQtyCost'); 
+const cheepCheepsQtyPrice = document.getElementById('cQtyCost'); 
 
-const totalInvoiceAmount = document.getElementById('totalInvoiceAmount');
+function calculateTotalPrice() { 
+    const goombaQty = parseInt(goombaQtyTotalCaught.value); 
+    const boboombsQty = parseInt(boboombsQtyTotalCaught.value); 
+    const cheepCheepsQty = parseInt(cheepCheepsQtyTotalCaught.value); 
 
-function calculateTotalPrice() {
-    const goombaQty = parseInt(goombaQtyTotal.value);
-    const boboombsQty = parseInt(boboombsQtyTotal.value);
-    const cheepCheepsQty = parseInt(cheepCheepsQtyTotal.value);
+    const goombaPrice = parseInt(gQtyCost.value); 
+    const boboombsPrice = parseInt(bQtyCost.value); 
+    const cheepCheepsPrice = parseInt(cQtyCost.value); 
 
-    const goombaPrice = parseInt(gQtyPrice.textContent);
-    const boboombsPrice = parseInt(bQtyPrice.textContent);
-    const cheepCheepsPrice = parseInt(cQtyPrice.textContent);
+    goombaTotalPriceOwed = goombaQty * goombaPrice; 
+    boboombsTotalPriceOwed = boboombsQty * boboombsPrice; 
+    cheepCheepsTotalPriceOwed = cheepCheepsQty * cheepCheepsPrice; 
 
-    const goombaTotalPrice = goombaQty * goombaPrice;
-    const boboombsTotalPrice = boboombsQty * boboombsPrice;
-    const cheepCheepsTotalPrice = cheepCheepsQty * cheepCheepsPrice;
+    tBaddiesCaught = goombaQty + boboombsQty + cheepCheepsQty;
+} 
 
-    goombaCoinsOwed.value = goombaTotalPrice;
-    boboombsCoinsOwed.value = boboombsTotalPrice;
-    cheepCheepsCoinsOwed.value = cheepCheepsTotalPrice;
-
-    const totalAmount = goombaTotalPrice + boboombsTotalPrice + cheepCheepsTotalPrice;
-    totalInvoiceAmount.value = totalAmount;
-}
-
-
-function clearInvoice() {
-    goombaQtyTotal.value = "0";
-    goombaCoinsOwed.value = "0";
-    boboombsQtyTotal.value = "0";
-    boboombsCoinsOwed.value = "0";
-    cheepCheepsQtyTotal.value ="0";
-    cheepCheepsCoinsOwed.value = "0";
-    totalBaddies.value = "0";
-    totalInvoiceAmount.value = "0";
+function clearInvoice() { 
+    goombaQty.value = 0; 
+    goombaTotalPriceOwed.value = 0; 
+    boboombsQty.value = 0; 
+    boboombsTotalPriceOwed.value = 0; 
+    cheepCheepsQty.value = 0; 
+    cheepCheepsTotalPriceOwed.value = 0; 
+    totalBaddies.value = 0; 
+    totalInvoiceAmount.value = 0; 
 };
 
-goombaQtyAdd.addEventListener('click', (e) => {
-    e.preventDefault();
-    const goombaQty = parseInt(goombaQtyTotal.value);
-    const goombaPrice = parseInt(gQtyPrice.textContent);
-    const newGoombaQty = goombaQty + 1;
-    goombaQtyTotal.value = newGoombaQty;
-    goombaCoinsOwed.value = newGoombaQty * goombaPrice;
-    calculateTotalPrice();
+totalInvoiceAmount.value = goombaTotalPriceOwed.value + boboombsTotalPriceOwed.value + cheepCheepsTotalPriceOwed.value;
+goombaQty.addEventListener('change', (e) => {
+    goombaTotalPriceOwed.value = goombaQty.value * goombaQtyPrice.value;
+}); 
+
+boboombsQty.addEventListener('change', (e) => {
+    boboombsTotalPriceOwed.value = boboombsQty.value * boboombsQtyPrice.value;
 });
 
-boboombsQtyAdd.addEventListener('click', (e) => {
-    e.preventDefault();
-    const boboombsQty = parseInt(boboombsQtyTotal.value);
-    const boboombsPrice = parseInt(bQtyPrice.textContent);
-    const newBoboombsQty = boboombsQty + 1;
-    boboombsQtyTotal.value = newBoboombsQty;
-    boboombsCoinsOwed.value = newBoboombsQty * boboombsPrice;
-    calculateTotalPrice();
+cheepCheepsQty.addEventListener('change', (e) => {
+    cheepCheepsTotalPriceOwed.value = cheepCheepsQty.value * cheepCheepsQtyPrice.value;
 });
 
-cheepCheepsQtyAdd.addEventListener('click', (e) => {
-    e.preventDefault();
-    cheepCheepsQty = parseInt(cheepCheepsQtyTotal.value);
-    const cheepCheepsPrice = parseInt(cQtyPrice.textContent);
-    cheepCheepsQty = cheepCheepsQty + 1;
-    cheepCheepsQtyTotal.value = cheepCheepsQty;
-    cheepCheepsCoinsOwed.value = cheepCheepsQty * cheepCheepsPrice;
-    calculateTotalPrice();
-    
+totalBaddies.addEventListener('change', (e) => {
+    tBaddiesCaught.value = cheepCheepsQty.value + boboombsQty.value + goombaQty.value;
 });
 
-totalInvoiceSubmit.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (totalInvoiceAmount.value > "0") {
-        clearInvoice();
-        alert("You have submitted your invoice to Princess Peach. Please wait 30 days for payment.");
-    } else {
-        alert("You have not entered any Baddies Found!");
-    } 
+totalInvoiceSubmit.addEventListener('click', (e) => { 
+    e.preventDefault(); 
+    if (totalInvoiceAmount.value > "0") { 
+        clearInvoice(); 
+        alert("You have submitted your invoice to Princess Peach. Please wait 30 days for payment."); 
+    } else { 
+        alert("You have not entered any Baddies Found!"); 
+    }  
 });

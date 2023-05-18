@@ -31,24 +31,24 @@ nav {
     font-size: 60px;
 }
 
-.ppBaddiesContainer {
+.BaddiesContainer {       
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     justify-content: center;
     align-items: center;
     gap: 15px;
-    margin: 130px auto;
-    border: 2px solid Black; background-color: whitesmoke   ;
-    height: 425px;
+    margin: 70px auto;
+    border: 4px solid red; background-color: whitesmoke   ;
+    height: 520px;
     width: 800px;
 }
 
-.ppBaddiesContainer img {
+.BaddiesContainer img {
     margin: 10px;
     height: 120px;
     width: auto;
-    border: 1px solid black;
+    border: 3px solid blue;
 }
 
 .baddieItem {
@@ -67,12 +67,24 @@ nav {
     text-align: center;
 }
 
+.boboombsValueCost {
+    width: 30px;
+}
+
+.cheepCheepsValueCost {
+    width: 30px;
+}
+
+.goombaValueCost {
+    width: 30px;
+}
+
 .totalCaughtInput {
-    width: 40px;
+    width: 30px;
 }
 
 .totalAmountOwed {
-    width: 40px;
+    width: 30px;
 }
 
 .invoiceContainer {
@@ -102,7 +114,7 @@ nav {
     margin-right: 10px;
 }
 
-.invoiceContainer .totalItem {
+.invoiceContainer .totalItem  {
     display: flex;
     justify-content: flex-end;
     margin-top: 10px;
@@ -111,6 +123,35 @@ nav {
 .invoiceContainer button {
     margin-top: 10px;
 }
+
+.totalBaddies {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 3px;
+    grid-column: 1/4;
+    
+}
+
+.totalBaddies p {
+    margin-bottom: 10px;
+}
+
+.totalBaddies button {
+    margin-top: 10px;
+    background-color: blue;
+    border: 5px solid red;
+    color: whitesmoke;
+    margin: 25px;
+    width: 150px;
+}
+
+#tBaddiesCaught {
+    width: 40px;
+}
+
 
 .footer {
     background-color: red;
