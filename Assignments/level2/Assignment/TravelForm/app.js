@@ -9,8 +9,8 @@ function detectLanguage() {                     //declares detectLanguage functi
 function tosspiPassengerCount() {
     var passengerCount = parseInt(document.getElementById("passengerCount").value);
     var passengerInfoContainer = document.getElementById("passengerInfoContainer");
-
-    passengerInfoContainer.innerHTML = "";
+    
+    passengerInfoContainer.innerHTML = "";      //clears out the passengerInfoContainer box data when choosing from drop down menu.
     if (passengerCount > 0) {
         for(i = 0; i < passengerCount; i++) {
             var passengerNumber = i + 1;
@@ -142,5 +142,39 @@ function tosspiPassengerCount() {
         submitButton.setAttribute('value', "Submit");
         passengerInfoContainer.appendChild(submitButton);
 
+        // Attach event listener to the dynamically created form
+        var passengerForm = document.forms['passengerTravelInformation'];
+        passengerForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        var formData = new FormData(this);
+        var passengerData = {};
+
+        for (var pair of formData.entries()) {
+            passengerData[pair[0]] = pair[1];
+        }
+
+        var alertMessage = "Passenger Information:\n";
+        for (var i = 0; i < passengerCount; i++) {
+          var passengerNumber = i + 1;
+          alertMessage += "\nPassenger " + passengerNumber + ":";
+          alertMessage += "\nFirst Name: " + passengerData["firstName" + passengerNumber];
+          alertMessage += "\nLast Name: " + passengerData["lastName" + passengerNumber];
+          alertMessage += "\nAge: " + passengerData["age"];
+          alertMessage += "\nGender: " + passengerData["gender " + passengerNumber];
+          alertMessage += "\nLocation: " + passengerData["destination" + passengerNumber];
+          
+          var dietaryRestrictions = document.querySelectorAll('input[name="diet' + passengerNumber + '"]:checked');
+          var restrictionsArray = Array.from(dietaryRestrictions).map(function(checkbox) {
+            return checkbox.value;
+          });
+          alertMessage += "\nDietary restrictions: " + restrictionsArray.join(", ");
+          alertMessage += "\n";
+        }
+        
+        alert(alertMessage);
+        
+
+        });
     };
 };
