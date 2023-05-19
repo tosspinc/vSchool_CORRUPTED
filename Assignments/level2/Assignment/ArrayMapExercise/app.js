@@ -88,20 +88,20 @@ function namesOnly(arr){   //declares namesOnly as a function and passes the par
   ]));
 
   //6. make an array of names that display as a h1 and the ages display as a h2.
-  const readyToPutInTheDom = [
-    {Name: 'Angelina Jolie', Age: 80},
-    {Name: 'Eric Jones', Age: 2},
-    {Name: 'Paris Hilton', Age: 5},
-    {Name: 'Kanye West', Age: 16}, 
-    {Name: 'Bob Ziroll', Age: 100}
+  const readyToPutInTheDom = [ //declares readyToPutInTheDom as a constant variable and passes the array with peoples names and ages to it.
+    {Name: 'Angelina Jolie', Age: 80},  //Angelina Jolie is a string, 80 is a number collected in the .map method below.
+    {Name: 'Eric Jones', Age: 2},       //Eric Jones is a string, 2 is a number collected in the .map method below.
+    {Name: 'Paris Hilton', Age: 5},     //Paris Hilton is a string, 5 is a number collected in the .map method below.
+    {Name: 'Kanye West', Age: 16},      //Kanye West is a string, 16 is a number collected in the .map method below.
+    {Name: 'Bob Ziroll', Age: 100}      //Bob Ziroll is a string, 100 is a number collected in the .map method below.
   ];
 
-  const nameAndAgesHeaders = document.getElementById('nameAndAgesHeader');
+  const nameAndAgeHeaders = document.getElementById  ('nameAndAgeHeaders'); //declares nameAndAgeHeaders as a constant variable and retrieves the HTML element with the id of nameAndAgeHeaders.
 
-  const namesAndAges = readyToPutInTheDom.map(person => {
-    const nameHeader =  `<h1>Name: ${person.Name}</h1>`;
-    const ageHeader = `<h2>Age: ${person.Age}</h2>`;
-    return nameHeader + ageHeader;
+  const namesAndAges = readyToPutInTheDom.map(person => { //declares namesAndAges as a constant variable and uses .map to iterate over elements of the readyToPutInTheDom array.  
+    const nameHeader =  `<h1>Name: ${person.Name}</h1>`; //declares nameHeader as a constant variable and uses the string literal to assign the name property of the correlated person object to it and the name of the person is assigned to the h1 format in the html document.
+    const ageHeader = `<h2>Age: ${person.Age}</h2>`; //declares ageHeader as a constant variable and uses the string literal to assign the age property of the correlated person object to it and the age of the person is assigned to the h2 format in the html document.  
+    return nameHeader + ageHeader;  //returns the value or data of nameHeader and ageHeader.
   });
 
-  nameAndAgesHeader.innerHTML = namesAndAges.join('');
+  nameAndAgeHeaders.innerHTML = namesAndAges.join('');
