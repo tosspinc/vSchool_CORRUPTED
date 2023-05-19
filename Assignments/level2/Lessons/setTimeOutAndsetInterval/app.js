@@ -51,7 +51,7 @@ function getTime(){
         sec = `0${sec}`;
     }
 
-    display.textContent = `${hour}:${min}:${sec}`;
+    display.textContent = `Current time is: ${hour}:${min}:${sec}`;
 }
 
 setInterval(getTime, 1000);
