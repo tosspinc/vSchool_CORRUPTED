@@ -1,4 +1,4 @@
-const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+//const arr = [1, 2, 3, 4, 5, 6, 7, 8];
 //const result = arr.map(function(num){ //num = arr[i]
 //    return num = 10;
 //});
@@ -12,6 +12,6 @@ const users = [
 ];
 
 const result = users.map(function(user){
-    return user.name;
+    return user.name;   //each name is an individual user. this is why user.name was called.
 });
 console.log(result);
