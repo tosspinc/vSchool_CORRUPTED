@@ -5,20 +5,23 @@
 </head>
 <body>
   <h1>Go Speed Clicker Assignment</h1>
-  <div class="gscContainer" id="gscContainer">
+  <div class='gscContainer' id='gscContainer'>
     <h2>Let's see how fast you can click on the center button below!!</h2>
-    <div class="gscTimerContainer">
-      <h3 id="count">Timer: 20</h3>
+    <div class='gscTimerContainer' id="gscTimerContainer">
+        <div id="gscTimerContainer">
+            <h3 >Timer: <span id='count'>15</span></h3>
+            <h3 >Total Clicks: <span id='displayTotalClicks'>0</span></h3>
+        </div>
     </div>
-    <div class="gscButtonRow">
+    <div class='gscButtonRow'>
       <div class="buttonContainer">
         <button class="startButton" id="startTimerButton">Start Timer</button>
       </div>
       <div class="buttonContainer">
-        <button class="quicklyButton">Click Me Quickly</button>
+        <button class="quicklyButton" id="totalClicksButton">Click Me Quickly</button>
       </div>
       <div class="buttonContainer">
-        <button class="resetButton">Reset Timer</button>
+        <button class="resetButton" id="resetButton">Reset Timer</button>
       </div>
     </div>
   </div>

@@ -5,14 +5,14 @@ body {
   }
   
   .gscContainer {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 140px 1fr 140px;
-    height: 100vh; /* Set the height to 100% of the viewport height */
+    display: grid;                  /*sets the designated container up as a grid.*/
+    grid-template-columns: 1fr;     /*takes up the entire column*/
+    grid-template-rows: 140px 1fr 140px;    /*sets up 3 rows and 1st and 3rd row is 140px high and allows for the second row to be adjusted as needed.*/
+    height: 100vh; /* Set the height to 100% of the display height for the container designated. */
     margin: auto; /* Remove margins */
     padding: 0; /* Remove padding */
-    border: 4px double black;
-    background-color: teal;
+    border: 4px double black;       /*gives the box a double solid line border around the container that is 4 pixels thick.*/
+    background-color: teal;         /*sets the background color of the container.*/    
   }
 
   .gscTimerContainer {
@@ -20,47 +20,47 @@ body {
   }
 
   .gscContainer h2 {
-    grid-column: 1 / -1;
-    display: flex;
+    grid-column: 1 / -1;        /*takes up the entire grid column.*/
+    display: flex;              /*allows the buttonContainer box to adjust to the current display being used.*/
     justify-content: center;
     align-items: center;
     margin: 20px;
     padding: 10px;
-    border: 6px outset grey;
+    border: 6px outset grey;   /*sets the container to be a raised (outset) looking container.*/
     font-size: 30px;
     color: black;
     background-color: goldenrod;
-    height: 60px;
+    height: 60px;                   /*sets teh height of the container.*/
   }
-  
-  .gscTimerContainer h3 {
-    display: flex;
+
+  .gscTimerContainer {
+    display: flex;          /*allows the buttonContainer box to adjust to the current display being used.*/
     justify-content: center;
     align-items: center;
     background-color: goldenrod;
-    height: 500px;
-    margin: auto;
+    height: 500px;          /*sets the height of the container*/
+    margin: auto;           /*adjusts the margin for the container automatically.*/
     color: black;
-    border: 6px inset grey;
-    width: 800px; /* Add the unit (e.g., px) to the width value */
+    border: 6px inset grey; /*sets the border as a indented (inset) looking box*/
+    width: 800px;           /* sets the width of the container. */
   }
 
   
  .gscButtonRow {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
-    align-items: center;
+    display: grid;              /*sets the button row display as a grid format.*/
+    grid-template-columns: 1fr 1fr 1fr; /* takes up all three columns of the row in the grid.*/
+    justify-content: center;        /*centers the content*/
+    align-items: center;            /*aligns items by placing them in the center center of the row.*/
     
   }
   
-  .buttonContainer {
-    display: flex;
+  .buttonContainer {  /*styling for the buttonContainer*/
+    display: flex;      /*allows the buttonContainer box to adjust to the current display being used.*/
     justify-content: center;
     align-items: center;
   }
 
-  .resetButton, .startButton, .quicklyButton {
+  button {  /*styles all of the buttons the same*/
     background-color: goldenrod;
     color: black;
     font-size: 20px;
@@ -70,3 +70,7 @@ body {
     width: 220px;
     border: 6px outset grey;
   }
+
+  /* .randomDiv > h2{  this allows all of the h2's to be formatted and not the parent. which would be the randomDiv class in this case.*/
+
+ /* } */
