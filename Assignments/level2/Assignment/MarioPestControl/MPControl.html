@@ -1,60 +1,61 @@
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
-        <link rel="stylesheet" href="style.css">
-        <title>Mario's Pest Control</title>
-        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">    <!--references css file for styling purposes-->
+        <title>Mario's Pest Control</title>         <!--title of page for browser.-->
+        <meta charset="UTF-8">                      <!--character set that contains most used characters.-->
         <meta name="description" content="Keep track of how many baddies Mario caught for Princess Peach so he can send her a bill">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!--sets display viewing instructions-->
     </head>
     <body>
-        <nav>
-            <div class="logo">
-                <img src="../IMG/Mario.png" title="Home" alt="homepage"> 
+        <nav>                           <!--creates navigation bar-->
+            <div class="logo">          <!--class name given for css styling and logo div needs to be inside nav bar to display correctly.-->
+                <img src="../IMG/Mario.png" title="Home" alt="homepage"> <!--location of logo image.-->
             </div>
-            <div class="mpcContainer">
-                <h1>Mario's Pest Control</h1>
+            <div class="mpcContainer">      <!--class name for styling of navigator bar-->
+                <h1>Mario's Pest Control</h1>   <!--company business name.-->
             </div>
         </nav> 
 
-        <div class = "BaddiesContainer">
-            <div class="baddieItem">
-                <img src="../IMG/bob_boom.png" alt="boboombsBaddies">
-                <span>Bob-Boom Baddie</span>
-                <p>Bob-Boom Cost: <input type="number" class="boboombsValueCost" id="bQtyCost" value="7"></p>
-                <p>Total Caught: <input type="number" class="totalCaughtInput" id="boboombsQtyTotalCaught" value="0"></p>
-                <p>Total Owed: $ <input type="number" class="totalAmountOwed" id="boboombsTotalPriceOwed" value= "0" readonly></p>
+        <div class = "BaddiesContainer">      <!--class name for css styling and javascript coding-->
+            <div class="baddieItem">          <!--class name for css styling-->  
+                <img src="../IMG/bob_boom.png" alt="boboombsBaddies">  <!--location of image file-->
+                <span>Bob-Boom Baddie</span> <!--give it a descriptive title under the image.-->
+                <!--paragraph text for each number input box and displays a placeholder value in input box  class name and id used for javascript coding and css styling. -->
+                <p>Bob-Boom Cost: <input type="number" class="boboombsValueCost" id="bQtyCost" value=7></p>
+                <p>Total Caught: <input type="number" class="totalCaughtInput" id="boboombsQtyTotalCaught" value=0></p>
+                <p>Total Owed: $ <input type="number" class="totalAmountOwed" id="boboombsTotalPriceOwed" value= 0 readonly></p>
             </div>
-            <div class="baddieItem">
-                <img src="../IMG/cheep_cheep.png" alt="cheepCheapBaddies">
-                <span>Cheep-Cheep Baddie</span>
-                <p>Cheep Cheep Cost: <input type="number" class="cheepCheepsValueCost" id="cQtyCost" value="11"></p>
-                <p>Total Caught: <input type="number" class="totalCaughtInput" id="cheepCheepsQtyTotalCaught" value="0"></p>
-                <p>Total Owed: $ <input type="number" class="totalAmountOwed" id="cheepCheepsTotalPriceOwed" value= "0" readonly></p>
+            <div class="baddieItem">    <!--class name for css styling-->  
+                <img src="../IMG/cheep_cheep.png" alt="cheepCheapBaddies">  <!--location of image file-->
+                <span>Cheep-Cheep Baddie</span> <!--give it a descriptive title under the image.-->
+                <!--paragraph text for each number input box and displays a placeholder value in input box  class name and id used for javascript coding and css styling. -->
+                <p>Cheep Cheep Cost: <input type="number" class="cheepCheepsValueCost" id="cQtyCost" value=11></p>
+                <p>Total Caught: <input type="number" class="totalCaughtInput" id="cheepCheepsQtyTotalCaught" value=0></p>
+                <p>Total Owed: $ <input type="number" class="totalAmountOwed" id="cheepCheepsTotalPriceOwed" value= 0 readonly></p>
             </div>
-            <div class="baddieItem">
-                <img src="../IMG/goomba.png" alt="goombaBaddies">
-                <span>Goomba Baddie</span>
-                <p>Goomba Cost: <input type="number" class="goombaValueCost" id="gQtyCost" value="5"></p>
-                <p>Total Caught: <input type="number" class="totalCaughtInput" id="goombaQtyTotalCaught" value="0"></p>
-                <p>Total Owed: $ <input type="number" class="totalAmountOwed" id="goombaTotalPriceOwed" value= "0" readonly></p>
+            <div class="baddieItem">  <!--assigns class of baddieItem for css styling-->
+                <img src="../IMG/goomba.png" alt="goombaBaddies"> <!--location of image file for goomba and id for jscript coding and css styling.-->
+                <span>Goomba Baddie</span> <!--give it a descriptive title under the image.-->
+                <!--paragraph text for each number input box and displays a placeholder value in input box  class name and id used for javascript coding and css styling. -->
+                <p>Goomba Cost: <input type="number" class="goombaValueCost" id="gQtyCost" value=5></p>
+                <p>Total Caught: <input type="number" class="totalCaughtInput" id="goombaQtyTotalCaught" value=0></p>
+                <p>Total Owed: $ <input type="number" class="totalAmountOwed" id="goombaTotalPriceOwed" value= 0 readonly></p>
             </div>
-            <div class="totalBaddies">
-                <p> Total baddies Mario caught: <input type="number" id="tBaddiesCaught" value= "0" readonly></p>
-                <button id="button">Submit Invoice</button>
+            <div class="totalOwed"> <!--declares the class as totalOwed for css styling.-->
+                <!--paragraph text and displays a number input box with the class name and Id for css styling and javascript coding. defined as a readonly box. can not be manipulated by user.-->
+                <p> Total invoice amount owed $: <input type="number" class="totalOwed" id="tOwed" value= 0 readonly></p> 
+                <button id="button">Submit Invoice</button>  <!--creates a button with the text.-->
             </div> 
             
-
             <div id="totalInvoiceAmount"></div>
         </div>
-
-        
-
+<!--footer section of webpage.  information to be displayed needs to be within the initial div to display correctly.-->
         <div class="footer" id="footer">
-                <a href="https://www.universalstudioshollywood.com/web/en/us/things-to-do/lands/super-nintendo-world" target='_blank'>Mario's website</a>
-            <div class="email">Mario@MarioPestControl.net</div>
-            <div class="address">100 Universal City Plaza, Universal City, CA 90068</div>
+                <a href="https://www.universalstudioshollywood.com/web/en/us/things-to-do/lands/super-nintendo-world"  target='_blank'>Mario's website</a> <!--reference universals studio website regarding mario world and give link a title.-->
+            <div class="email">Mario@MarioPestControl.net</div> <!--displays the email address-->
+            <div class="address">100 Universal City Plaza, Universal City, CA 90068</div> <!--displays the company address-->
         </div>
-        <script src="MPControl.js"></script>
+        <script src="MPControl.js"></script>    <!--references the javascript page -->
     </body>
 </html>

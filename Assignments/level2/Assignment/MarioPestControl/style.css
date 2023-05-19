@@ -124,22 +124,21 @@ nav {
     margin-top: 10px;
 }
 
-.totalBaddies {
+.totalOwed {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 3px;
     grid-column: 1/4;
     
 }
 
-.totalBaddies p {
+.totalOwed p {
     margin-bottom: 10px;
 }
 
-.totalBaddies button {
+.totalOwed button {
     margin-top: 10px;
     background-color: blue;
     border: 5px solid red;
@@ -148,10 +147,9 @@ nav {
     width: 150px;
 }
 
-#tBaddiesCaught {
-    width: 40px;
+#tOwed {
+    width: 100px;
 }
-
 
 .footer {
     background-color: red;
