@@ -36,23 +36,23 @@
  
 //setTimeout(stopSayingHello,  6000);             //declares the java built in function called setTimeout() and runs the function stopSayingHello after 6 seconds. only allows the sayHello function to run for 6 seconds.  
 
-var display = document.getElementById('time-display');
+const display = document.getElementById('time-display');  //declares display as a variable
 
-function getTime(){
-    var now = new Date();
-    var hour = now.getHours();
-    var min = now.getMinutes();
-    var sec = now.getSeconds();
-    if(hour < 10){
-        hour = `0${hour}`;
+function getTime(){                 //declares getTime as a function.
+    const now = new Date();         //declares now as a constant variable and assigns a new instance of system date to it.
+    const hour = now.getHours();    //declares hour as a constant variable and assign new instant of system hour to it.
+    const min = now.getMinutes();   //declares min as a constant variable and assigns a new instant of the system getMinutes to it.
+    const sec = now.getSeconds();   //declares sec as a constant variable and assigns a new instant of the system getSeconds to it.
+    if(hour < 10){                  //validates if the hour is below the number ten.
+        hour = `0${hour}`;          //when hour number is below 10 a zero is added before the numbers.
     } if (min < 10) {
-        min = `0${min}`;
+        min = `0${min}`;            //when minutes numbers are below 10 a zero is added before the minutes number.
     } if (sec < 10) {
-        sec = `0${sec}`;
-    }
+        sec = `0${sec}`;            //when seconds numbers are below 10 a zero is added before the seconds number.
+    };
 
-    display.textContent = `Current time is: ${hour}:${min}:${sec}`;
-}
+    display.textContent = `Current time is: ${hour}:${min}:${sec}`;     //display is used to display data to webpage.
+};
 
-setInterval(getTime, 1000);
+setInterval(getTime, 1000);         //updates getTime every second.
  
