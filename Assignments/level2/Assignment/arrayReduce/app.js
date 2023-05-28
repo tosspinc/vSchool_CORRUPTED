@@ -85,11 +85,11 @@ console.log(combineArr);
 
 //6. return an object representing the results of the vote.
 const individualVoters = [
+    {name:'Phil' , age: 21, voted: true},
     {name:'Bob' , age: 30, voted: true},
     {name:'Jake' , age: 32, voted: true},
     {name:'Kate' , age: 25, voted: false},
     {name:'Sam' , age: 20, voted: false},
-    {name:'Phil' , age: 21, voted: true},
     {name:'Ed' , age:55, voted:true},
     {name:'Tami' , age: 54, voted:true},
     {name: 'Mary', age: 31, voted: false},
@@ -99,58 +99,61 @@ const individualVoters = [
     {name: 'Zack', age: 19, voted: false}
 ];
 
-function voterResults(arr) {
-    const voteData = arr.reduce((final, voter) => {
-     if (voter.age > 17 && voter.age < 26) {
-         final.numYoungPeople++;
-         if(voter.voted) {
-             final.numYoungVotes++
-         };
-     } if (voter.age > 25 && voter.age < 36) {
-         final.numMidsPeople++;
-         if(voter.voted) {
-             final.numMidVotesPeople++
-         };
-     } if (voter.age > 35 && voter.age < 56) {
-         final.numOldsPeople++;
-         if(voter.voted) {
-             final.numOldVotesPeople++
-         };
-     };
-     return final;
-    },{numYoungVotes: 0, numYoungPeople: 0, numMidVotesPeople: 0, numMidsPeople: 0, numOldVotesPeople: 0, numOldsPeople: 0});
-    return voteData;
- };
- 
- console.log(voterResults(individualVoters)); // Returned value shown below:
+function individualsVoting(individualVoters){
+    const voterData = individualVoters.reduce((final, individualVoter) => {
+    if (individualVoter.age > 17 && individualVoter.age < 26) {
+            final.numYoungVotes += individualVoter.voted ? 1 : 0; //uses ternary (conditional) operator. The ? validates if the voted is true or false. If it is true it returns a 1 and adds the voter count to the numYoungVotes object. If it validates it as false then it will add the age to the numYoungPeople object.
+            final.numYoungPeople++;
+        } else if (individualVoter.age > 25 && individualVoter.age < 36) {
+            final.numMidVotesPeople += individualVoter.voted ? 1 : 0; //uses ternary (conditional) operator. The ? validates if the voted is true or false. If it is true it returns a 1 and adds the voter count to the numMidVotesPeople object. If it validates it as false then it will add it to the numMidsPeople object.
+            final.numMidsPeople++;
+        } else if (individualVoter.age > 35 && individualVoter.age < 56) {
+            final.numOldVotesPeople += individualVoter.voted ? 1 : 0; //uses ternary (conditional) operator. The ? validates if the voted is true or false. If it is true it returns a 1 and adds the voter count to the numOldVotesPeople object. If it validates it as false then it will add it to the numOldsPeople object.
+            final.numOldsPeople++;
+        };
+        return final;
+    }, { //this is the string array of voter data and how it is displayed in the console.
+        numYoungVotes: 0, 
+        numYoungPeople: 0, 
+        numMidVotesPeople: 0, 
+        numMidsPeople: 0, 
+        numOldVotesPeople: 0, 
+        numOldsPeople: 0
+        });
+    return voterData;
+};    
 
- //should be displayed as follows:
- //{ numYoungVotes: 1,
-//   numYoungPeople: 4,
-//   numMidVotesPeople: 3,
-//   numMidsPeople: 4,
-//   numOldVotesPeople: 3,
-//   numOldsPeople: 4
-// }
+const result = individualsVoting(individualVoters); //declares result as a constant variable and assigns the data held in the individualVoters object to the object called individualsVoting.
+console.log(result);  //displays result object in the console.
+// Returned value shown below:
+/*
+{ numYoungVotes: 1,
+  numYoungPeople: 4,
+  numMidVotesPeople: 3,
+  numMidsPeople: 4,
+  numOldVotesPeople: 3,
+  numOldsPeople: 4
+}
+*/
 
+
+//7. extra credit assignment.
 var username = 'tosspinc';  //my github user name.
 var repository = 'vSchool'; //my github vSchool repository name.
 
 var request = new XMLHttpRequest(); //sets request as a variable and asks for new instance of httpRequest.
 request.open('GET', 'https://api.github.com/repos/' + username + '/' + repository, true); //gets data from my username.
 
-var request = new XMLHttpRequest();
-request.open('GET', 'https://api.github.com/repos/' + username + '/' + repository, true); //gets data from my github repository.
-
 request.onload = function() {  //once it loads information it make a new empty function.
   if (request.status >= 0 && request.status < 400) { //requests data is within data logged instances on my gitHub account.
-    var data = JSON.parse(request.responseText);  //parses the data received from gitHub server and assigns it to the variable of data.  
+    var data = JSON.parse(request.responseText);  //parses the data received from gitHub server and assigns it to the variable of data.
     var watchersCount = data.watchers_count; //extracts the data assigned to watchers and assigns it to watchersCount variable.
     console.log('Number of watchers: ' + watchersCount); //displays number of watchers followed by the actual number counted.
   } else {
     console.error('Failed to fetch repository'); //if no access to gitHub server is authorized then this message appears.
   };
 };
+
 
 // if there is a network error then this function is run. 
 request.onerror = function() {
