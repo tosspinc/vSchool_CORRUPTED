@@ -42,7 +42,7 @@ body {
     background-repeat: no-repeat;       /*does not repeat the image.*/
     background-color: rgb(4, 69, 4);
     opacity: .9;                        /*displays the image with a 90 percent transparency.*/
-    height: 380px;                      /*sets the height of the box1 to 380 pixels.*/
+    height: 350px;                      /*sets the height of the box1 to 380 pixels.*/
     width: 100%;                        /*sets the width of box1 to the full display size.*/
 }
 
@@ -52,13 +52,19 @@ body {
     background-image: url(http://www.csszengarden.com/214/contours-opaque.png);
 }
 
+#box1 .contoursContainer .gridlinesContainer {
+    height: 100%;               /*fills in the box1 with the gridlines image from csszengarden website.*/
+    align-items: center;        /*center the image within the box1 dimensions.*/
+    background-image: url(http://www.csszengarden.com/214/gridlines.png);   
+}
+
 #title {
     color: whitesmoke;
     position: absolute;
     z-index: 2;                 /*ensures that the h1 text appears on top of the huntington image.*/
     top: 8%;                    /*displays the text down 8% from the top of the container box.*/
-    left: 39%;                  /*displays the text starting 39% from the left side of the container box.*/
-    transform: translate(-50%, -50%);
+    left: 450px;                /*displays the text starting 450 pixels from the left side of the container box.*/
+    transform: translate(-50%, -50%); /*allows to transform the title element. translate moves the element along the x and y axis. the first (-50%) starts works on the x axis and moves it in from the left side. The second (-50%) works along the y axis and moves it up from the bottom.*/
     font-family: 'Julius Sans One', sans-serif;
     font-size: 44px;            /*sets the text size at 44 pixels.*/
     opacity: .7;                /*sets the transparency of the text at 70 percent*/
@@ -69,8 +75,8 @@ body {
     position: absolute;
     z-index: 2;                 /*ensures that the subtitle text appears on top of the huntington image.*/
     top: 11%;                   /*places the subtitle text 11% down from the top of the container.*/
-    left: 36%;                  /*places the subtitle text in 36% from the left edge of the container.*/
-    transform: translate(-50%, -50%);
+    left: 390px;                  /*places the subtitle text in 390 pixels from the left edge of the container.*/
+    transform: translate(-50%, -50%); /*allows to transform the subtitle element. translate moves the element along the x and y axis. the first (-50%) starts works on the x axis and moves it in from the left side. The second (-50%) works along the y axis and moves it up from the bottom.*/
     font-size: 22px;            /*sets the font size.*/
     font-family: 'Julius Sans One', sans-serif;
     font-style: oblique;        /*sets the type style of the text to oblique*/
@@ -78,23 +84,11 @@ body {
 }
 
 #logo {
-    opacity: .2;                /*sets the transparency of the logo image.*/
-}
-
-#box2 {
-    grid-column: 2 / span 1;        /*takes up the right column of the first row.*/
-    grid-row: 1 / span 1;           /*located on the first row.*/
-    margin-top: 15px;               /*sets the top margin of the box at 15 pixels.*/
-    padding: 0;
-    background-image: url('./IMG/huntington.jpg');
-    background-size: cover; /*allows the background-image - huntington.jpg - to fil the entire background area assigned. */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: rgb(4, 69, 4);
-    opacity: .9;
-    height: 310px;
-    width: 100%;
-
+    margin-top: 50px;
+    margin-left: 30px;
+    opacity: .2;                /*sets the transparency of the logo image at 20 percent.*/
+    height: 250px;
+    width: 250px;
 }
 
 #box3 {
@@ -192,17 +186,6 @@ body {
     background-color: black;
     border-radius: 50%;
 }*/
-
-/*#gridlines {
-    grid-column: 2 / span 1;
-    grid-row: 1 / span 1;
-    background-repeat: repeat;
-    background-image: url('/IMG/gridlines.png');
-    z-index: 2;
-    background-size: 100% 100%;
-    opacity: .5;
-}*/
-
 
 /*.dotted-underline {
     position: relative;
