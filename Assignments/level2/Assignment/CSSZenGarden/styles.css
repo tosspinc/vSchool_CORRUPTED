@@ -1,73 +1,184 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: rgb(4, 69, 4);
-    height: 100%;
+    background-image: url(http://www.csszengarden.com/214/bamboo.png); /*places image in background of html document.*/
+    background-size: cover;                             /*fills the entire html document with the backgound image.*/
+    background-repeat: no-repeat;                       /*ensures that the image is not repeated in the html document.*/
+    background-position: center;                        /*centers the image in the display*/
+    background-attachment: fixed;                       /*sets the background image to a fixed state do it does not move when scrolling site with mouse.*/
+    min-height: 100vh;                                  /*sets the image to be 100 percent of the display screen.*/
+    width: 100%;                                        /*makes sure that the image spans the width of the display screen.*/
 }
 
 .gridContainer {
-    margin: 10px auto;
-    padding: 2px;
-    
-}
- #cssBanner {
-    margin-top: 15px;
-    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;                         /*one column*/
+    grid-template-rows: .6fr 1.2fr 1fr 1fr .4fr .3fr;   /*this makes six rows*/
+    grid-template-areas:                                /*gives each area of the grid a name.*/
+    'gridContainer'
+    'highlightsContainer'
+    'participationContainer'
+    'requirementsContainer'
+    'closing'
+    'footer';
     width: 100%;
-    height: 310px;
- }
-
-h1 {
-    color: white;
-}
-
-h2 {
-    color: lightseagreen;
-    
-
-}
-
-.dotted-underline {
     position: relative;
-    display: inline-block;
 }
 
-.dotted-underline::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    border-bottom: 1px dotted;
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Julius+Sans+One&family=Open+Sans:wght@300&display=swap');
+
+.gridContainer > div {
+    border: solid black 2px;    /*puts a solid black border of 2 pixels thick around all of the divs on html document.*/
 }
 
-.grid4 {
-    background-color: white;
+#box1 {
+    grid-column: 1 / span 1;            /*takes up the first column space on the first row.*/
+    grid-row: 1 / span 1;               /*located on the first row.*/
+    margin-top: 15px;                   /*sets the box1 to have a margin of 15 pixels from the top of the display area.*/
     padding: 0;
-    height: 20px;
-    max-width: 50%
+    background-image: url(http://www.csszengarden.com/214/huntington.jpg); /*gets image from website.*/
+    background-size: cover;             /*ensures that the image fills in the box1 dimensions completely.*/
+    background-position: center;        /*centers the image in the box.*/
+    background-repeat: no-repeat;       /*does not repeat the image.*/
+    background-color: rgb(4, 69, 4);
+    opacity: .9;                        /*displays the image with a 90 percent transparency.*/
+    height: 380px;                      /*sets the height of the box1 to 380 pixels.*/
+    width: 100%;                        /*sets the width of box1 to the full display size.*/
 }
 
-.authors {
-    background-color: lightcoral
-}
-.links {
-    background-color: lightpink
+#box1 .contoursContainer {
+    height: 100%;               /*fills in the box1 with the contour image from csszengarden website.*/
+    align-items: center;        /*centers the image within the box1 dimensions.*/
+    background-image: url(http://www.csszengarden.com/214/contours-opaque.png);
 }
 
-.footer {
-    background-color: aquamarine;
+#title {
+    color: whitesmoke;
     position: absolute;
+    z-index: 2;                 /*ensures that the h1 text appears on top of the huntington image.*/
+    top: 8%;                    /*displays the text down 8% from the top of the container box.*/
+    left: 39%;                  /*displays the text starting 39% from the left side of the container box.*/
+    transform: translate(-50%, -50%);
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 44px;            /*sets the text size at 44 pixels.*/
+    opacity: .7;                /*sets the transparency of the text at 70 percent*/
+}
+
+#subtitle {
+    color: whitesmoke;
+    position: absolute;
+    z-index: 2;                 /*ensures that the subtitle text appears on top of the huntington image.*/
+    top: 11%;                   /*places the subtitle text 11% down from the top of the container.*/
+    left: 36%;                  /*places the subtitle text in 36% from the left edge of the container.*/
+    transform: translate(-50%, -50%);
+    font-size: 22px;            /*sets the font size.*/
+    font-family: 'Julius Sans One', sans-serif;
+    font-style: oblique;        /*sets the type style of the text to oblique*/
+    opacity: .7;                /*sets the transparency of the beauty of css text at 70 percent.*/
+}
+
+#logo {
+    opacity: .2;                /*sets the transparency of the logo image.*/
+}
+
+#box2 {
+    grid-column: 2 / span 1;        /*takes up the right column of the first row.*/
+    grid-row: 1 / span 1;           /*located on the first row.*/
+    margin-top: 15px;               /*sets the top margin of the box at 15 pixels.*/
+    padding: 0;
+    background-image: url('./IMG/huntington.jpg');
+    background-size: cover; /*allows the background-image - huntington.jpg - to fil the entire background area assigned. */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(4, 69, 4);
+    opacity: .9;
+    height: 310px;
+    width: 100%;
+
+}
+
+#box3 {
+    grid-column: 1 / span 1;        /*takes up the first column one row two.*/
+    grid-row: 2 / span 1;           /*located on row two.*/
+    background-color: whitesmoke;
+    height: 100%;
+    width: 100%;
+}
+
+#authors {
+    grid-column: 2 / span 1;        /*takes up the second column space on the second row.*/
+    grid-row: 2 / span 1;           /*located on row two.*/
+    background-color: lightcoral;
+    height: 100%;
+    width: 100%;
+    /*padding: 0;
+    height: 20px;
+    max-width: 50%*/
+}
+
+#box5 {    
+    grid-column: 1 / span 1;    /*takes up the left column of row three*/
+    grid-row: 3 / span 1;       /*located on the third row.*/
+    background-color: rgba(138, 188, 159, .5);
+    height: 100%;
+    width: 100%;
+}
+
+#links { 
+    grid-column: 2 / span 1;        /*takes up the right column on row three.*/
+    grid-row: 3 / span 1;           /*located on the third row.*/
+    background-color: lightpink;     
+    height: 100%;
+    width: 100%;
+}
+
+#box7 {                   
+    grid-column: 1 / span 1;        /*takes up the left column on row four.*/
+    grid-row: 4 / span 1;           /*located on the fourth row.*/
+    background-color: whitesmoke;
+    height: 100%;
+    width: 100%;
+ /*   position: absolute;
     bottom: 0;
     left: 0;
     display: grid;
     width: 100%;
-    max-height: 200px;
+    max-height: 200px;*/
 }
+
+#box8 {
+    grid-column: 2 / span 1;        /*takes up the first column on the left of row 4.*/
+    grid-row: 4 / span 1;           /*located on row four.*/
+    background-color: whitesmoke;
+    height: 100%;
+    width: 100%;
+}
+
+#box9 {
+    grid-column: 1 / span 2;        /*takes up the entire width of the row.*/
+    grid-row: 5 / span 1;           /*located on row five.*/
+    background-color: rgba(255 255 255 0.4);
+    background-image: url('./IMG/huntington.jpg');
+    background-size: cover; /*allows the background-image - huntington.jpg - to fil the entire background area assigned. */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(4, 69, 4);
+    height: 100%;
+    width: 100%;
+    opacity: .9;
+}
+
+#footer {
+    grid-column: 1 / span 2;        /*takes up the entire width of the row.*/
+    grid-row: 6 / span 1;           /*located on row six, which is the last row.*/
+    background-color: aquamarine;
+    height: 100%;
+    width: 100%;
+}
+
 /* FLEX */
 /* use flexbox to make the icons behave like css zen garden's social icons */
-.icons {
+/*.icons {
     display: flex;
     justify-content: space-around;
     width: 50%;
@@ -80,51 +191,46 @@ h2 {
     height: 30px;
     background-color: black;
     border-radius: 50%;
-}
+}*/
+
+/*#gridlines {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    background-repeat: repeat;
+    background-image: url('/IMG/gridlines.png');
+    z-index: 2;
+    background-size: 100% 100%;
+    opacity: .5;
+}*/
+
+
+/*.dotted-underline {
+    position: relative;
+    display: inline-block;
+}*/
+
+/*.dotted-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    border-bottom: 1px dotted;
+}*/
 
 /* latin-ext */
-@font-face {
-    font-family: 'Julius Sans One';
-    font-style: normal;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/juliussansone/v14/1Pt2g8TAX_SGgBGUi0tGOYEga5WOzHsX2aE.woff2) format('woff2');
-    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-  }
-  /* latin */
-  @font-face {
-    font-family: 'Julius Sans One';
-    font-style: normal;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/juliussansone/v14/1Pt2g8TAX_SGgBGUi0tGOYEga5WOwnsX.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
-  /* latin-ext */
-  @font-face {
-    font-family: 'Libre Baskerville';
-    font-style: italic;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/librebaskerville/v14/kmKhZrc3Hgbbcjq75U4uslyuy4kn0qNcWx8QDP2V.woff2) format('woff2');
-    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-  }
-  /* latin */
-  @font-face {
-    font-family: 'Libre Baskerville';
-    font-style: italic;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/librebaskerville/v14/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNZaxM.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
 
-  @media (max-width: 900px){
+/*@media (max-width: 900px){
     /* use this media query to help these two cells drop to the bottom when screens are smaller */
-    .authors {
+/*    .authors {
          
     }
     .links {
 
     }
     /* container could use some help so that it's children are full screen width */
-    .container {
+/*    .container {
         
     }
-}
+}*/
