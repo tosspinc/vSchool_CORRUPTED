@@ -1,105 +1,153 @@
 body {
     background-color: teal;
 }
-h5{
+
+h3{
     text-align: center;
-    font-size: 25px;
+    font-size: 22px;
     font-style: oblique;
     color: whitesmoke;
 }
 
-h3{
+h4{
     text-align:center;
     font-size: 30px;
     font-style: oblique;
     color: orange;
 }
 .container{
-    background-color: transparent;
+    background-color: goldenrod;
     margin: 5em;
     border: 4px double black;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
     grid-template-areas:
     "header header header" 
-    "one two three"
-    "four five six";
-    gap: .30em;
-    height: 100vh;
+    "box1 box2 box3"
+    "box4 box5 box6";
+    height: 700px;
 }
+
 
 .musicBox {
-    background-color: grey;
-    height: 50px;   
-}
-
-#header {
-    grid-area: header;
-    border-bottom: 2px solid black;
+    background-color: black;
+    margin: 3px;
 }
 
 .musicBox audio {
-    width: 100%;
-    height: 90%;
+    width: 100%;    /*takes up the entire length of the row.*/
+    height: 100%;   /*takes up the entire heights of the row*/
+    
 }
 
-/* Vendor prefixes for Firefox */
-audio::-moz-media-controls-panel {
-    background-color: black;
+#header {
+    grid-area: header; /*the heard is located in the first row of the container box and takes up the entire row.*/
+    height: 55px; /*sets height of the header box to 55 pixels.*/
+    
 }
 
-audio::-moz-mutebutton {
-    background-color: white;
-    border-radius: 100%;
-}
-
-audio::-moz-mutebutton[moz-state="mute"] {
-    background-color: red;
-}
-
-audio::-moz-range-progress {
-    background-color: grey;
-    border-radius: 5em;
-    opacity: 0.3;
-}
-
-/* Vendor prefixes for Chrome and Edge */
 audio::-webkit-media-controls-panel {
-    background-color: black;
+    background-color: black;    /*sets the background color of the control panel to black.*/
 }
 
 audio::-webkit-media-controls-mute-button {
-    background-color: white;
+    background-color: red;    /*sets the mute button color to red.*/
     border-radius: 100%;
 }
 
-audio::-webkit-media-controls-mute-button[aria-pressed="true"] {
-    background-color: red;
+audio::-webkit-media-controls-play-button {
+    background-color: teal;    /*sets the play button color to teal to match the body background color.*/
+    border-radius: 100%;
 }
 
-audio::-webkit-media-controls-timeline {
-    background-color: grey;
-    border-radius: 5em;
-    opacity: 0.3;
+audio::-webkit-media-controls-current-time-display {
+    border-radius: 100%;
+    color: goldenrod; /*set the current play time to goldenrod*/
 }
 
-/* Standard version without prefixes */
-audio::media-controls-panel {
+audio::-webkit-media-controls-time-remaining-display {
+    border-radius: 100%;
+    color: goldenrod;   /*sets the second count or length of song time on the timer to goldenrod.*/
+}
+
+audio::-webkit-media-controls-timeline-container {
     background-color: black;
 }
 
-audio::media-controls-mute-button {
-    background-color: white;
-    border-radius: 100%;
-}
-
-audio::media-controls-mute-button:checked {
-    background-color: red;
-}
-
-audio::media-controls-timeline {
-    background-color: grey;
+audio::-webkit-media-controls-timeline {
+    background-color: teal; /*sets the background color of the playline to teal to match the website body color.*/
     border-radius: 5em;
-    opacity: 0.3;
+    opacity: .8;    /*sets the opacity level of the playbar.*/
+}
+
+audio::-webkit-media-controls-volume-slider {
+    background-color: white;
+    border-radius: 1em;
+    opacity: .3;
+}
+
+audio::-webkit-media-controls-timeline-container {
+    background: transparent;
+}
+
+.box{
+    grid-area: (1 / 1 / 2 / 4); /*the box class takes up the entire 1 first row and span across all three columns.  starts at row one column one and ends at row 2 column border 4*/
+    margin: 5px; /*places a marging of 5 pixels around each box.*/
+}
+
+
+#box1 { 
+    grid-area: 2/ 1 / 3 / 2; /*box1 is located in the 2 row and and is the first column of that row.*/
+}
+
+#box1:hover { /*allows for the elements of the box to change when the box is hovered over with the mouse.*/
+    grid-area: 2/ 1 / 3 / 2; 
+}
+
+
+#box2 { 
+    grid-area: 2/ 2 / 3 / 3; /*box2 is located in the 2nd row and is in the second column of that row.*/
+}
+
+#box2:hover { /*allows for the elements of the box to change when the box is hovered over with the mouse.*/
+    grid-area: 2 / 2 / 3 / 3; 
+}
+
+#box3 { 
+    grid-area: 2/ 3 / 3 / 4; /*box3 is located in the 2nd row and is in the third and last column of that row.*/
+}
+
+#box3:hover { /*allows for the elements of the box to change when the box is hovered over with the mouse.*/
+    grid-area: 2 / 3 / 3 / 4; 
+}
+
+#box4 {
+    grid-area: 3 / 1 / 3 / 2; /*box4 is located in the 3rd row and is in the first column.*/
+}
+
+#box4:hover { /*allows for the elements of the box to change when the box is hovered over with the mouse.*/
+    grid-area: 3 / 1 / 3 / 2; 
+}
+
+#box5 { 
+    grid-area: 3 / 2 / 3 / 3 /*box5 is located in the 3rd row and is in the middle column of that row.*/
+} 
+
+#box5:hover { /*allows for the elements of the box to change when the box is hovered over with the mouse.*/
+    grid-area: 3 / 2 / 3 / 3; 
+}
+    
+#box6 { /*box6 is located in the 3rd row and is located in the last column of that row.*/
+    grid-area: 3 / 3 / 3 / 4;
+}
+
+#box6:hover { /*allows for the elements of the box to change when the box is hovered over with the mouse.*/
+    grid-area: 3 / 3 / 3 / 4; 
+}
+
+@media only screen and (max-width: 1023px) {
+    * {
+        overflow: auto;
+    }
 }
