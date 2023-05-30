@@ -41,7 +41,7 @@ h4{
     
 }
 
-#header {
+#mBox {
     grid-area: header; /*the heard is located in the first row of the container box and takes up the entire row.*/
     height: 55px; /*sets height of the header box to 55 pixels.*/
     
@@ -63,12 +63,12 @@ audio::-webkit-media-controls-play-button {
 
 audio::-webkit-media-controls-current-time-display {
     border-radius: 100%;
-    color: goldenrod; /*set the current play time to goldenrod*/
+    color: whitesmoke; /*set the current play time to whitesmoke*/
 }
 
 audio::-webkit-media-controls-time-remaining-display {
     border-radius: 100%;
-    color: goldenrod;   /*sets the second count or length of song time on the timer to goldenrod.*/
+    color: orangered;   /*sets the second count or length of song time on the timer to orangered.*/
 }
 
 audio::-webkit-media-controls-timeline-container {
