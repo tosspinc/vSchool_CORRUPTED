@@ -94,56 +94,94 @@ audio::-webkit-media-controls-timeline-container {
 .box{
     grid-area: (1 / 1 / 2 / 4); /*the box class takes up the entire 1 first row and span across all three columns.  starts at row one column one and ends at row 2 column border 4*/
     margin: 5px; /*places a marging of 5 pixels around each box.*/
+    transition-duration: 500ms;
+    -webkit-transition-delay: 600ms;
 }
 
 
 #box1 { 
     grid-area: 2/ 1 / 3 / 2; /*box1 is located in the 2 row and and is the first column of that row.*/
+    background-color: red;
+    border: 2px solid black;
 }
 
 #box1:hover { /*allows for the elements of the box to change when the box is hovered over with the mouse.*/
-    grid-area: 2/ 1 / 3 / 2; 
+    grid-area: 2 / 1 / 3 / 2; 
+    background-color: darkkhaki;
+    border-radius: 50%;
+    opacity: .8em;
 }
 
 
 #box2 { 
     grid-area: 2/ 2 / 3 / 3; /*box2 is located in the 2nd row and is in the second column of that row.*/
+    background-color: whitesmoke;
+    border: 2px solid black;
+
 }
 
 #box2:hover { /*allows for the elements of the box to change when the box is hovered over with the mouse.*/
-    grid-area: 2 / 2 / 3 / 3; 
+    grid-area: 2 / 2 / 3 / 3;
+    background-color: crimson; 
+    border: 4px dashed white;
+    width: 70%;
+    height: 80%;
 }
 
 #box3 { 
     grid-area: 2/ 3 / 3 / 4; /*box3 is located in the 2nd row and is in the third and last column of that row.*/
+    background-color: blue;
+    border: 2px solid black;
 }
 
 #box3:hover { /*allows for the elements of the box to change when the box is hovered over with the mouse.*/
     grid-area: 2 / 3 / 3 / 4; 
+    background-color: coral;
+    border: 10px double;
 }
 
 #box4 {
     grid-area: 3 / 1 / 3 / 2; /*box4 is located in the 3rd row and is in the first column.*/
+    background-color: yellow;
+    border: 2px solid black;
 }
 
 #box4:hover { /*allows for the elements of the box to change when the box is hovered over with the mouse.*/
     grid-area: 3 / 1 / 3 / 2; 
+    background-color: blueviolet;
+    height: 70%;
+    width: 85%;
 }
 
 #box5 { 
-    grid-area: 3 / 2 / 3 / 3 /*box5 is located in the 3rd row and is in the middle column of that row.*/
+    grid-area: 3 / 2 / 3 / 3;/*box5 is located in the 3rd row and is in the middle column of that row.*/
+    background-color: purple;
+    border: 2px solid black;
+    text-align: center;
 } 
 
 #box5:hover { /*allows for the elements of the box to change when the box is hovered over with the mouse.*/
     grid-area: 3 / 2 / 3 / 3; 
+    background-color: cornflowerblue;
+    color: black;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
     
-#box6 { /*box6 is located in the 3rd row and is located in the last column of that row.*/
-    grid-area: 3 / 3 / 3 / 4;
+#box6 { 
+    grid-area: 3 / 3 / 3 / 4;   /*box6 is located in the 3rd row and is located in the last column of that row.*/
+    background-color: green;
+    border: 2px solid black;
+    
 }
 
 #box6:hover { /*allows for the elements of the box to change when the box is hovered over with the mouse.*/
     grid-area: 3 / 3 / 3 / 4; 
+    background-color: aquamarine;
+    border: 6px dashed purple;
+    height: 70%;
 }
 
 @media only screen and (max-width: 1023px) {
