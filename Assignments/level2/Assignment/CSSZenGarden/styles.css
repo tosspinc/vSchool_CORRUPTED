@@ -48,13 +48,13 @@ abbr {
 }
 
 header {
-   height: 230px;
+   height: 230px; /*sets the header element height.*/
    padding: 20px 0 70px 0;  /*pads the header top, right, bottom and left sides appropriately.*/
-   background: #2d6360 50% 0 url(http://www.csszengarden.com/214/huntington.jpg) no-repeat; /* old IE fallback */
+   background: #2d6360 50% 0 url(http://www.csszengarden.com/214/huntington.jpg) no-repeat; /* old IE fallback. sets the huntington image to be displayed horizontally and centere in the header element. the image does not repeat.*/
    background-attachment: fixed, fixed, fixed, scroll;
    background-image: url(http://www.csszengarden.com/214/contours.png), url(http://www.csszengarden.com/214/noise.png), url(http://www.csszengarden.com/214/gridlines.png), url(http://www.csszengarden.com/214/huntington.jpg); /*calls the images from csszengarden.com website in the 214 folder.*/
    background-position: 0 0, 0 0, -5px -25px, 0 50%; /*positions the images above in the header. 0 0, means the first image is positioned at top left and 0 pixels from top.  second image is the same.  the third image is to be positioned 5 pixels to the left of the header border and 25 pixels above the top border of the header.  the fourth image is to be position at the top left corner and then 50 percent of the images height down from the top of the header element.*/
-   background-repeat: repeat, repeat, repeat, no-repeat;  /*first, second and third images repeat in the header element as they are the contours image, the noise image and gridlines image.  the final image does not repeat and fills the header element as that is the main image.*/
+   background-repeat: repeat, repeat, repeat, no-repeat;  /*first, second and third images repeat in the header element so they take up the entire header. the final image does not repeat and fills the header element as that is the main image.*/
    background-size: auto, auto, auto, cover; /*the auto represents that the first three images above be displayed at their orginal size and the last image (huntington.jpg) will fill the header element entirely.*/
    text-align: center;  /*aligns the h1 and h2 text in the center of the header element.*/
 }
