@@ -310,8 +310,8 @@ div.participation p, div.benefits p {
    font-style: normal;
 }
  
-/* archives navigation */
-.design-archives {
+/* sets up  the archives navigation elements area for css styling.*/
+.design-archives {   /*main design-archives element settings.*/
    position: absolute;
    top: 160px;
    right: 0;
@@ -320,7 +320,7 @@ div.participation p, div.benefits p {
    background: rgba(255,255,255,0.2);
 }
  
-.design-archives h3 {
+.design-archives h3 {   /*settings for the h3 in the design=archives element.*/
    display: none;
 }
  
@@ -328,7 +328,7 @@ div.participation p, div.benefits p {
    margin: 0;
 }
  
-.design-archives li {
+.design-archives li { /*sets the list section in the design-archives element to a position of abosolute. if the other styling lines are removed as have a value of zero or none, it displays items vertically rather than correctly.*/
    position: absolute;
    top: 0;
    padding: 0;
@@ -359,7 +359,7 @@ div.participation p, div.benefits p {
    color: rgba(255, 255, 255, 0.65);
 }
  
-.design-archives a:hover, .design-archives a:focus {
+.design-archives a:hover, .design-archives a:focus {  /*sets up the text color when the anchors in the design-archives element are hovered over with the mouse.*/
    color: #fff;
 }
  
@@ -381,7 +381,7 @@ div.participation p, div.benefits p {
    text-align: center;
 }
  
-.design-archives a::before {
+.design-archives a::before { /*sets up the styling for the space before the anchors in the design-archives element.*/
    position: absolute;
    left: 0;
    width: 70px;
@@ -412,19 +412,19 @@ div.participation p, div.benefits p {
    content: ">";
 }
  
-/* resources */
+/* sets up the resources elements styling. */
 .zen-resources {
    overflow: hidden;
    background-color: rgba(138,188,159,0.5);
    background-image: url(http://www.csszengarden.com/214/bamboo.png);   /*gets the bamboo.png image from csszengarden.com webite folder labelled 214.  */
 }
  
-.zen-resources li {
+.zen-resources li { /*settings for the list in the zen=resources element.*/
    border-top: solid 1px #a0b9ad;
    font-style: normal;
 }
  
-.zen-resources li:last-child {
+.zen-resources li:last-child {   /*settings for the last list item in the zen-resources element.*/
    float: none;
    width: auto;
    border-bottom: solid 1px #a0b9ad;
@@ -435,7 +435,7 @@ div.participation p, div.benefits p {
    padding-bottom: 2em;
 }
  
-.supporting .requirements {
+.supporting .requirements {   /*setting for the require elements embedded within the supporting element.*/
    float: none;
    clear: both;
    width: 100%;
@@ -443,12 +443,12 @@ div.participation p, div.benefits p {
    padding-right: 0;
 }
  
-.supporting .requirements a {
+.supporting .requirements a { /*settings for the anchor in the requirements element within the supporting element.*/
    text-decoration: none;
 }
  
 .supporting .requirements a:hover, .supporting .requirements a:focus {
-   text-decoration: underline;  /*when areas in the requirement section or hovered over the image/text will be underlined.*/
+   text-decoration: underline;  /*when areas in the requirement section are hovered over the image/text will be underlined.*/
 }
  
 .supporting .requirements h3 {
@@ -471,7 +471,7 @@ div.participation p, div.benefits p {
    text-align: center;
 }
  
-.requirements p:last-child a {
+.requirements p:last-child a { /*settings for the paragraph in the requirements element and the last anchor. */
    color: rgba(255, 255, 255, 0.7);
    font-style: normal;
 }
@@ -485,7 +485,7 @@ footer {
    text-align: center;
 }
  
-footer a {
+footer a { /*coding for anchors in the footing.*/
    display: inline-block;
    overflow: hidden;
    width: 40px;
@@ -499,16 +499,16 @@ footer a {
    transition: color 0.25s ease-out, box-shadow 0.25s ease-out;
 }
  
-footer a:hover, footer a:focus {
+footer a:hover, footer a:focus { /*coding for the hover and focus features of the anchors in the footer element.*/
    color: rgba(255, 255, 255, 0.3);
    text-decoration: none;
 }
  
-footer a:visited {
+footer a:visited {  /*coding for anchors in the footer element after the user selects the anchor.*/
    color: rgba(255, 255, 255, 0.2);
 }
  
-footer a::before {
+footer a::before { /*settings for the spacing before the anchors in the footer element.*/
    display: block;
    position: absolute;
    top: 3px;
