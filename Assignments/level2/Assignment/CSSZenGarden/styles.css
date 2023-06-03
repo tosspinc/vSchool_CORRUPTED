@@ -1,219 +1,1031 @@
+/*web fonts from Google:
+  Julius Sans One – https://fonts.google.com/specimen/Julius+Sans+One?query=julius
+  Libre Baskerville – https://fonts.google.com/specimen/Libre+Baskerville?query=baskerville*/
+@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Libre+Baskerville:400,400italic);   /*imports fonts from google api so they can be used on the website.*/
+
+/* base CSS */
+* { /*this is for formating the border for various browsers so they can be displayed correctly in those specific browsers.*/
+   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */    
+   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+   box-sizing: border-box;         /* Opera/IE 8+ */
+}
+ 
+html, body {
+   padding: 0;
+   margin: 0;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    background-image: url(http://www.csszengarden.com/214/bamboo.png); /*places image in background of html document.*/
-    background-size: cover;                             /*fills the entire html document with the backgound image.*/
-    background-repeat: no-repeat;                       /*ensures that the image is not repeated in the html document.*/
-    background-position: center;                        /*centers the image in the display*/
-    background-attachment: fixed;                       /*sets the background image to a fixed state do it does not move when scrolling site with mouse.*/
-    min-height: 100vh;                                  /*sets the image to be 100 percent of the display screen.*/
-    width: 100%;                                        /*makes sure that the image spans the width of the display screen.*/
+   color: #325050;
+   background: #fff;
+   font-family: 'Libre Baskerville', sans-serif;
+   font-size: 70%; /*sets the font size within the body of the html document to 70 percent default font size. in another words. if the font size is set at 10 pixels it will display as 7 pixels in the body of the html document.*/
 }
 
-.gridContainer {
-    display: grid;
-    grid-template-columns: 1fr;                         /*one column*/
-    grid-template-rows: .6fr 1.2fr 1fr 1fr .4fr .3fr;   /*this makes six rows*/
-    grid-template-areas:                                /*gives each area of the grid a name.*/
-    'gridContainer'
-    'highlightsContainer'
-    'participationContainer'
-    'requirementsContainer'
-    'closing'
-    'footer';
-    width: 100%;
-    position: relative;
+/*sets the color for the anchors in the html document.*/
+a {                        
+   color: #0d8ba1;
+   text-decoration: none;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Julius+Sans+One&family=Open+Sans:wght@300&display=swap');
-
-.gridContainer > div {
-    border: solid black 2px;    /*puts a solid black border of 2 pixels thick around all of the divs on html document.*/
+a:visited {
+   color: #1a5952;
 }
 
-#box1 {
-    grid-column: 1 / span 1;            /*takes up the first column space on the first row.*/
-    grid-row: 1 / span 1;               /*located on the first row.*/
-    margin-top: 15px;                   /*sets the box1 to have a margin of 15 pixels from the top of the display area.*/
-    padding: 0;
-    background-image: url(http://www.csszengarden.com/214/huntington.jpg); /*gets image from website.*/
-    background-size: cover;             /*ensures that the image fills in the box1 dimensions completely.*/
-    background-position: center;        /*centers the image in the box.*/
-    background-repeat: no-repeat;       /*does not repeat the image.*/
-    background-color: rgb(4, 69, 4);
-    opacity: .9;                        /*displays the image with a 90 percent transparency.*/
-    height: 350px;                      /*sets the height of the box1 to 380 pixels.*/
-    width: 100%;                        /*sets the width of box1 to the full display size.*/
+a:hover, a:focus {
+   color: #0599c2;
+   text-decoration: underline;  /*underlines the text when hovered over by the mouse or focus is called.*/
+   -webkit-transition: all 0.25s ease-out;  /*sets the transition to ease out when hover over an area and then going out of that area. the transition is set a one quarter of a second. this is for safari, older versions of chrome*/
+   -moz-transition: all 0.25s ease-out; /*sets the transition to ease out when hover over an area and then going out of that area. the transition is set a one quarter of a second. this is for older versions of firefox or gecko based browsers. */
+   transition: all 0.25s ease-out; /*creates a smooth transition and is what most browsers now understand.*/
+}
+ 
+abbr {
+   border: none;
+   text-transform: uppercase;
+   font-size: 0.9em;
+   letter-spacing: 0.01em;
 }
 
-#box1 .contoursContainer {
-    height: 100%;               /*fills in the box1 with the contour image from csszengarden website.*/
-    align-items: center;        /*centers the image within the box1 dimensions.*/
-    background-image: url(http://www.csszengarden.com/214/contours-opaque.png);
+header {
+   height: 230px;
+   padding: 20px 0 70px 0;  /*pads the header top, right, bottom and left sides appropriately.*/
+   background: #2d6360 50% 0 url(http://www.csszengarden.com/214/huntington.jpg) no-repeat; /* old IE fallback */
+   background-attachment: fixed, fixed, fixed, scroll;
+   background-image: url(http://www.csszengarden.com/214/contours.png), url(http://www.csszengarden.com/214/noise.png), url(http://www.csszengarden.com/214/gridlines.png), url(http://www.csszengarden.com/214/huntington.jpg); /*calls the images from csszengarden.com website in the 214 folder.*/
+   background-position: 0 0, 0 0, -5px -25px, 0 50%; /*positions the images above in the header. 0 0, means the first image is positioned at top left and 0 pixels from top.  second image is the same.  the third image is to be positioned 5 pixels to the left of the header border and 25 pixels above the top border of the header.  the fourth image is to be position at the top left corner and then 50 percent of the images height down from the top of the header element.*/
+   background-repeat: repeat, repeat, repeat, no-repeat;  /*first, second and third images repeat in the header element as they are the contours image, the noise image and gridlines image.  the final image does not repeat and fills the header element as that is the main image.*/
+   background-size: auto, auto, auto, cover; /*the auto represents that the first three images above be displayed at their orginal size and the last image (huntington.jpg) will fill the header element entirely.*/
+   text-align: center;  /*aligns the h1 and h2 text in the center of the header element.*/
+}
+ 
+h1, h2 {
+   padding: 0 10%;
+   margin: 0;
+   color: #fff;
+   font-weight: normal;
+}
+ 
+h1 {
+   padding-top: 0;
+   padding-bottom: 5px;
+   border-bottom: none;
+   font-family: 'Julius Sans One', sans-serif;
+   font-size: 3.2em; /*displays the font size at 3.2 times the default size of the font selected.  if its default size is 10 pixels then it will display at 32 pixels.*/
+   text-transform: uppercase;
 }
 
-#box1 .contoursContainer .gridlinesContainer {
-    height: 100%;               /*fills in the box1 with the gridlines image from csszengarden website.*/
-    align-items: center;        /*center the image within the box1 dimensions.*/
-    background-image: url(http://www.csszengarden.com/214/gridlines.png);   
+h1::before {
+   display: inline-block;   /*displays the h1 text next to the logo in the header.*/
+   position: relative;      /*displays the h1 text with an offset of 20 pixels down from its origional positon in the header element.*/
+   top: 20px;
+   content: "";
+   width: 80px;     /*sets logo to be displayed at 80 pixels in width.*/
+   height: 80px;    /*sets logo to be displayed at 80 pixels in height.*/
+   margin: -20px 20px 0 0;
+   background: url(http://www.csszengarden.com/214/enso.svg); /*logo is used from the websites folder named 214.*/
+   background-repeat: no-repeat;    /*does not repeat the logo image.*/
+   background-size: 100%;   /*displays the logo at actual size.*/
+   opacity: 0.6;  /*sets h1 transparency at 60 percent of original color.*/
 }
 
-#title {
-    color: whitesmoke;
-    position: absolute;
-    z-index: 2;                 /*ensures that the h1 text appears on top of the huntington image.*/
-    top: 8%;                    /*displays the text down 8% from the top of the container box.*/
-    left: 450px;                /*displays the text starting 450 pixels from the left side of the container box.*/
-    transform: translate(-50%, -50%); /*allows to transform the title element. translate moves the element along the x and y axis. the first (-50%) starts works on the x axis and moves it in from the left side. The second (-50%) works along the y axis and moves it up from the bottom.*/
-    font-family: 'Julius Sans One', sans-serif;
-    font-size: 44px;            /*sets the text size at 44 pixels.*/
-    opacity: .7;                /*sets the transparency of the text at 70 percent*/
+ h2 {
+   display: block;   padding-top: 5px;   padding-bottom: 30px;
+   border-top: none; 
+   color: rgba(255,255,255,0.6);
+   font-size: 1.6em;    /*displays the h2 text at 1.6 times it default size.  if default is 10px it will show up as 16px in height.*/
+   font-style: italic;  /*sets the h2 text to be displayed in italicized format.*/
+}
+ 
+h2::before {
+   content: " ";        /*sets up an empty space at the beginning of or before the h2 text is displayed.*/
+   padding: 50px;       /*offsets the h2 text by 50 pixels from the top.*/
 }
 
-#subtitle {
-    color: whitesmoke;
-    position: absolute;
-    z-index: 2;                 /*ensures that the subtitle text appears on top of the huntington image.*/
-    top: 11%;                   /*places the subtitle text 11% down from the top of the container.*/
-    left: 390px;                  /*places the subtitle text in 390 pixels from the left edge of the container.*/
-    transform: translate(-50%, -50%); /*allows to transform the subtitle element. translate moves the element along the x and y axis. the first (-50%) starts works on the x axis and moves it in from the left side. The second (-50%) works along the y axis and moves it up from the bottom.*/
-    font-size: 22px;            /*sets the font size.*/
-    font-family: 'Julius Sans One', sans-serif;
-    font-style: oblique;        /*sets the type style of the text to oblique*/
-    opacity: .7;                /*sets the transparency of the beauty of css text at 70 percent.*/
+h3 {
+   margin: 2em 0 0 0;
+   color: #2e484c;
+   font-family: 'Julius Sans One', sans-serif;
+   font-size: 1.8em;            /*displays the h3 text at 1.8 times it default size.  if 10px is default it will be displayed at 18 pixels in height.*/
+   font-weight: normal;
+   text-transform: uppercase;   /*changes the h3 text to uppercase.*/
 }
 
-#logo {
-    margin-top: 50px;
-    margin-left: 30px;
-    opacity: .2;                /*sets the transparency of the logo image at 20 percent.*/
-    height: 250px;
-    width: 250px;
+p {
+   margin: 0.75em 0;
+   line-height: 2; /*sets the paragraph font height to two times its default size.  if its default is 6px it will display as 12px in height.*/
+}
+ 
+.page-wrapper {
+   position: relative;
+}
+ 
+.summary, .preamble {
+   width: 80%;              /*displays the summary and preamble class at 80 of its element size.*/
+   margin: 0 auto;
+}
+ 
+.supporting h3, .supporting p {
+   width: 80%;
+   margin-left: auto;
+   margin-right: auto;
+}
+ 
+.summary {
+   padding-top: 2em;
+}
+ 
+/* intro block links -- download HTML/CSS  links do not work on my page.*/
+.intro a, .intro a:visited {
+   position: relative;
+   display: inline-block;
+   padding: 1px 10px 0 32px;    /*sets padding of box to 1px at top, 10 pixels from right and 32 pixels from left.*/
+   margin: -1px -10px -1px -6px;  /*when hovering over the text the margin all shift to the left from default settings.*/
+   -webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+   border-radius: 2px;
+   color: #809b7e;
+   font-family: 'Julius Sans One', sans-serif;
+   text-transform: uppercase;   /*capitalizes the HTML file and CSS file text in the introduction area.*/
+}
+ 
+.intro a:hover, .intro a:focus {  /*refers to the anchors in the html document when hovering over or focusing them.*/
+   z-index: 2;          /*sets the intro hover and focus to be in the second index position.  */
+   color: #fff;
+   background: #3d8a9f;
+   text-decoration: none;
 }
 
-#box3 {
-    grid-column: 1 / span 1;        /*takes up the first column one row two.*/
-    grid-row: 2 / span 1;           /*located on row two.*/
-    background-color: whitesmoke;
-    height: 100%;
-    width: 100%;
+/*displays the D next to the html file and css file for downloading at the top of the introduction section.*/
+.intro a::before {
+   display: inline-block;
+   position: absolute;
+   top: 6px;
+   left: 8px;
+   padding: 2px;
+   color: #a9b995;
+   background: #d9e1cd;
+   content: "D";        /*the letter D from google fonts and places it infront of html and css text.*/
+   font-size: 16px;     /*sets the letter D to a height of 16 pixels.*/
+   text-indent: 0;
+ 
+   /*defaults settings provided from icomoon.io for the ltter D in the introduction element of the document.*/
+  font-family: 'verdemoderna';
+   font-weight: normal;
+   font-variant: normal;
+   text-transform: none;
+   line-height: 1;
+   -webkit-font-smoothing: antialiased;
+   -webkit-transition: all 0.25s ease-out; /*when hovering over shows the background color smoothly */
+   -moz-transition: all 0.25s ease-out;
+   transition: all 0.25s ease-out;
+}
+ 
+.intro a:hover::before {
+   color: #fff;
+   background: #357d93;
+}
+ 
+/* coloured cutoff */
+div.participation, div.benefits {
+   background-attachment: scroll, scroll, fixed;
+   background-color: rgba(138,188,159,0.5);
+   background-image: url(http://www.csszengarden.com/214/contours-opaque.png), url(http://www.csszengarden.com/214/gridlines-opaque.png), url(http://www.csszengarden.com/214/bamboo.png);
+   background-repeat: repeat, repeat, no-repeat;
+   background-size: auto, auto, cover;
+}
+ 
+/* extra padding at the cutoffs */
+div.participation {
+   padding: 3em 0;
+   margin-top: 3em;
+}
+ 
+div.benefits {
+   padding-bottom: 3em;
+   margin-bottom: 3em;
+}
+ 
+div.participation h3, div.benefits h3 {
+   margin-top: 0;
+}
+ 
+div.participation p, div.benefits p {
+   margin-bottom: 0;
+}
+ 
+/* sidebar base styles */
+.sidebar {
+   background: #edf4f0;
+}
+ 
+.sidebar h3 {
+   display: none;
+}
+ 
+.sidebar a {
+   color: #607476;
+   text-decoration: none;
 }
 
-#authors {
-    grid-column: 2 / span 1;        /*takes up the second column space on the second row.*/
-    grid-row: 2 / span 1;           /*located on row two.*/
-    background-color: lightcoral;
-    height: 100%;
-    width: 100%;
-    /*padding: 0;
-    height: 20px;
-    max-width: 50%*/
+.sidebar a:hover, .sidebar a:focus {
+   color: #49968e;
 }
-
-#box5 {    
-    grid-column: 1 / span 1;    /*takes up the left column of row three*/
-    grid-row: 3 / span 1;       /*located on the third row.*/
-    background-color: rgba(138, 188, 159, .5);
-    height: 100%;
-    width: 100%;
+ 
+.sidebar ul {
+   padding: 0;
+   margin: 0;
+   list-style: none;
+   overflow: hidden;    /*if any of the text or images go outside of the element when resizing it will not show. */
 }
-
-#links { 
-    grid-column: 2 / span 1;        /*takes up the right column on row three.*/
-    grid-row: 3 / span 1;           /*located on the third row.*/
-    background-color: lightpink;     
-    height: 100%;
-    width: 100%;
+ 
+/* shared sidebar styling */
+.design-selection ul, .zen-resources ul {
+   margin: 0;
 }
-
-#box7 {                   
-    grid-column: 1 / span 1;        /*takes up the left column on row four.*/
-    grid-row: 4 / span 1;           /*located on the fourth row.*/
-    background-color: whitesmoke;
-    height: 100%;
-    width: 100%;
- /*   position: absolute;
-    bottom: 0;
-    left: 0;
-    display: grid;
-    width: 100%;
-    max-height: 200px;*/
+ 
+.design-selection li, .zen-resources li {
+   float: left;
+   width: 50%;
+   padding: 1.5em 10%;
+   border-top: solid 1px #d9e3dc;
+   color: #c0cac3;
+   font-style: italic;
 }
+ 
+/*sets the list items of the design selection element for various browsers.*/
+.design-selection li:hover, .design-selection li:focus {
+    background: -moz-linear-gradient(left, /*sets background color gradient for mozilla firefox browser 3.6 and newer.*/
+    rgba(255,255,255,0) 0%,     
+    rgba(255,255,255,0.5) 50%,
+    rgba(255,255,255,0) 100%); /* FF3.6+ */
+ 
+    background: -webkit-gradient(linear, left top, right top,  /*for google chrome and safari 4 and above.*/
+    color-stop(0%,rgba(255,255,255,0)), /*stops using the rgba color*/
+    color-stop(50%,rgba(255,255,255,0.5)), /*stops using the rgba color*/
+    color-stop(100%,rgba(255,255,255,0))); /* /*stops using the rgba color for Chrome,Safari4+ */
+   
+    background: -webkit-linear-gradient(left,   /*for chrome 10 and above as well as for safari 5.1 and above.*/
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.5) 50%,
+    rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
 
-#box8 {
-    grid-column: 2 / span 1;        /*takes up the first column on the left of row 4.*/
-    grid-row: 4 / span 1;           /*located on row four.*/
-    background-color: whitesmoke;
-    height: 100%;
-    width: 100%;
+    background: -o-linear-gradient(left,        /*for opera browser 11.10 and above*/
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.5) 50%,
+    rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+    
+    background: -ms-linear-gradient(left,       /*for internet explorer 10 and above*/
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.5) 50%,
+    rgba(255,255,255,0) 100%); /* IE10+ */
+    
+    background: linear-gradient(to right,       /*sets background color according to w3c specs for modern browsers.*/
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.5) 50%,
+    rgba(255,255,255,0) 100%); /* W3C */
 }
-
-#box9 {
-    grid-column: 1 / span 2;        /*takes up the entire width of the row.*/
-    grid-row: 5 / span 1;           /*located on row five.*/
-    background-color: rgba(255 255 255 0.4);
-    background-image: url('./IMG/huntington.jpg');
-    background-size: cover; /*allows the background-image - huntington.jpg - to fil the entire background area assigned. */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: rgb(4, 69, 4);
-    height: 100%;
-    width: 100%;
-    opacity: .9;
+ 
+.design-selection li:nth-child(2n+1), .zen-resources li:nth-child(2n+1) {
+   clear: left;
 }
-
-#footer {
-    grid-column: 1 / span 2;        /*takes up the entire width of the row.*/
-    grid-row: 6 / span 1;           /*located on row six, which is the last row.*/
-    background-color: aquamarine;
-    height: 100%;
-    width: 100%;
+ 
+.design-selection .design-name, .zen-resources a, li.viewall a {
+   display: block;
+   margin-bottom: 0.25em;       /*puts the bottom marging at one quarter percent of its default maring size.*/
+   font-family: 'Julius Sans One', sans-serif;
+   font-size: 1.2em;    /*displays the font at 1.2 times its default setting size.*/
+   font-style: normal;
+   text-transform: uppercase;   /*changes the text to uppercase in the design element / box area..*/
 }
-
-/* FLEX */
-/* use flexbox to make the icons behave like css zen garden's social icons */
-/*.icons {
-    display: flex;
-    justify-content: space-around;
-    width: 50%;
-    margin: auto;
-    padding: 10px;
+ 
+/* select a design */
+.design-selection h3 {
+   display: none;
 }
-
-.icons > div {
-    width: 30px;
-    height: 30px;
-    background-color: black;
-    border-radius: 50%;
-}*/
-
-/*.dotted-underline {
-    position: relative;
-    display: inline-block;
-}*/
-
-/*.dotted-underline::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    border-bottom: 1px dotted;
-}*/
-
-/* latin-ext */
-
-/*@media (max-width: 900px){
-    /* use this media query to help these two cells drop to the bottom when screens are smaller */
-/*    .authors {
-         
+ 
+.design-selection .designer-name {
+   color: #616857;
+   font-size: 0.9em;            /*displays text at 90 percent of its default font size.*/
+   font-style: normal;
+}
+ 
+/* archives navigation */
+.design-archives {
+   position: absolute;
+   top: 160px;
+   right: 0;
+   width: 100%;             /*displays the archives section full display width*/
+   height: 70px;            /*displays the archives section at 70 percent of the elements */
+   background: rgba(255,255,255,0.2);
+}
+ 
+.design-archives h3 {
+   display: none;
+}
+ 
+.design-archives ul {
+   margin: 0;
+}
+ 
+.design-archives li {
+   position: absolute;
+   top: 0;
+   padding: 0;
+   margin: 0;
+   border: none;
+   list-style: none;
+}
+ 
+.design-archives li.viewall {
+   top: 0;
+   left: 0;
+   width: 100%;
+   padding: 0 71px;
+   line-height: 50px;
+}
+ 
+.previous, .next {
+   left: 0;
+   z-index: 3;
+}
+ 
+.next {
+   left: auto;
+   right: 0;
+}
+ 
+.design-archives a, .design-archives a:visited {
+   color: rgba(255, 255, 255, 0.65);
+}
+ 
+.design-archives a:hover, .design-archives a:focus {
+   color: #fff;
+}
+ 
+.design-archives .previous a, .design-archives .next a {
+   display: block;
+   overflow: hidden;
+   width: 70px;
+   height: 70px;
+   text-indent: 100%;
+   text-decoration: none;
+   white-space: nowrap;
+}
+ 
+.design-archives .viewall a {
+   z-index: 2;
+   width: 100%;
+   min-height: 70px;
+   padding: 12px 0 0 0;
+   text-align: center;
+}
+ 
+.design-archives a::before {
+   position: absolute;
+   left: 0;
+   width: 70px;
+   height: 70px;
+   text-align: center;
+   text-indent: 0;
+   font-size: 44px;
+   /* icomoon.io defaults */
+   font-family: 'verdemoderna';
+   font-weight: normal;
+   font-variant: normal;
+   text-transform: none;
+   line-height: 70px;
+   -webkit-font-smoothing: antialiased;
+}
+ 
+ .design-archives .viewall a:hover, .design-archives .viewall a:focus, .design-archives .viewall a:active,
+.design-archives a:hover::before, .design-archives a:focus::before, .design-archives a:active::before {
+   background-color: rgba(255,255,255,0.25);
+   box-shadow: inset 0 0 10px rgba(255,255,255,0.1);
+}
+ 
+.design-archives .previous a::before {
+   content: "<";
+}
+ 
+.design-archives .next a::before {
+   content: ">";
+}
+ 
+/* resources */
+.zen-resources {
+   overflow: hidden;
+   background-color: rgba(138,188,159,0.5);
+   background-image: url(http://www.csszengarden.com/214/bamboo.png);   /*gets the bamboo.png image from csszengarden.com webite folder labelled 214.  */
+}
+ 
+.zen-resources li {
+   border-top: solid 1px #a0b9ad;
+   font-style: normal;
+}
+ 
+.zen-resources li:last-child {
+   float: none;
+   width: auto;
+   border-bottom: solid 1px #a0b9ad;
+}
+ 
+/* busting out the credits block */
+.requirements p:nth-child(5) {
+   padding-bottom: 2em;
+}
+ 
+.supporting .requirements {
+   float: none;
+   clear: both;
+   width: 100%;
+   padding-left: 0;
+   padding-right: 0;
+}
+ 
+.supporting .requirements a {
+   text-decoration: none;
+}
+ 
+.supporting .requirements a:hover, .supporting .requirements a:focus {
+   text-decoration: underline;  /*when areas in the requirement section or hovered over the image/text will be underlined.*/
+}
+ 
+.supporting .requirements h3 {
+   padding-top: 0;
+}
+ 
+.requirements p:last-child {
+   width: auto;             /*allows the paragraph to automatically adjust as the website resizes.*/
+   padding: 1em 12%;        /*sets the padding to the default height of the the font size and then adjusts the left and right padding to be 12 percent on both sides appropriately.*/
+   margin: 0;
+   color: rgba(255, 255, 255, 0.4);
+   background: #3e5d67;
+   background-attachment: fixed, fixed, fixed, scroll;  /*the first three images below are fixed and don't move. however, the last image (koi.jpg) will scroll with the page as user moves up and down reading the content of the requirements section.*/
+   background-image: url(http://www.csszengarden.com/214/contours.png), url(http://www.csszengarden.com/214/gridlines.png), url(http://www.csszengarden.com/214/noise.png), url(http://www.csszengarden.com/214/koi.jpg);
+   background-position: 0 0, -5px -25px, 0 0, 0 50%;
+   background-repeat: repeat, repeat, repeat, no-repeat;
+   background-size: auto, auto, auto, cover;
+   font-size: 2em;
+   font-style: italic;
+   text-align: center;
+}
+ 
+.requirements p:last-child a {
+   color: rgba(255, 255, 255, 0.7);
+   font-style: normal;
+}
+ 
+/* main footer */
+footer {
+   clear: both;
+   padding: 3em 10%;
+   color: #fff;
+   background: #134347;
+   text-align: center;
+}
+ 
+footer a {
+   display: inline-block;
+   overflow: hidden;
+   width: 40px;
+   height: 40px;
+   padding: 40px 0 0 0;
+   margin: 0 0.5em;
+   position: relative;
+   color: rgba(255, 255, 255, 0.5);
+   -webkit-transition: color 0.25s ease-out, box-shadow 0.25s ease-out;
+   -moz-transition: color 0.25s ease-out, box-shadow 0.25s ease-out;
+   transition: color 0.25s ease-out, box-shadow 0.25s ease-out;
+}
+ 
+footer a:hover, footer a:focus {
+   color: rgba(255, 255, 255, 0.3);
+   text-decoration: none;
+}
+ 
+footer a:visited {
+   color: rgba(255, 255, 255, 0.2);
+}
+ 
+footer a::before {
+   display: block;
+   position: absolute;
+   top: 3px;
+   left: 0;
+   overflow: visible;
+   font-size: 36px;
+   text-indent: 0;
+   /* icomoon.io defaults */
+   font-family: 'verdemoderna';
+   font-weight: normal;
+   font-variant: normal;
+   text-transform: none;
+   line-height: 1;
+   -webkit-font-smoothing: antialiased;
+}
+    
+ footer a.zen-validate-html::before {content: "5";}
+ footer a.zen-validate-html:hover::before, footer a.zen-validate-html:focus::before {content: "%";}
+ footer a.zen-validate-css::before {content: "3";}
+ footer a.zen-validate-css:hover::before, footer a.zen-validate-css:focus::before {content: "#";}
+ footer a.zen-license::before {content: "c";}
+ footer a.zen-license:hover::before, footer a.zen-license:focus::before {content: "C";}
+ footer a.zen-accessibility::before {content: "a";}
+ footer a.zen-accessibility:hover::before, footer a.zen-accessibility:focus::before {content: "A";}
+ footer a.zen-github::before {content: "g";}
+ footer a.zen-github:hover::before, footer a.zen-github:focus::before {content: "G";}
+ 
+/* low-res CSS */
+@media only screen and (max-width: 600px) {
+ 
+   /* these download links make approximately zero sense
+      on a phone without a user-accessible file system. */
+   .summary p:last-child {
+     display: none;
+   }
+ 
+   /* type adjustments */
+   h1 {
+     margin-top: 30px;
+     font-size: 2.5em;
+   }
+ 
+   h1::before {
+     width: 50px;
+     height: 50px;
+   }
+ 
+   h2::before {
+     padding: 25px;
+   }
+ 
+   .requirements p:last-child {
+     padding: 1em 6%;
+   }
+}
+ 
+ 
+@media only screen and (max-width: 500px) {
+   header {
+     height: 250px;
+     padding-top: 0;
+   }
+ 
+   h1 {
+     margin: 0;
+   }
+ 
+   h1::before {
+     display: block;
+     left: 50%;
+     width: 50px;
+     height: 50px;
+     margin: 0 0 0 -25px;
+     padding: 0 0 35px 0;
+   }
+ 
+   h2::before {
+     padding: 0;
+   }
+ 
+   .design-archives {
+     top: 180px;
+   }
+ 
+   .design-selection li, .zen-resources li {
+     padding: 1em 5%;
+   }
+ 
+   footer a {
+     margin: 0 0.5em;
+   }
+}
+ 
+@media only screen and (max-width: 320px) {
+ 
+    /* adjusting the site header type size */
+    h1 {
+       font-size: 2em;
     }
-    .links {
-
+ 
+        h2 {
+       font-size: 1.3em;
     }
-    /* container could use some help so that it's children are full screen width */
-/*    .container {
-        
+    /* linearizing the design list on small screens */
+ 
+    .design-selection li, .zen-resources li {
+       float: none;
+       width: 100%;
     }
-}*/
+    /* adjusting footer type, icons */
+ 
+    .requirements p:last-child {
+       font-size: 1.4em;
+    }
+ 
+    footer {
+       padding: 2em 5%;
+    }
+ 
+    footer a {
+       width: 35px;
+       height: 35px;
+       padding: 35px 0 0 0;
+       margin: 0 0.5em;
+    }
+ 
+    footer a::before {
+       font-size: 32px;
+    }
+}
+ 
+ 
+/* mid-res CSS */
+@media only screen and (max-width: 1132px) {
+    
+   header {
+     border-top: solid 10px rgba(19, 67, 71, 0.9);
+   }
+   
+   p, li {
+     font-size: 1.2em;
+   }
+}
+ 
+@media only screen and (min-width: 500px) and (max-width: 1150px) {
+    .requirements p:last-child {
+     padding-bottom: 2em;
+     padding-top: 2em;
+   }
+ 
+   /* page footer */
+   footer {
+     padding: 3em 0;
+   }
+ 
+   footer a {
+     width: 52px;
+     height: 52px;
+     padding: 52px 0 0 0;
+     margin: 0 2em;
+   }
+ 
+   footer a::before {
+     font-size: 48px;
+   }
+}
+ 
+/* high-res CSS */
+@media only screen and (min-width: 1132px) {
+    body {
+      background: #ffffff;
+      background: -moz-linear-gradient(left,  #ffffff 0%, #ffffff 66%, #e5ede8 66%, #e5ede8 100%);
+      background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffffff), color-stop(66%,#ffffff), color-stop(66%,#e5ede8), color-stop(100%,#e5ede8));
+      background: -webkit-linear-gradient(left,  #ffffff 0%,#ffffff 66%,#e5ede8 66%,#e5ede8 100%);
+      background: -o-linear-gradient(left,  #ffffff 0%,#ffffff 66%,#e5ede8 66%,#e5ede8 100%);
+      background: -ms-linear-gradient(left,  #ffffff 0%,#ffffff 66%,#e5ede8 66%,#e5ede8 100%);
+      background: linear-gradient(to right,  #ffffff 0%,#ffffff 66%,#e5ede8 66%,#e5ede8 100%);
+      font-size: 100%;
+    } 
+    header {
+        width: 100%;
+        height: 310px;
+        padding: 0 10%;
+        border-top: solid 12px rgba(19, 67, 71, 0.8);
+        box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.3);
+        vertical-align: middle;
+        text-align: left;
+    }
+ 
+    header::before, header::after {
+        display: block;
+        content: " ";
+        position: absolute;
+        z-index: 3;
+        top: 9px;
+        left: 0;
+        width: 100%;
+        height: 7px;
+        background: rgba(0, 39, 43, 0.2);
+    }
+ 
+    header::after {
+        top: 306px;
+        height: 4px;
+        background: rgba(0, 39, 43, 0.075);
+    }
+    
+    h1 {
+        display: inline-block;
+        position: relative;
+        margin: 15px 0 0 0;
+        padding: 60px 0 5px 0;
+    }
+ 
+    h1::before {
+        display: inline-block;
+        position: relative;
+        top: 65px;
+        content: "";
+        width: 125px;
+        height: 125px;
+        margin: -65px 40px 0 0;
+        background: url(http://www.csszengarden.com/214/enso.svg);
+        background-size: 100%;
+        opacity: 0.6;
+        -webkit-animation: koan 36000s infinite alternate;
+        -moz-animation: koan 36000s infinite alternate;
+        animation: koan 36000s infinite alternate;
+    }
+ 
+    h2 {
+        display: block;
+        margin: 0;
+        padding: 5px 0 60px 70px;
+    }
+ 
+    p {
+        font-size: 1em;
+    }
+ 
+    /* main layout blocks */
+    nav, .supporting {
+        display: inline;
+    }
+ 
+    .summary, .preamble, .supporting div, .requirements h3, .requirements p {
+        float: left;
+        clear: left;
+        width: 66%;
+        padding: 1em 5% 1em 10%;
+    }
+ 
+    .explanation h3, .explanation p,
+    .participation h3, .participation p,
+    .benefits h3, .benefits p {
+        width: 100%;
+    }
+ 
+    .summary {
+        padding-top: 3.25em;
+    }
+ 
+    .requirements h3, .requirements p {
+        margin: 0;
+        padding-bottom: 0;
+    }
+ 
+    /* coloured cutoff */
+    div.participation, div.benefits {
+        width: 100%;
+        padding-left: 10%;
+        padding-right: 38%;
+        margin: 0;
+    }
+ 
+    /* extra padding at the cutoffs */
+    div.participation, div.requirements {
+        padding-top: 4em;
+    }
+ 
+    div.explanation, div.benefits {
+        padding-bottom: 4em;
+    }
+ 
+    .requirements p:nth-child(5) {
+        padding-bottom: 4em;
+    }
+ 
+    .intro h3, .supporting h3 {
+        margin-top: 0;
+    }
+ 
+    .intro p:last-child, .supporting p:last-child {
+        margin-bottom: 0;
+    }
+ 
+    .requirements p:last-child {
+        padding-bottom: 3em;
+        padding-top: 3em;
+        box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.3);
+    }
+ 
+    /* sidebar styling */
+    .design-selection, .zen-resources {
+        position: absolute;
+        top: 360px;
+        right: 0;
+        width: 33.3%;
+        padding: 0 0 20px 0;
+        margin: 0;
+        overflow: visible;
+        background: transparent;
+    }
+ 
+    .sidebar li {
+        float: none;
+        width: auto;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0 29.4% 0 14.7%; /* 0 10% 0 5% of total width */
+    }
+ 
+    /* select a design */
+    .design-selection li:first-child {
+        border-top: 0;
+    }
+ 
+    .design-selection li:hover, .design-selection li:focus {
+        background: none;
+    }
+ 
+    /* archives navigation */
+    .design-archives {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 310px;
+        background: -moz-linear-gradient(left,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0) 66%,
+        rgba(0,0,0,0.2) 66%,
+        rgba(33,84,95,0.3) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, right top,
+        color-stop(0%,rgba(255,255,255,0)),
+        color-stop(66%,rgba(255,255,255,0)),
+        color-stop(66%,rgba(33,84,95,0.3)),
+        color-stop(100%,rgba(33,84,95,0))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(left,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0) 66%,
+        rgba(33,84,95,0.3) 66%,
+        rgba(33,84,95,0) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(left,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0) 66%,
+        rgba(33,84,95,0.3) 66%,
+        rgba(33,84,95,0) 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(left,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0) 66%,
+        rgba(33,84,95,0.3) 66%,
+        rgba(33,84,95,0) 100%); /* IE10+ */
+        background: linear-gradient(to right,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0) 66%,
+        rgba(33,84,95,0.3) 66%,
+        rgba(33,84,95,0) 100%); /* W3C */
+    }
+ 
+    .design-archives nav {
+        display: block;
+        position: absolute;
+        right: 1%;
+        top: 120px;
+        width: 32%;
+    }
+ 
+    .design-archives li {
+        margin: 0;
+    }
+ 
+    .design-archives .viewall a, .design-archives a::before {
+        background: rgba(255,255,255,0.1);
+        text-decoration: none;
+    }
+ 
+    .design-archives .viewall a:hover, .design-archives a:hover::before {
+        background-color: rgba(255,255,255,0.2);
+    }
+ 
+    /* resources navigation */
+    .zen-resources {
+        position: absolute;
+        top: 1310px;
+        right: 0;
+        width: 34%;
+        background: transparent;
+    }
+ 
+    .zen-resources h3 {
+        display: none;
+    }
+ 
+    .zen-resources ul {
+        width: 55.9%;
+        margin: 0 29.4% 0 14.7%;
+    }
+ 
+    .zen-resources li {
+        padding: 1.5em 0 1.25em 0;
+        margin: 0;
+    }
+}
+ 
+ 
+ @media only screen and (min-width: 1150px) {
+ 
+   /* page footer */
+   footer a {
+     width: 76px;
+     height: 76px;
+     padding: 76px 0 0 0;
+     margin: 0 3em;
+   }
+   footer a::before {
+     font-size: 72px;
+   }
+ 
+ }
+ 
+ 
+ /*
+ Okay, look, I feel rather awful about this. But due to source order it
+ seems like the only way to pull off the separated sidebar. Perhaps
+ flexbox is the way forward here, once the syntax settles down a bit.
+ */
+ @media only screen and (min-width: 1120px) {.zen-resources {top: 1490px;}}
+ @media only screen and (min-width: 1240px) {.zen-resources {top: 1460px;}}
+ @media only screen and (min-width: 1260px) {.zen-resources {top: 1420px;}}
+ @media only screen and (min-width: 1320px) {.zen-resources {top: 1390px;}}
+ @media only screen and (min-width: 1370px) {.zen-resources {top: 1360px;}}
+ @media only screen and (min-width: 1520px) {.zen-resources {top: 1330px;}}
+ @media only screen and (min-width: 1812px) {.zen-resources {top: 1300px;}}
+ @media only screen and (min-width: 1848px) {.zen-resources {top: 1270px;}}
+ @media only screen and (min-width: 2015px) {.zen-resources {top: 1240px;}}
+ @media only screen and (min-width: 2115px) {.zen-resources {top: 1210px;}}
+ @media only screen and (min-width: 2400px) {/* you're kidding, right? */}
+ 
+ 
+ @-webkit-keyframes koan {
+   from {
+     -webkit-transform: scale(1);
+   opacity: 1;
+   }
+   to {
+     -webkit-transform: scale(3);
+   opacity: 0;
+   }
+ }
+ @-moz-keyframes koan {
+   from {
+     -moz-transform: scale(1);
+   opacity: 1;
+   }
+   to {
+     -moz-transform: scale(3);
+   opacity: 0;
+   }
+ }
+ @keyframes koan {
+   from {
+     transform: scale(1);
+   opacity: 1;
+   }
+   to {
+     transform: scale(3);
+   opacity: 0;
+   }
+ }
+ 
+ /* high-DPI adjustments */
+ @media
+   (min--moz-device-pixel-ratio: 1.5),
+   (-o-min-device-pixel-ratio: 3 / 2),
+   (-webkit-min-device-pixel-ratio: 1.5),
+   (min-device-pixel-ratio: 1.5),
+   (min-resolution: 1.5dppx) {
+   header {
+       background-image: url(http://www.csszengarden.com/214/contours@2x.png), url(http://www.csszengarden.com/214/noise.png), url(http://www.csszengarden.com/214/gridlines.png), url(http://www.csszengarden.com/214/huntington.jpg);
+       background-size: 50% auto, auto, auto, cover;
+   }
+   .requirements p:last-child {
+       background-image: url(http://www.csszengarden.com/214/contours@2x.png), url(http://www.csszengarden.com/214/gridlines.png), url(http://www.csszengarden.com/214/noise.png), url(http://www.csszengarden.com/214/koi.jpg);
+       background-size: 50% auto, auto, auto, cover;
+   }
+   /*
+       This shouldn't be necessary, but it is. Due to differences in how
+       Chrome calculates gradients and % widths / padding, the archives
+       spill out of the visual container at some screen sizes.
+   */
+   .design-archives nav {
+       right: 3%;
+       width: 29%;
+   }
+ }
+ 
+ /* icon fonts */
+ @font-face {
+     font-family: 'verdemoderna';
+     src:url('verdemoderna.eot');
+     src:url('verdemoderna.eot?#iefix') format('embedded-opentype'),
+         url('verdemoderna.woff') format('woff'),
+         url('verdemoderna.ttf') format('truetype'),
+         url('verdemoderna.svg#verdemoderna') format('svg');
+     font-weight: normal;
+     font-style: normal;
+ }
+ 
