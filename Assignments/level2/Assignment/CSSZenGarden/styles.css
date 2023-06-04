@@ -28,23 +28,24 @@ a {
    text-decoration: none;
 }
 
-a:visited {
+a:visited { /*sets color for when user clicks on the anchor image or page with mouse to show has been selected.*/
    color: #1a5952;
 }
 
-a:hover, a:focus {
+a:hover, a:focus {   /*sets color for when mouse hovers over image or page anchor.*/
    color: #0599c2;
    text-decoration: underline;  /*underlines the text when hovered over by the mouse or focus is called.*/
    -webkit-transition: all 0.25s ease-out;  /*sets the transition to ease out when hover over an area and then going out of that area. the transition is set a one quarter of a second. this is for safari, older versions of chrome*/
    -moz-transition: all 0.25s ease-out; /*sets the transition to ease out when hover over an area and then going out of that area. the transition is set a one quarter of a second. this is for older versions of firefox or gecko based browsers. */
    transition: all 0.25s ease-out; /*creates a smooth transition and is what most browsers now understand.*/
 }
- 
-abbr {
-   border: none;
-   text-transform: uppercase;
-   font-size: 0.9em;
-   letter-spacing: 0.01em;
+
+/*abbr allows for a popup window to be displayed showing a description for selected text within the html document when the mouse hovers over the specific text.*/
+abbr {   
+   border: none;  /*ensures there is no border.*/
+   text-transform: uppercase; /*changes the font to uppercase.*/
+   font-size: 0.9em; /*displays the font at 90 percent of its default size.*/
+   letter-spacing: 0.01em;  /*puts a space of 10 percent of original spacing between the font letters.*/
 }
 
 header {
@@ -59,61 +60,61 @@ header {
    text-align: center;  /*aligns the h1 and h2 text in the center of the header element.*/
 }
  
-h1, h2 {
-   padding: 0 10%;
-   margin: 0;
-   color: #fff;
-   font-weight: normal;
+h1, h2 {                                        /*declared here as these setting are common between both h1 and h2.*/
+   padding: 0 10%;                              /*no padding at the top of the h1 and h2 and a 10 percent padding on the right*/
+   margin: 0;                                   /*no margin.*/
+   color: #fff;                               /*color of the font.*/
+   font-weight: normal;                         /*font weight is set a normal.*/
 }
  
-h1 {
+h1 {                                            /*additional h1 setting declarations as these are seperate setting used for h1.*/
    padding-top: 0;
-   padding-bottom: 5px;
+   padding-bottom: 5px;                         /*sets a bottom padding of 5 pixels.*/
    border-bottom: none;
-   font-family: 'Julius Sans One', sans-serif;
-   font-size: 3.2em; /*displays the font size at 3.2 times the default size of the font selected.  if its default size is 10 pixels then it will display at 32 pixels.*/
-   text-transform: uppercase;
+   font-family: 'Julius Sans One', sans-serif;  /*type of font used.*/
+   font-size: 3.2em;                            /*displays the font size at 3.2 times the default size.*/
+   text-transform: uppercase;                   /*changes font to upper case.*/
 }
 
 h1::before {
-   display: inline-block;   /*displays the h1 text next to the logo in the header.*/
-   position: relative;      /*displays the h1 text with an offset of 20 pixels down from its origional positon in the header element.*/
-   top: 20px;
-   content: "";
-   width: 80px;     /*sets logo to be displayed at 80 pixels in width.*/
-   height: 80px;    /*sets logo to be displayed at 80 pixels in height.*/
-   margin: -20px 20px 0 0;
+   display: inline-block;                       /*displays the h1 text next to the logo in the header.*/
+   position: relative;                          /*changes the position in relation to the parent element (h1) from its original position.*/
+   top: 20px;                                   /*displays the h1 text with an offset of 20 pixels down from its origional positon in the header element.*/
+   content: "";                                 /*empty spaced for proper viewing.*/
+   width: 80px;                                 /*sets logo to be displayed at 80 pixels in width.*/
+   height: 80px;                                /*sets logo to be displayed at 80 pixels in height.*/
+   margin: -20px 20px 0 0;                      /*sets the spacing of the before element spacing to 20 above (-20) its regular position and 20 pixels to the right*/
    background: url(http://www.csszengarden.com/214/enso.svg); /*logo is used from the websites folder named 214.*/
-   background-repeat: no-repeat;    /*does not repeat the logo image.*/
-   background-size: 100%;   /*displays the logo at actual size.*/
-   opacity: 0.6;  /*sets h1 transparency at 60 percent of original color.*/
+   background-repeat: no-repeat;                /*does not repeat the logo image.*/
+   background-size: 100%;                       /*displays the logo at actual size.*/
+   opacity: 0.6;                                /*sets h1 transparency at 60 percent of original color.*/
 }
 
- h2 {
+ h2 {                                           /*additional h2 setting declarations as these are seperate setting used for h2.*/
    display: block;   padding-top: 5px;   padding-bottom: 30px;
-   border-top: none; 
-   color: rgba(255,255,255,0.6);
-   font-size: 1.6em;    /*displays the h2 text at 1.6 times it default size.  if default is 10px it will show up as 16px in height.*/
-   font-style: italic;  /*sets the h2 text to be displayed in italicized format.*/
+   border-top: none;          
+   color: rgba(255,255,255,0.6);              /*h2 font color.*/
+   font-size: 1.6em;                            /*displays the h2 text at 1.6 times it default size.  if default is 10px it will show up as 16px in height.*/
+   font-style: italic;                          /*sets the h2 text to be displayed in italicized format.*/
 }
  
 h2::before {
-   content: " ";        /*sets up an empty space at the beginning of or before the h2 text is displayed.*/
-   padding: 50px;       /*offsets the h2 text by 50 pixels from the top.*/
+   content: " ";                                /*sets up an empty space at the beginning of or before the h2 text is displayed.*/
+   padding: 50px;                               /*offsets the h2 text by 50 pixels from the top.*/
 }
 
 h3 {
-   margin: 2em 0 0 0;
-   color: #2e484c;
-   font-family: 'Julius Sans One', sans-serif;
-   font-size: 1.8em;            /*displays the h3 text at 1.8 times it default size.  if 10px is default it will be displayed at 18 pixels in height.*/
+   margin: 2em 0 0 0;                           /*sets the h3 top margin at 2 times it default setting.*/
+   color: #2e484c;                            /*font color.*/
+   font-family: 'Julius Sans One', sans-serif;  /*type of font.*/
+   font-size: 1.8em;                            /*displays the h3 text at 1.8 times it default size.  if 10px is default it will be displayed at 18 pixels in height.*/
    font-weight: normal;
-   text-transform: uppercase;   /*changes the h3 text to uppercase.*/
+   text-transform: uppercase;                   /*changes the h3 text to uppercase.*/
 }
 
 p {
    margin: 0.75em 0;
-   line-height: 2; /*sets the paragraph font height to two times its default size.  if its default is 6px it will display as 12px in height.*/
+   line-height: 2;                              /*sets the paragraph font height to two times its default size.  if its default is 6px it will display as 12px in height.*/
 }
  
 .page-wrapper {
@@ -121,36 +122,36 @@ p {
 }
  
 .summary, .preamble {
-   width: 80%;              /*displays the summary and preamble class at 80 of its element size.*/
-   margin: 0 auto;
+   width: 80%;                                  /*displays the summary and preamble class at 80 of its element size.*/
+   margin: 0 auto;                              /*sets top margin to zero and then adusts the other 3 side automatically.*/
 }
  
 .supporting h3, .supporting p {
    width: 80%;
-   margin-left: auto;
-   margin-right: auto;
+   margin-left: auto;                           /*automatically sets the left margin.*/
+   margin-right: auto;                          /*automatically sets the right margin.*/
 }
  
 .summary {
-   padding-top: 2em;
+   padding-top: 2em;                            /*sets top margin for the summary class element to 2 times its default size.*/
 }
  
 /* intro block links -- download HTML/CSS  links do not work on my page.*/
-.intro a, .intro a:visited {
+.intro a, .intro a:visited {                    /*settings for the anchors when mouse is on them or selected the anchor link in the intro class element.*/
    position: relative;
    display: inline-block;
-   padding: 1px 10px 0 32px;    /*sets padding of box to 1px at top, 10 pixels from right and 32 pixels from left.*/
-   margin: -1px -10px -1px -6px;  /*when hovering over the text the margin all shift to the left from default settings.*/
+   padding: 1px 10px 0 32px;                    /*sets padding of box to 1px at top, 10 pixels from right and 32 pixels from left.*/
+   margin: -1px -10px -1px -6px;                /*when hovering over the text the margin all shift to the left from default settings.*/
    -webkit-border-radius: 2px;
    -moz-border-radius: 2px;
    border-radius: 2px;
    color: #809b7e;
    font-family: 'Julius Sans One', sans-serif;
-   text-transform: uppercase;   /*capitalizes the HTML file and CSS file text in the introduction area.*/
+   text-transform: uppercase;                   /*capitalizes the HTML file and CSS file text in the introduction area.*/
 }
  
-.intro a:hover, .intro a:focus {  /*refers to the anchors in the html document when hovering over or focusing them.*/
-   z-index: 2;          /*sets the intro hover and focus to be in the second index position.  */
+.intro a:hover, .intro a:focus {                /*refers to the anchors in the html document when hovering over or focusing them.*/
+   z-index: 2;                                  /*sets the intro hover and focus to be in the second index position.  */
    color: #fff;
    background: #3d8a9f;
    text-decoration: none;
@@ -158,15 +159,15 @@ p {
 
 /*displays the D next to the html file and css file for downloading at the top of the introduction section.*/
 .intro a::before {
-   display: inline-block;
-   position: absolute;
-   top: 6px;
-   left: 8px;
-   padding: 2px;
+   display: inline-block;                       /*displays items horizontally rather than vertically (which is default).*/
+   position: absolute;                          /*position the before as close as possible to its parent -> intro class element*/
+   top: 6px;                                    /*top padding of 6 pixels between the letter D and its parent intro element.*/
+   left: 8px;                                   /*left padding of 8 pixels between the letter D and its parent intro element.*/
+   padding: 2px;                                /*adds padding inside the element where the D is displayed.*/
    color: #a9b995;
    background: #d9e1cd;
-   content: "D";        /*the letter D from google fonts and places it infront of html and css text.*/
-   font-size: 16px;     /*sets the letter D to a height of 16 pixels.*/
+   content: "D";                                /*the letter D from google fonts and places it infront of html and css text.*/
+   font-size: 16px;                             /*sets the letter D to a height of 16 pixels.*/
    text-indent: 0;
  
    /*defaults settings provided from icomoon.io for the ltter D in the introduction element of the document.*/
@@ -175,30 +176,30 @@ p {
    font-variant: normal;
    text-transform: none;
    line-height: 1;
-   -webkit-font-smoothing: antialiased;
-   -webkit-transition: all 0.25s ease-out; /*when hovering over shows the background color smoothly */
+   -webkit-font-smoothing: antialiased;         /*smoothes out the edges of the font for aesthetic appearance.*/
+   -webkit-transition: all 0.25s ease-out;      /*transitions after a 1/4 second period has elapsed. */
    -moz-transition: all 0.25s ease-out;
-   transition: all 0.25s ease-out;
+   transition: all 0.25s ease-out;           
 }
  
 .intro a:hover::before {
-   color: #fff;
-   background: #357d93;
+   color: #fff;                               /*sets font color for the anchor in the intro element.*/
+   background: #357d93;                       /*sets background color of the anchor in the intro element.*/
 }
  
 /* coloured cutoff */
 div.participation, div.benefits {
-   background-attachment: scroll, scroll, fixed;
+   background-attachment: scroll, scroll, fixed;   /*allows for scrolling of the first two images in the background of the participatoin and benefits elements.  The third image (bamboo) is fixed and does not scroll.*/
    background-color: rgba(138,188,159,0.5);
    background-image: url(http://www.csszengarden.com/214/contours-opaque.png), url(http://www.csszengarden.com/214/gridlines-opaque.png), url(http://www.csszengarden.com/214/bamboo.png);
-   background-repeat: repeat, repeat, no-repeat;
-   background-size: auto, auto, cover;
+   background-repeat: repeat, repeat, no-repeat;      /*the three images do not repeat within the participation and benefits element.*/
+   background-size: auto, auto, cover;    /*all three images are layered within the participation and benefits element. the first two images are displayed at their original size. The third image - bamboo.png - takes up the entire area (cover) of each element. the 3rd image is the base layer.*/
 }
  
 /* extra padding at the cutoffs */
 div.participation {
-   padding: 3em 0;
-   margin-top: 3em;
+   padding: 3em 0;   /*padding within the participation element is set at 3 times its default setting.*/
+   margin-top: 3em;  /*top margin within the participation element is set at 3 times it default setting.*/
 }
  
 div.benefits {
@@ -207,11 +208,11 @@ div.benefits {
 }
  
 div.participation h3, div.benefits h3 {
-   margin-top: 0;
+   margin-top: 0;           /*the h3 within the participation and benefits element div's has a top margin of zero pixels.*/
 }
  
 div.participation p, div.benefits p {
-   margin-bottom: 0;
+   margin-bottom: 0;        /*the paragraphs within the participation and benefits element div's have a bottom margin of zero.*/
 }
  
 /* sidebar base styles */
@@ -232,11 +233,11 @@ div.participation p, div.benefits p {
    color: #49968e;
 }
  
-.sidebar ul {
+.sidebar ul {           /*unordered list settings within the sidebar class element.*/
    padding: 0;
    margin: 0;
    list-style: none;
-   overflow: hidden;    /*if any of the text or images go outside of the element when resizing it will not show. */
+   overflow: hidden;    /*text or images that go outside of the element when resizing it will not show. */
 }
  
 /* shared sidebar styling */
@@ -381,8 +382,8 @@ div.participation p, div.benefits p {
    text-align: center;
 }
  
-.design-archives a::before { /*sets up the styling for the space before the anchors in the design-archives element.*/
-   position: absolute;
+.design-archives a::before {  /*sets up the styling for the space before the anchors in the design-archives element.*/
+   position: absolute;        /*allows for horizontal viewing.*/
    left: 0;
    width: 70px;
    height: 70px;
