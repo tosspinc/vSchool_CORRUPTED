@@ -1,0 +1,34 @@
+{
+    "data": [   "this is a comment - this is the key for the following object.",
+        {       "This is a comment -": "This is the object for the first individuals data.",
+            "name": "Steve",
+            "age": 20,
+            "isAlive": true,
+            "friends": ["john", "betty", "jake"],
+            "address": {
+                "street": "123 street",
+                "city": "SLC"
+            }
+        },
+        {       "This is a comment -": "This is the object for the second individuals data.",
+            "name": "Steve",    
+            "age": 20,
+            "isAlive": true,
+            "friends": ["john", "betty", "jake"],
+            "address": {
+                "street": "123 street",
+                "city": "SLC"
+            }
+        },
+        {       "This is a comment -": "This is the object for the third individuals data.",
+            "name": "Steve",
+            "age": 20,
+            "isAlive": true,
+            "friends": ["john", "betty", "jake"],
+            "address": {
+                "street": "123 street",
+                "city": "SLC"
+            }   
+        }
+    ]
+}
