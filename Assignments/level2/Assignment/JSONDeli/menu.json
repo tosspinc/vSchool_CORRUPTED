@@ -1,0 +1,82 @@
+{
+    "JSON's Menu": [
+        {
+            "appetizer 1": {
+                "name": "Tuna Tartare",
+                "ingredients": ["Ahi Tuna", "Avocado", "Lime Juice", "Roma Tomato", "Red Onion", "Cilantro", "White and Black Sesame Seeds", "Olive Oil", "Salt", "Pepper"],
+                "description": "Finely diced Ahi Tuna with avacoda, roma tomato and red onion and cilantro marinated in lime juice."
+            },
+            "appetize 2": {
+                "name": "Shrimp Brucchetta",
+                "ingredients": ["Shrimp", "Red Onion", "Cucumber", "Roma Tomato", "Celery", "Ginger", "Lime Juice", "Balsamic Vinegar", "Cilantro", "Salt and Pepper"],
+                "description": "Small shrimp, finely diced red onion, roma tomato, cucumber and celery. Seasoned with lime juice, balsamic vinegar, cilantro and ginger. thinly slice garlic toasted bruschetta bread."
+            }
+        }
+    ],
+    "cold Sandwiches": [
+       {
+            "Sandwich 1": {
+                "name": "BLT",
+                "ingredients": ["Fresh Green Leaf lettuce", "Calabash Tomato", "Apple Smoked Bacon", "Mayo", "Beaver Mild Dijon mustard"],
+                "description": "We use Apple smoked bacon, served with sliced calabsh tomato and fresh locally grown green leaf lettuce. This is served with our own in house prepared mayonaisse and Beaver Mild Dijon Mustard served on freshly daily baked in house sour dough bread."
+            },
+            "Sandwich 2": {
+                "name": "Chicken Breast Sandwich",
+                "ingredients": ["Fresh Green Leaf lettuce", "Calabash Tomato", "Red Onion", "Thinly Slice Chicken Breast", "Mayo", "Raspberry flavored Dijon mustard"],
+                "description": "Enjoy our deicious thinly sliced Chicken breast sandwich. Served with green leaf lettuce, calabash tomator, Mayo and Raspberry flavored Dijon mustard served on multi-grain bread."
+            }
+        }
+    ],
+    "Hot Sandwiches": [
+       {
+            "Hot Sandwich 1": {
+            "name": "Assorted Hoagie",
+            "ingredients": ["Mozarella Cheese", "Shredded Green lettuce", "Roma tomato", "Roast Beef", "Turkey", "Ham", "Salami", "Apple Smoked Bacon", "Mayo", "Beaver Mild Dijon mustard", "onion", "Italian Dressing", "Garlic Butter"],
+            "description": "Enjoy our assorted Hot Hoagie. Garlic butter toasted Hoagie bun served with Roast Beef, Turkey, Ham and Salami. topped with shredded lettuce, melted mozarella cheese, onion and tomato."
+            },
+            "Hot Sandwich 2": {
+                "name": "Reuben",
+                "ingredients": ["Corned Beef", "Sauerkraut", "Russian dressing", "Mayonaise", "Swiss Cheese", "Rye Bread"],
+                "description": "Enjoy our seasoned Corned Beef, house made Sauerkraut and topped with melted Swiss Cheese. served on Rye bread.."
+            }
+        }
+    ],
+    "Desserts": [
+        {
+            "dessert 1": {
+                "name": "New York Style Cheesecake",
+                "ingredients": ["Cream Cheese", "Sugar", "Eggs", "Lemon Juice", "Heavy Whipping Cream", "Graham Cracker Crumbs", "Butter"],
+                "description": "Enjoy our in house baked Cream Cheese Cake. Made fresh daily."
+            },
+            "dessert 2": {
+                "name": "Raspberry Kiwi Chocolate Cake",
+                "ingredients": ["Flour", "Eggs", "Chocolate", "Heavy Whipping Cream", "Raspberries", "Kiwi"],
+                "description": "Enjoy our in house baked Chocolate Rasberry and Kiwi cake."
+            }
+        }
+    ],
+    "Drinks": [
+        {
+            "Drink 1": {
+                "name": "Coffee",
+                "ingredients": ["In House roasted coffee beans"],
+                "description": "Enjoy a cup of freshly brewed caffenated or decafenated coffee."
+            },
+            "Drink 2": {
+                "name": "Fresh Vegetable Juice",
+                "ingredients": ["Tomato Juice", "Celery Juice", "Cucumber", "Apple Juice", "Carrot Juice", "Beet Juice"],
+                "description": "Enjoy a glass of freshly squeezed to order vegetable juice"
+            },
+            "Drink 3": {
+                "name": "Soda",
+                "ingredients": ["Carbonated Water", "Sugar", "Natural and artificial flavorings"],
+                "description": "Enjoy a cold glass of refreshing soda."
+            },
+            "Drink 4": {
+                "name": "Orange Juice",
+                "ingredients": ["North American Grown Oranges"],
+                "description": "Enjoy a glass of our freshly prepared Orange juice."
+            }
+        }
+    ]
+}
