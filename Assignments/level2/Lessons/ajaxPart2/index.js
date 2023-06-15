@@ -11,10 +11,11 @@
 //xhr.send - sends request to server.
 
 //url: https://swapi.co/api/people/1
-
+//does not work with node. have to inspect console to view results.
 const xhr = new XMLHttpRequest();   //defines xhr as a constant variable. assigns the new XMLHttpRequest() function to it.
 
 //this xhr.open needs three parameters. GET, webaddress and asynchronous.  so code can run without waiting for completion.
+
 xhr.open("GET", "https://swapi.dev/api/people/1", true);
 
 //then send request to server.
