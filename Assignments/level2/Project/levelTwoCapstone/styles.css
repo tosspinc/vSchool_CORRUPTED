@@ -20,3 +20,34 @@ h2 {
     margin-left: 1rem;
     text-align: left;               /*aligns text on the left*/
 }
+
+form {
+    Margin: 40px;
+    text-align: center;
+    min-height: 3vh;
+}
+
+form input, form button {
+    background-color: bisque;
+    font-size: 1rem;                    /*rem is root element and 16px*/
+    padding: .4rem;                     /* 4 pixels*/
+    color: black;
+    border: 1.5px solid;
+    justify-content: center;
+    width: 110px;
+}
+
+form button:hover {
+    background-color: bisque;
+    color: black;
+}
+
+button {
+    margin: 1rem;
+    background-color: bisque;
+    color: black;
+    text-align: center;
+    justify-content: center;
+    border: none;
+    width: 40px;
+}

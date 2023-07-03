@@ -16,6 +16,6 @@ axios.get("https://api.vschool.io/arnoldjones/todo")
     .catch(error => console.log(error))
 
 //get one - a single item.
-//axios.get("https://api.vschool.io/arnoldjones/todo/648a681478fe452c11499701")
+//axios.get("https://api.vschool.io/arnoldjones/todo/")
 //    .then(response => console.log(response.data))
 //    .catch(error => console.log(error))
