@@ -1,50 +1,74 @@
+function clearList(){
+  const el = document.getElementById("todo-list")
+  while(el.firstChild) {
+    el.removeChild(el.firstChild)
+  }
+}
+
+const todoList = document.getElementById("todo-list")
+
+console.log(todoList)
+
 function getData() {
+  clearList()
   axios.get("https://api.vschool.io/arnoldjones/todo")              /*calls data from my vschool profile*/
   .then(response => {                                               /*declares function*/
     for(let i = 0; i < response.data.length; i++){                  /*gets all data from vschool database and starts for loop*/
       const title = document.createElement('h2');                   /*declares title as variable and assigns to h2*/
+      title.id = `title${response.data[i]._id}`;
       title.textContent = response.data[i].title;                   /*sets the content retrieved and assigns it to the title object.*/
-      document.body.appendChild(title);                             /*assigns data to html document in the body section.*/
+      todoList.appendChild(title);                             /*assigns data to html document in the body section.*/
 
       const id = document.createElement('h3');                      /*declares id as variable and assigns it to h3*/
-      id.textContent = response.data[i].id;                         /*sets the content retrieved and assigns it to the id object.*/
-      document.body.appendChild(id);                                /*assigns data to html document in the body section.*/
+      id.textContent = response.data[i]._id;                         /*sets the content retrieved and assigns it to the id object.*/
+      todoList.appendChild(id);                                /*assigns data to html document in the body section.*/
             
       const description = document.createElement('h4');             /*declares description as variable and assigns it to h4*/    
       description.textContent = response.data[i].description;       /*sets the content retrieved and assigns it to the description object.*/
-      document.body.appendChild(description);                       /*assigns data to html document in the body section.*/
+      todoList.appendChild(description);                       /*assigns data to html document in the body section.*/
             
       const price = document.createElement('h4');                   /*declares price as variable and assigns it to h4*/
       price.textContent = response.data[i].price;                   /*sets the content retrieved and assigns it to the price object.*/
-      document.body.appendChild(price);                             /*assigns data to html document in the body section.*/
+      todoList.appendChild(price);                             /*assigns data to html document in the body section.*/
             
       const imgUrl = document.createElement('h4');                  /*declares imgUrl as variable and assigns it to h4*/
       imgUrl.textContent = response.data[i].imgUrl;                 /*sets the content retrieved and assigns it to the imgUrl object.*/
-      document.body.appendChild(imgUrl);                            /*assigns data to html document in the body section.*/
+      todoList.appendChild(imgUrl);                                 /*assigns data to html document in the body section.*/
                 
       const completedValue = document.createElement('h4');          /*declares completedValue as variable and assigns it to h4*/
-      completedValue.textContent = response.data[i].completedValue; /*sets the content retrieved and assigns it to the completedValue object.*/
-      document.body.appendChild(completedValue);
-
-      const completeButton = document.createElement('input');         /*declares completeButtons as a variable and assigns input data to it.*/
-      completeButton.setAttribute("id", `completeButton${response.data[i]._id}`);
-      completeButton.type = "checkbox";/*assigns data to html document in the body section.*/
-
-                                   /*sets completeButtons as a checkbox.*/
-
-    const completeRequest = function(id) {                          /*declares completeRequest as a variable and id as a function.*/
-      if (`completeButton${response.data[i]._id}.checked`) {        /*if statement verifies that id is marked as checked.*/
-         axios.put(`https://api.vschool.io/arnoldjones/todo/${id}`, completedActionTrue) /*adds data entry to my vschool database.*/
-            .then(response => {                                   
-                getData();                                          /*calls the getData function which pulls data from my vschool database file.*/
-            })
-            .catch(error => console.log(error.data));               /*if there is an error then it runs the following line of code.*/
-      } else {
-        console.log("Checkbox is not checked..");                   /*if there is an error displays this message.*/
+      const completedButton = document.createElement('input');      /*declares completedButton as variable and assigns it to input*/
+      completedButton.type = 'checkbox';                            /*defines checkbox type.*/
+      completedButton.setAttribute('id', `completedButton#{response.data[i]._id}`);
+      completedButton.checked = response.data[i].completed;         /*sets the checked state of the checkbox in accordance to the data pulled from the server.*/
+      completedValue.textContent = response.data[i].completed ? 'true' : 'false'; /*checks to see if completedValue is trur or false.*/
+      if (response.data[i].completed) {                             /*verifies if response from database is equal to false.*/
+        title = document.getElementById(`title.${response.data[i]._id}`);
+        title.classList.add('completed');                           /*adds the css completed class to the title element. */
+      }
+      completedButton.addEventListener('change', () => completeRequest(response.data[i]._id))
+      title = document.getElementById(`title${response.data[i]._id}`);
+    }
+      todoList.appendChild(completedValue);
+      todoList.appendChild(completedButton);  
+    
+    function completeRequest(id) {                        /*declares completeRequest as a function and passes id object to it.*/
+      const title = document.getElementById(`title${id}`) /*retrieves html element with dynamic ID and assigns it to the title.*/      
+      const completeButton = document.getElementById(`completeButton${id}`)
+      
+     if (completeButton.checked === true) {
+      title.classList.add('completed');
+      console.log("should be false")
+      axios.put(`https://api.vschool.io/arnoldjones/todo/${id}`,{ "completed": false})
+        .then(res => getData())
+        .catch(err => console.log(err))
+      } else if (completeButton.checked === true){
+      title.classList.add('completed');
+      console.log("should be true")
+      axios.put(`https://api.vschool.io/arnoldjones/todo/${id}`,{ "completed": true})
+        .then(res => getData())
+        .catch(err => console.log(err))
       }
     };
-    completeButton.addEventListener("change", () => completeRequest(response.data[i]._id));
-    document.body.appendChild(completeButton);
 
     const deleteButton = document.createElement('button');          /*declares deleteButton as a variable and assigns button to it.*/
     deleteButton.textContent = "DELETE";                            /*assigns the text Delete to the delete button.*/
@@ -54,18 +78,17 @@ function getData() {
     const deleteRequest = function(id) {                            /*declares deleteReques as a variable and assigns id function data to it.*/
       axios.delete(`https://api.vschool.io/arnoldjones/todo/${_id}`)
         .then(response => {
-            getData();                                              /*calls the getData function.*/
-        })
-        .catch(error => console.log(error.data));                   /*if an error occurs, the error message is displayed.*/
+        getData();                                                  /*calls the getData function.*/
+      })
+      .catch((error) => console.log(error.data));                   /*if an error occurs, the error message is displayed.*/
     };
     deleteButton.addEventListener("click", ()=> deleteRequest(response.data[i]._id));
-    document.body.appendChild(deleteButton);
-  }})
-  .catch(error => console.log(error));
-};
+    todoList.appendChild(deleteButton);
+  })
+}
 getData();                                                          /*calls the getData function.*/
 
-const toDoform = document.toDoform;                                 /*declares toDoform as a variable and assigns data to html document.*/
+const toDoform = document.getElementById('todo-form')               /*declares toDoform as a variable and assigns data to html document.*/
 
 toDoform.addEventListener("submit", function(e){
   e.preventDefault()                                              /*stops webpage from refreshing.*/
@@ -76,11 +99,7 @@ toDoform.addEventListener("submit", function(e){
       imgUrl: toDoform.imgUrl.value,                              /*assigns the value in the  image text box to imgUrl object.*/
       completed: false                                            /*initial newTodo completion is set to false status.*/
   };
-  toDoform.title.value = "",                                      /*sets title data value to empty.*/
-  toDoform.price.value = "",                                      /*sets price data value to empty.*/
-  toDoform.description.value = "",                                /*sets description data value to empty.*/
-  toDoform.imgUrl.value = ""                                      /*sets image url data value to empty.*/
-
+  
   axios.post("https://api.vschool.io/arnoldjones/todo", newTodo)  /*posts data to my vschool database file and assigns it to newTodo.*/
     .then(response => {
         getData(),                                              /*calls the getData function*/
