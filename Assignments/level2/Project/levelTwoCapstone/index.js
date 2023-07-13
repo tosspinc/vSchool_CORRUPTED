@@ -1,35 +1,35 @@
-function clearList(){
-  const el = document.getElementById("todo-list")
-  while(el.firstChild) {
-    el.removeChild(el.firstChild)
+function clearList(){                                               /*declares clearList() as a function and clears the object being run. - added by instructor Zak Ward*/
+  const el = document.getElementById("todo-list")                   /*el is a constant variable and and gets id todo-list and assigns it to el objext.*/
+  while(el.firstChild) {                                            /*continues to loop/run as long as there is data in the firstChild element.*/
+    el.removeChild(el.firstChild)                                   /*removes first data fro the el element.*/
   }
 }
 
-const todoList = document.getElementById("todo-list")
+const todoList = document.getElementById("todo-list")               /*declares todoList as a constant variable and passes the todo-list object data to it.*/
 
-console.log(todoList)
+console.log(todoList)                                               /*displays in the console data from the todoList object.*/
 
-function getData() {
-  clearList()
+function getData() {                                                /*declares getData() as a function.*/
+  clearList()                                                       /*calls clearList() function and clears out any local data from memory.*/
   axios.get("https://api.vschool.io/arnoldjones/todo")              /*calls data from my vschool profile*/
   .then(response => {                                               /*declares function*/
     for(let i = 0; i < response.data.length; i++){                  /*gets all data from vschool database and starts for loop*/
       const title = document.createElement('h2');                   /*declares title as variable and assigns to h2*/
       title.id = `title${response.data[i]._id}`;
       title.textContent = response.data[i].title;                   /*sets the content retrieved and assigns it to the title object.*/
-      todoList.appendChild(title);                             /*assigns data to html document in the body section.*/
+      todoList.appendChild(title);                                  /*assigns data to html document in the body section.*/
 
       const id = document.createElement('h3');                      /*declares id as variable and assigns it to h3*/
-      id.textContent = response.data[i]._id;                         /*sets the content retrieved and assigns it to the id object.*/
-      todoList.appendChild(id);                                /*assigns data to html document in the body section.*/
+      id.textContent = response.data[i]._id;                        /*sets the content retrieved and assigns it to the id object.*/
+      todoList.appendChild(id);                                     /*assigns data to html document in the body section.*/
             
       const description = document.createElement('h4');             /*declares description as variable and assigns it to h4*/    
       description.textContent = response.data[i].description;       /*sets the content retrieved and assigns it to the description object.*/
-      todoList.appendChild(description);                       /*assigns data to html document in the body section.*/
+      todoList.appendChild(description);                            /*assigns data to html document in the body section.*/
             
       const price = document.createElement('h4');                   /*declares price as variable and assigns it to h4*/
       price.textContent = response.data[i].price;                   /*sets the content retrieved and assigns it to the price object.*/
-      todoList.appendChild(price);                             /*assigns data to html document in the body section.*/
+      todoList.appendChild(price);                                  /*assigns data to html document in the body section.*/
             
       const imgUrl = document.createElement('h4');                  /*declares imgUrl as variable and assigns it to h4*/
       imgUrl.textContent = response.data[i].imgUrl;                 /*sets the content retrieved and assigns it to the imgUrl object.*/
@@ -55,18 +55,18 @@ function getData() {
       const title = document.getElementById(`title${id}`) /*retrieves html element with dynamic ID and assigns it to the title.*/      
       const completeButton = document.getElementById(`completeButton${id}`)
       
-     if (completeButton.checked === true) {
-      title.classList.add('completed');
-      console.log("should be false")
-      axios.put(`https://api.vschool.io/arnoldjones/todo/${id}`,{ "completed": false})
-        .then(res => getData())
-        .catch(err => console.log(err))
-      } else if (completeButton.checked === true){
-      title.classList.add('completed');
-      console.log("should be true")
+     if (completeButton.checked === true) {               /*verifies if the completeButton element is checked, if it is then runs following code*/
+      title.classList.add('completed');                   /*assigns the css styling from the completed class to it.*/
+      console.log("should be false")                      /*displays in the console "this should be false" if it is already checked.*/
+      axios.put(`https://api.vschool.io/arnoldjones/todo/${id}`,{ "completed": false})  /*puts or sends data to vschool database related to my information.*/
+        .then(res => getData())                           /*calls the getData() function.*/
+        .catch(err => console.log(err))                   /*catches if there is an error and displays the error message.*/
+      } else if (completeButton.checked === false){       /*verifies if checkbox is not checked and then runs following line of code.*/
+      title.classList.add('completed');                   /*assigns the css styling from the completed class to it.*/
+      console.log("should be true")                       /*displays in console message: "Should be true".*/
       axios.put(`https://api.vschool.io/arnoldjones/todo/${id}`,{ "completed": true})
-        .then(res => getData())
-        .catch(err => console.log(err))
+        .then(res => getData())                           /*calls the getData() function.*/  
+        .catch(err => console.log(err))                   /*catches if there is an error and displays the error message.*/
       }
     };
 

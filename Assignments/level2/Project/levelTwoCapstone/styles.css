@@ -27,7 +27,7 @@ form {
     min-height: 3vh;
 }
 
-form input, form button {
+form input {
     background-color: bisque;
     font-size: 1rem;                    /*rem is root element and 16px*/
     padding: .4rem;                     /* 4 pixels*/
@@ -35,6 +35,16 @@ form input, form button {
     border: 1.5px solid;
     justify-content: center;
     width: 110px;
+}
+
+form button{
+    background-color: bisque;
+    font-size: 1rem;                    /*rem is root element and 16px*/
+    padding: .4rem;                     /* 4 pixels*/
+    color: black;
+    border: 1.5px solid;
+    justify-content: center;
+    width: 200px;
 }
 
 form button:hover {
