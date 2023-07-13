@@ -40,7 +40,13 @@ function getData() {                                                /*declares g
       completedButton.type = 'checkbox';                            /*defines checkbox type.*/
       completedButton.setAttribute('id', `completedButton#{response.data[i]._id}`);
       completedButton.checked = response.data[i].completed;         /*sets the checked state of the checkbox in accordance to the data pulled from the server.*/
-      completedValue.textContent = response.data[i].completed ? 'true' : 'false'; /*checks to see if completedValue is trur or false.*/
+      //completedValue.textContent = response.data[i].completed ? 'true' : 'false'; /*checks to see if completedValue is true or false.*/
+
+      //when this code is here it shows only one entry and one check box.  
+      //this is the first entry shown in the vschool database associated with my name.
+      todoList.appendChild(completedValue);                         /*appends completedValue object which makes it a new element in the list.*/
+      todoList.appendChild(completedButton);                        /*appends completedButton object.*/
+
       if (response.data[i].completed) {                             /*verifies if response from database is equal to false.*/
         title = document.getElementById(`title.${response.data[i]._id}`);
         title.classList.add('completed');                           /*adds the css completed class to the title element. */
@@ -48,9 +54,11 @@ function getData() {                                                /*declares g
       completedButton.addEventListener('change', () => completeRequest(response.data[i]._id))
       title = document.getElementById(`title${response.data[i]._id}`);
     }
-      todoList.appendChild(completedValue);
-      todoList.appendChild(completedButton);  
     
+      //when this code is here only one entry is displayed. this is the first entry from the vschool database under my name.
+      //todoList.appendChild(completedValue);                         /*appends completedValue object which makes it a new element in the list.*/
+      //todoList.appendChild(completedButton);                        /*appends completedButton object.*/
+
     function completeRequest(id) {                        /*declares completeRequest as a function and passes id object to it.*/
       const title = document.getElementById(`title${id}`) /*retrieves html element with dynamic ID and assigns it to the title.*/      
       const completeButton = document.getElementById(`completeButton${id}`)
