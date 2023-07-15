@@ -38,27 +38,22 @@ function getData() {                                                /*declares g
       const completedValue = document.createElement('h4');          /*declares completedValue as variable and assigns it to h4*/
       const completedButton = document.createElement('input');      /*declares completedButton as variable and assigns it to input*/
       completedButton.type = 'checkbox';                            /*defines checkbox type.*/
-      completedButton.setAttribute('id', `completedButton#{response.data[i]._id}`);
+      completedButton.setAttribute('id', `completedButton${response.data[i]._id}`);
       completedButton.checked = response.data[i].completed;         /*sets the checked state of the checkbox in accordance to the data pulled from the server.*/
-      //completedValue.textContent = response.data[i].completed ? 'true' : 'false'; /*checks to see if completedValue is true or false.*/
+      completedValue.textContent = response.data[i].completed ? 'true' : 'false'; /*checks to see if completedValue is true or false.*/
 
       //when this code is here it shows only one entry and one check box.  
       //this is the first entry shown in the vschool database associated with my name.
       todoList.appendChild(completedValue);                         /*appends completedValue object which makes it a new element in the list.*/
       todoList.appendChild(completedButton);                        /*appends completedButton object.*/
-
       if (response.data[i].completed) {                             /*verifies if response from database is equal to false.*/
-        title = document.getElementById(`title.${response.data[i]._id}`);
+    //    title = document.getElementById(`title.${response.data[i]._id}`); /*retrieves an html element with the dynamic ID and assigns it to title.*/
         title.classList.add('completed');                           /*adds the css completed class to the title element. */
       }
-      completedButton.addEventListener('change', () => completeRequest(response.data[i]._id))
-      title = document.getElementById(`title${response.data[i]._id}`);
+     completedButton.addEventListener('change', () => completeRequest(response.data[i]._id))
+    //   title = document.getElementById(`title${response.data[i]._id}`);  /*.*/
     }
     
-      //when this code is here only one entry is displayed. this is the first entry from the vschool database under my name.
-      //todoList.appendChild(completedValue);                         /*appends completedValue object which makes it a new element in the list.*/
-      //todoList.appendChild(completedButton);                        /*appends completedButton object.*/
-
     function completeRequest(id) {                        /*declares completeRequest as a function and passes id object to it.*/
       const title = document.getElementById(`title${id}`) /*retrieves html element with dynamic ID and assigns it to the title.*/      
       const completeButton = document.getElementById(`completeButton${id}`)
@@ -78,27 +73,27 @@ function getData() {                                                /*declares g
       }
     };
 
-    const deleteButton = document.createElement('button');          /*declares deleteButton as a variable and assigns button to it.*/
-    deleteButton.textContent = "DELETE";                            /*assigns the text Delete to the delete button.*/
-    deleteButton.setAttribute = ("id", `deleteButton${response.data[i]._id}`);
+  //  const deleteButton = document.createElement('button');          /*declares deleteButton as a variable and assigns button to it.*/
+  //  deleteButton.textContent = "DELETE";                            /*assigns the text Delete to the delete button.*/
+  //  deleteButton.setAttribute = ("id", `${response.data[i]._id}`);
 
     //DELETE REQUEST
-    const deleteRequest = function(id) {                            /*declares deleteReques as a variable and assigns id function data to it.*/
-      axios.delete(`https://api.vschool.io/arnoldjones/todo/${_id}`)
-        .then(response => {
-        getData();                                                  /*calls the getData function.*/
-      })
-      .catch((error) => console.log(error.data));                   /*if an error occurs, the error message is displayed.*/
-    };
-    deleteButton.addEventListener("click", ()=> deleteRequest(response.data[i]._id));
-    todoList.appendChild(deleteButton);
+  //  const deleteRequest = function(id) {                            /*declares deleteReques as a variable and assigns id function data to it.*/
+  //    axios.delete(`https://api.vschool.io/arnoldjones/todo/${_id}`)
+  //      .then(response => {
+  //      getData();                                                  /*calls the getData function.*/
+  //    })
+  //    .catch((error) => console.log(error.data));                   /*if an error occurs, the error message is displayed.*/
+  //  };
+  //  deleteButton.addEventListener("click", ()=> deleteRequest(response.data[i]._id));
+  //  todoList.appendChild(deleteButton);
   })
 }
 getData();                                                          /*calls the getData function.*/
 
 const toDoform = document.getElementById('todo-form')               /*declares toDoform as a variable and assigns data to html document.*/
 
-toDoform.addEventListener("submit", function(e){
+document.getElementById('todo-form').addEventListener("submit", function(e){
   e.preventDefault()                                              /*stops webpage from refreshing.*/
   const newTodo = {                                               /*declares newTodo as a variable.*/
       title: toDoform.title.value,                                /*assigns the value in the title text box to title object.*/
