@@ -1,3 +1,4 @@
+//clearList added by vSchool Instructor Zak Ward.
 function clearList(){                                               /*declares clearList() as a function and clears the object being run. - added by instructor Zak Ward*/
   const el = document.getElementById("todo-list")                   /*el is a constant variable and and gets id todo-list and assigns it to el objext.*/
   while(el.firstChild) {                                            /*continues to loop/run as long as there is data in the firstChild element.*/
@@ -16,23 +17,23 @@ function getData() {                                                /*declares g
       const title = document.createElement('h2');                   /*declares title as variable and assigns to h2*/
       title.id = `title${response.data[i]._id}`;
       title.textContent = response.data[i].title;                   /*sets the content retrieved and assigns it to the title object.*/
-      dataContainer.appendChild(title);                             /*assigns data to html document in the body section.*/
+      dataContainer.appendChild(title);                             /*assigns data to html document in the dataContainer section.*/
 
       const id = document.createElement('h3');                      /*declares id as variable and assigns it to h3*/
       id.textContent = response.data[i]._id;                        /*sets the content retrieved and assigns it to the id object.*/
-      dataContainer.appendChild(id);                                /*assigns data to html document in the body section.*/
+      dataContainer.appendChild(id);                                /*assigns data to html document in the dataContainer section.*/
             
       const description = document.createElement('h4');             /*declares description as variable and assigns it to h4*/    
       description.textContent = response.data[i].description;       /*sets the content retrieved and assigns it to the description object.*/
-      dataContainer.appendChild(description);                       /*assigns data to html document in the body section.*/
+      dataContainer.appendChild(description);                       /*assigns data to html document in the dataContainer section.*/
             
       const price = document.createElement('h4');                   /*declares price as variable and assigns it to h4*/
       price.textContent = response.data[i].price;                   /*sets the content retrieved and assigns it to the price object.*/
-      dataContainer.appendChild(price);                             /*assigns data to html document in the body section.*/
+      dataContainer.appendChild(price);                             /*assigns data to html document in the dataContainer section.*/
             
       const imgUrl = document.createElement('h4');                  /*declares imgUrl as variable and assigns it to h4*/
       imgUrl.textContent = response.data[i].imgUrl;                 /*sets the content retrieved and assigns it to the imgUrl object.*/
-      dataContainer.appendChild(imgUrl);                            /*assigns data to html document in the body section.*/
+      dataContainer.appendChild(imgUrl);                            /*assigns data to html document in the dataContainer section.*/
                 
       const completedValue = document.createElement('h4');          /*declares completedValue as variable and assigns it to h4*/
       const completedButton = document.createElement('input');      /*declares completedButton as variable and assigns it to input*/
@@ -53,6 +54,7 @@ function getData() {                                                /*declares g
     //   title = document.getElementById(`title${response.data[i]._id}`);  /*.*/
     }
   })
+
 }
 //getData()
 
