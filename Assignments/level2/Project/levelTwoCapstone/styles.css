@@ -28,7 +28,7 @@ form {
 }
 
 form input {
-    background-color: bisque;
+    background-color: antiquewhite;
     font-size: 1rem;                    /*rem is root element and 16px*/
     padding: .4rem;                     /* 4 pixels*/
     color: black;
@@ -38,7 +38,7 @@ form input {
 }
 
 form button{
-    background-color: bisque;
+    background-color: antiquewhite;
     font-size: 1rem;                    /*rem is root element and 16px*/
     padding: .4rem;                     /* 4 pixels*/
     color: black;
@@ -48,13 +48,13 @@ form button{
 }
 
 form button:hover {
-    background-color: bisque;
+    background-color: antiquewhite;
     color: black;
 }
 
 button {
     margin: 1rem;
-    background-color: bisque;
+    background-color: antiquewhite;
     color: black;
     text-align: center;
     justify-content: center;
@@ -64,5 +64,14 @@ button {
 
 .completed {
     text-decoration: line-through;
-  }
-  
+}
+
+#dataContainer {
+    Margin: 1rem;
+    background-color: antiquewhite;
+    color: black;
+    justify-content: center;    
+    border: 2px solid;
+    width: 1270px;
+    height: 600px;
+}
