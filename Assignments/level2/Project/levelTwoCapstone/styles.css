@@ -67,11 +67,11 @@ button {
 }
 
 #dataContainer {
-    Margin: 1rem;
+    Margin: 2px;
     background-color: antiquewhite;
     color: black;
     justify-content: center;    
     border: 2px solid;
-    width: 1270px;
-    height: 600px;
+    width: 1630px;
+    height: 650px;
 }
