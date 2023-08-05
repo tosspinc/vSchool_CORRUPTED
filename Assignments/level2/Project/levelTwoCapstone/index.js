@@ -19,7 +19,7 @@ function clearList(){                                           /*declares clear
   }
 }
 
-const dataContainer = document.getElementById("dataContainer")  /*declares dataContainer as a constant variable and passes the todo-list object data to it.*/
+const dataContainer = document.getElementById("dataContainer")  /*declares dataContainer as variable and passes the todo-list object data to it.*/
 console.log(dataContainer)                                      /*displays in the console data from the dataContainer object.*/
 
 function getData() {                                            /*declares getData() as a function.*/
@@ -28,7 +28,7 @@ function getData() {                                            /*declares getDa
   .then(response => {                                           /*declares function*/
     for(let i = 0; i < response.data.length; i++){              /*gets all data from vschool database and starts for loop*/
       const title = document.createElement('h2');               /*declares title as variable and assigns to h2*/
-      title.id = `title${response.data[i]._id}`;
+      title.id = `title${response.data[i]._id}`;                /*retrieves an id from vSchool server and assigns it to the id property of the title element*/
       title.textContent = response.data[i].title;               /*sets the content retrieved and assigns it to the title object.*/
       dataContainer.appendChild(title);                         /*assigns data to html document in the dataContainer section.*/
 
