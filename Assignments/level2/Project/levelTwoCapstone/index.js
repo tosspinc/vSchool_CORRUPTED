@@ -23,7 +23,7 @@ const dataContainer = document.getElementById("dataContainer")  /*declares dataC
 console.log(dataContainer)                                      /*displays in the console data from the dataContainer object.*/
 
 function getData() {                                            /*declares getData() as a function.*/
-  clearList()                                                   /*calls clearList() function and clears out any local data from memory.*/
+  //clearList()                                                   /*calls clearList() function and clears out any local data from memory.*/
   axios.get("https://api.vschool.io/arnoldjones/todo")          /*calls data from my vschool profile*/
   .then(response => {                                           /*declares function*/
     for(let i = 0; i < response.data.length; i++){              /*gets all data from vschool database and starts for loop*/
@@ -51,22 +51,24 @@ function getData() {                                            /*declares getDa
       const completedValue = document.createElement('h4');      /*declares completedValue as variable and assigns it to h4*/
       const completedButton = document.createElement('input');  /*declares completedButton as variable and assigns it to input*/
       completedButton.type = 'checkbox';                        /*defines checkbox type.*/
+      completedButton.id = `completedButton${response.data[i]._id}`;
       completedButton.setAttribute('id', `completedButton${response.data[i]._id}`);
-      completedButton.checked = response.data[i].completed;     /*sets the checked state of the checkbox in accordance to the data pulled from the server.*/
+      completedButton.checked = false;                          /*sets the checked state of the data to false.*/
       completedValue.textContent = response.data[i].completed ? 'true' : 'false'; /*checks to see if completedValue is true or false.*/
+      //this code adds a line through the title when the status box is checked and removes the line through the title when unchecked.
+      completedButton.addEventListener('change', (event) =>   {
+        const isChecked = event.target.checked;
+        if (isChecked) {
+          title.classList.add('completed');
+        } else {
+          title.classList.remove('completed');
+        }
+        updateCompletedStatus(response.data[i]._id, isChecked);
+      })
 
-      
-      dataContainer.appendChild(completedValue);                /*appends completedValue object which makes it a new element in the list.*/
       dataContainer.appendChild(completedButton);               /*appends completedButton object.*/
-      if (response.data[i].completed) {                         /*verifies if response from database is equal to false.*/
-    //    title = document.getElementById(`title.${response.data[i]._id}`); /*retrieves an html element with the dynamic ID and assigns it to title.*/
-        title.classList.add('completed');                       /*adds the css completed class to the title element. */
-      }
-     completedButton.addEventListener('change', () => completeRequest(response.data[i]._id))
-    //   title = document.getElementById(`title${response.data[i]._id}`);  /*.*/
     }
   })
-
 }
 
 function completeRequest(id) {                                  /*declares completeRequest as a function and passes id object to it.*/
@@ -80,34 +82,59 @@ function completeRequest(id) {                                  /*declares compl
       .then(res => getData())                                   /*calls the getData() function.*/
       .catch(err => console.log(err))                           /*catches if there is an error and displays the error message.*/
   } else if (completeButton.checked === false){                 /*verifies if checkbox is not checked and then runs following line of code.*/
-    title.classList.add('completed');                           /*assigns the css styling from the completed class to it.*/
+    //title.classList.add('completed');                           /*assigns the css styling from the completed class to it.*/
     console.log("should be true")                               /*displays in console message: "Should be true".*/
     axios.put(`https://api.vschool.io/arnoldjones/todo/${id}`,{ "completed": true})
       .then(res => getData())                                   /*calls the getData() function.*/  
       .catch(err => console.log(err))                           /*catches if there is an error and displays the error message.*/
   }
-  
-  //  const deleteButton = document.createElement('button');    /*declares deleteButton as a variable and assigns button to it.*/
-  //  deleteButton.textContent = "DELETE";                      /*assigns the text Delete to the delete button.*/
-  //  deleteButton.setAttribute = ("id", `${response.data[i]._id}`);
 
-    //DELETE REQUEST
-  //  const deleteRequest = function(id) {                      /*declares deleteReques as a variable and assigns id function data to it.*/
-  //    axios.delete(`https://api.vschool.io/arnoldjones/todo/${_id}`)
-  //      .then(response => {
-  //      getData();                                            /*calls the getData function.*/
-  //    })
-  //    .catch((error) => console.log(error.data));             /*if an error occurs, the error message is displayed.*/
-  //  };
-  //  deleteButton.addEventListener("click", ()=> deleteRequest(response.data[i]._id));
-  //  todoList.appendChild(deleteButton);
 }
-//getData();                                                    /*calls the getData function.*/
+getData();                                                    /*calls the getData function.*/
 
+  //Delete Request
+  const deleteEntryButton = document.querySelector('button[type="submit"][name="delete"]');    /*declares deleteButton as a variable and assigns button to it.*/
   
-//  axios.post("https://api.vschool.io/arnoldjones/todo", newTodo)  /*posts data to my vschool database file and assigns it to newTodo.*/
-//    .then(response => {
-//        getData(),                                            /*calls the getData function*/
-//        window.location.reload()                              /*loads the data to the browser.*/
-//    })
-//    .catch(error => console.log(error.data.title))            /*catches errors and displays the error.*/
+  deleteEntryButton.addEventListener('click', function(e){
+    const titleToDelete = toDoform.title.value;
+    const descriptionToDelete = toDoform.description.value;
+    
+    axios.get('https://api.vschool.io/arnoldjones/todo')
+      .then(response => {
+      const entryToDelete = response.data.find(entry => 
+        entry.title === titleToDelete && entry.description === descriptionToDelete);
+    
+      if (entryToDelete) {
+        axios.delete(`https://api.vschool.io/arnoldjones/todo/${entryToDelete._id}`)
+        .then(response => {
+        clearList();
+        getData();                                            /*calls the getData function.*/
+      })
+      .catch((error) => console.log(error.data));             /*if an error occurs, the error message is displayed.*/
+      } else {
+      console.log('Entry not found');
+      }
+    })
+    .catch(error => console.log(error));
+  });
+  
+//Adds a new entry to database.
+const addEntryButton = document.querySelector('button[type="submit"][name="addEntry"]');
+
+addEntryButton.addEventListener('click', function(e) {
+  const newTodo = {
+    title: toDoform.title.value,
+    price: toDoform.price.value,
+    description: toDoform.description.value,
+    imgUrl: toDoform.imgUrl.value,
+    completed: false
+  };
+
+  axios.post("https://api.vschool.io/arnoldjones/todo", newTodo)  /*posts data to my vschool database file and assigns it to newTodo.*/
+    .then(response => {
+        clearList();
+        getData(),                                            /*calls the getData function*/
+        window.location.reload()                              /*loads the data to the browser.*/
+    })
+    .catch(error => console.log(error.data.title))            /*catches errors and displays the error.*/
+  });
