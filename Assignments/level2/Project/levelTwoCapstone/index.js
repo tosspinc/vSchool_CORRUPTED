@@ -109,10 +109,11 @@ getData();                                                    /*calls the getDat
         .then(response => {
         clearList();
         getData();                                            /*calls the getData function.*/
+        
       })
       .catch((error) => console.log(error.data));             /*if an error occurs, the error message is displayed.*/
       } else {
-      console.log('Entry not found');
+      console.log('Entry not found');                         /*if not entry is there it will show this message in the console.*/
       }
     })
     .catch(error => console.log(error));
@@ -121,18 +122,18 @@ getData();                                                    /*calls the getDat
 //Adds a new entry to database.
 const addEntryButton = document.querySelector('button[type="submit"][name="addEntry"]');
 
-addEntryButton.addEventListener('click', function(e) {
-  const newTodo = {
-    title: toDoform.title.value,
-    price: toDoform.price.value,
-    description: toDoform.description.value,
-    imgUrl: toDoform.imgUrl.value,
-    completed: false
+addEntryButton.addEventListener('click', function(e) {        /*creates new entry event listener*/
+  const newTodo = {                                           /*creates new Todo object */  
+    title: toDoform.title.value,                              /*assigns the new value entered in the input box to the title object.*/
+    price: toDoform.price.value,                              /*assigns the new value entered in the input box to the price object*/  
+    description: toDoform.description.value,                  /*assigns the new value entered in the input box to the description object*/
+    imgUrl: toDoform.imgUrl.value,                            /*assigns the new image entered in the input box to the imgUrl object.*/
+    completed: false                                          /*sets the new entry to a status of false intially.*/
   };
 
   axios.post("https://api.vschool.io/arnoldjones/todo", newTodo)  /*posts data to my vschool database file and assigns it to newTodo.*/
     .then(response => {
-        clearList();
+        clearList();                                          /*refreshed the dataContainer box on the webpage.*/  
         getData(),                                            /*calls the getData function*/
         window.location.reload()                              /*loads the data to the browser.*/
     })
