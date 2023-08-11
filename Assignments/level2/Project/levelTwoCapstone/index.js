@@ -74,7 +74,7 @@ function getData() {                                            /*declares getDa
         
       dataContainer.appendChild(completedButton);               /*appends completedButton object.*/
       const deleteEntryButton = document.createElement('button');
-      deleteEntryButton.textContent = 'delete item';
+      deleteEntryButton.textContent = 'delete entry';
       deleteEntryButton.classList.add('deleteEntryButton');
       deleteEntryButton.addEventListener('click', (event) =>{
        axios.delete(`https://api.vschool.io/arnoldjones/todo/${response.data[i]._id}`)
@@ -100,7 +100,6 @@ function completeRequest(id) {                                  /*declares compl
       .then(res => getData())                                   /*calls the getData() function.*/
       .catch(err => console.log(err))                           /*catches if there is an error and displays the error message.*/
   } else if (completeButton.checked === false){                 /*verifies if checkbox is not checked and then runs following line of code.*/
-    //title.classList.add('completed');                           /*assigns the css styling from the completed class to it.*/
     console.log("should be true")                               /*displays in console message: "Should be true".*/
     axios.put(`https://api.vschool.io/arnoldjones/todo/${id}`,{ "completed": true})
       .then(res => getData())                                   /*calls the getData() function.*/  
