@@ -75,3 +75,8 @@ button {
     width: 1630px;
     height: 650px;
 }
+
+.deleteEntryButton {
+    background-color: orangered;
+    color: black;
+}
