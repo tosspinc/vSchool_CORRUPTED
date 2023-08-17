@@ -71,7 +71,8 @@ function getData() {                                            /*declares getDa
         axios.put(`https://api.vschool.io/arnoldjones/todo/${response.data[i]._id}`,{"completed": isChecked})
         .catch(err => console.log(err))                           /*catches if there is an error and displays the error message.*/
       })
-        
+     
+      //completed this with the help of TA Anjanique Mackay.   
       dataContainer.appendChild(completedButton);               /*appends completedButton object.*/
       const deleteEntryButton = document.createElement('button');
       deleteEntryButton.textContent = 'delete entry';
