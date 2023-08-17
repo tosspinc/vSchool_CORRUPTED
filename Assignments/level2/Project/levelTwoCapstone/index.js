@@ -1,12 +1,12 @@
-const toDoform = document.getElementById('todo-form')           /*declares toDoform as a variable and assigns data to html document.*/
+const toDoForm = document.getElementById('todo-form')           /*declares toDoform as a variable and assigns data to html document.*/
 
-document.getElementById('todo-form').addEventListener("submit", function(e){
+toDoForm.addEventListener("submit", function(e){
   e.preventDefault()                                            /*stops webpage from refreshing.*/
   const newTodo = {                                             /*declares newTodo as a variable.*/
-    title: toDoform.title.value,                                /*assigns the value in the title text box to title object.*/
-    price: toDoform.price.value,                                /*assigns the value in the price text box to price object.*/
-    description: toDoform.description.value,                    /*assigns the value in the  description text box to description object.*/
-    imgUrl: toDoform.imgUrl.value,                              /*assigns the value in the  image text box to imgUrl object.*/
+    title: toDoForm.title.value,                                /*assigns the value in the title text box to title object.*/
+    price: toDoForm.price.value,                                /*assigns the value in the price text box to price object.*/
+    description: toDoForm.description.value,                    /*assigns the value in the  description text box to description object.*/
+    imgUrl: toDoForm.imgUrl.value,                              /*assigns the value in the  image text box to imgUrl object.*/
     completed: false                                            /*initial newTodo completion is set to false status.*/
   };
 });
@@ -87,7 +87,7 @@ function getData() {                                            /*declares getDa
       })
       dataContainer.appendChild(deleteEntryButton);
     }
-  })
+  })  
 }  
 
 function completeRequest(id) {                                  /*declares completeRequest as a function and passes id object to it.*/
@@ -115,22 +115,22 @@ getData();                                                    /*calls the getDat
   
  
 //Adds a new entry to database.
-const addEntryButton = document.querySelector('button[type="submit"][name="addEntry"]');
-
+const addEntryButton = document.querySelectorAll('button[type="submit"][name="addEntry"]');
+console.log(addEntryButton);
 addEntryButton.addEventListener('click', function(e) {        /*creates new entry event listener*/
   const newTodo = {                                           /*creates new Todo object */  
-    title: toDoform.title.value,                              /*assigns the new value entered in the input box to the title object.*/
-    price: toDoform.price.value,                              /*assigns the new value entered in the input box to the price object*/  
-    description: toDoform.description.value,                  /*assigns the new value entered in the input box to the description object*/
-    imgUrl: toDoform.imgUrl.value,                            /*assigns the new image entered in the input box to the imgUrl object.*/
+    title: toDoForm.title.value,                              /*assigns the new value entered in the input box to the title object.*/
+    price: toDoForm.price.value,                              /*assigns the new value entered in the input box to the price object*/  
+    description: toDoForm.description.value,                  /*assigns the new value entered in the input box to the description object*/
+    imgUrl: toDoForm.imgUrl.value,                            /*assigns the new image entered in the input box to the imgUrl object.*/
     completed: false                                          /*sets the new entry to a status of false intially.*/
   };
 
-  axios.post("https://api.vschool.io/arnoldjones/todo", newTodo)  /*posts data to my vschool database file and assigns it to newTodo.*/
-    .then(response => {
-        clearList();                                          /*refreshed the dataContainer box on the webpage.*/  
-        getData();                                            /*calls the getData function*/
-        window.location.reload()                              /*loads the data to the browser.*/
-    })
-    .catch(error => console.log(error.data.title))            /*catches errors and displays the error.*/
-  });
+   axios.post("https://api.vschool.io/arnoldjones/todo", newTodo)  /*posts data to my vschool database file and assigns it to newTodo.*/
+     .then(response => {
+         clearList();                                          /*refreshed the dataContainer box on the webpage.*/  
+         getData();                                            /*calls the getData function*/
+         window.location.reload()                              /*loads the data to the browser.*/
+     })
+     .catch(error => console.log(error.data.title))            /*catches errors and displays the error.*/
+   });
