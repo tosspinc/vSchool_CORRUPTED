@@ -1,2 +1,27 @@
 //in react you need to name classes as className in order for it to work properly.
-ReactDom.render(<h1 className="header">hello, React!</h1>, document.getElementById("root"))
+//JSX is javascript xml and becomes declarative.
+
+const h1 = document.createElement("h1")
+h1.textContent = "Hello world"
+h1.className = "header"
+console.log(h1)
+
+const element = <h1 className="header">This is JSX</h1>
+console.log(element);
+
+/*
+{
+    type:   "h1",
+    key:    null,
+    ref:    null,
+    props: {
+        className: "header",
+        children: "This is JSX"
+    },
+    _owner: null,
+    _store: {}
+}
+*/
+
+//JSX
+ReactDOM.render(element, document.getElementById("root"))
