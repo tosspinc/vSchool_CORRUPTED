@@ -11,7 +11,7 @@
         <p>This is my website.</p>
     )
 
-    answer: import React from "react" and import ReactDOM from "react-dom" has not been done so it will not render. It has two chile elments, h1 and p. This needs to be under on parent element, <div>.  ReactDOM.render(page, document.getElementByID("root")) has not been added at the bottom of the js file so it will not render.
+    answer: import React from "react" and import ReactDOM from "react-dom" has not been done so it will not render. It has two child elments, h1 and p. This needs to be under on parent element, <div>.  ReactDOM.render(page, document.getElementByID("root")) has not been added at the bottom of the js file so it will not render.
 
 4. What does it mean for something to be "declarative" instead of "imperative"?
     answer: when using React we write the code in javascript and the compiler figures how how it needs to be rendered. Imperative is writing the code step by step and uses CDN's.
