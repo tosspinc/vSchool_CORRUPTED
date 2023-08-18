@@ -16,9 +16,17 @@ Hints:
   //import React from "react"                             //imports react.
   //import ReactDOM from "react-dom"                      //imports react-dom.
 
-  const page = (                                        //declares a constant variable named page.
+  const page = (                                        //declares a constant variable named page. Added an unorganized list with 5 elements in it.>
     <div>                                               
-        <img src="./IMGS/react.png" width="40px" />     
+        <img src="./IMGS/react.png" width="50px" />     
+        <h1>Fun facts about React!</h1>
+        <ul>
+            <li>Was first released in 2013.</li>
+            <li>Was originally created by Jordan Walke.</li>
+            <li>Has over 100K stars on Github.</li>
+            <li>is maintained by facebook.</li>
+            <li>Powers thousands of enterprise apps, including mobile apps.</li>
+        </ul>
     </div>
 
   );
