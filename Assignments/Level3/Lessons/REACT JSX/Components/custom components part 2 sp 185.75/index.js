@@ -1,7 +1,7 @@
 //needed for React but not for webdev using cdn.
 //import React from "react";
-//import ReactDOM from "react-dom";
-//const ReactDOM = require("react-dom")
+//import ReactDom from "react-dom";
+
 
 function TemporaryName() {
     return (
