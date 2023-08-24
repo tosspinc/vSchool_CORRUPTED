@@ -28,7 +28,7 @@ function Page() {
                 if I know React</li>
             </ol>
             <footer>
-                <small>© 2021 Ziroll development. All rights reserved.</small>
+                <small>© 2023 Arnold Jones. All rights reserved.</small>
             </footer>
         </div>
     )
