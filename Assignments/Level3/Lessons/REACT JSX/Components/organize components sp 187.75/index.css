@@ -1,0 +1,34 @@
+html, body {
+    margin: 0px;
+    padding: 10px;
+}
+
+.nav {
+    display: flex;                  /*displays .nav across the top and allows for it to automatically adjust.*/
+    justify-content: space-between; /*Creates an automatic spacing between the items.*/
+    align-items: center;            /*centers the items on the DOM.*/
+}
+
+.nav-items > li {
+    padding: 15px;                  /*gives a pixel spacing between the list items.*/
+}
+
+.nav-logo {
+    padding: 5px;                   /*sets the image 10 pixels from the top.*/
+    width: 60px;                    /*makes the logo image have a width of 60 pixels.*/ 
+}
+
+.nav-items {
+    margin: 0px;                    
+    padding: 0px;
+    list-style: none;               /*styles the list items.*/
+    display: flex;                  /*allows the items to have an even space between them and places them horizontally in the dom on the left side.*/
+}
+
+.footer {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;                    /*sets the footer at the bottom of the page.*/
+    width: 100%;                    /*set footer width to entire width of DOM.*/
+    height: 50px;                  /*footer height*/
+}
