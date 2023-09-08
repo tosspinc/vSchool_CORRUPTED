@@ -5,6 +5,18 @@
   text-align: center;
 }
 
+.TosspiLogo {
+  height: 25px;
+}
+
+nav {
+  margin: 0px;
+  display: flex;
+  height: 90px;
+  background-color: black;
+  color: antiquewhite;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -14,6 +26,7 @@
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
