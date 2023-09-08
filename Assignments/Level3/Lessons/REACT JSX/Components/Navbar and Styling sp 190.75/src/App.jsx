@@ -14,17 +14,15 @@ function App() {
       <Navbar />
       {/*<Main />*/}
       <div>
+        
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
-        <a href="https://tosspi.com" target="_blank">
-          <img src={NewTosspiLogo} className="TosspiLogo" />
-        </a>
       </div>
-      <h1>Tosspi - The One Stop Shopping Place.</h1>
+      
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -36,6 +34,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+    {/*<Footer />*/}
     </>
   )
 }
