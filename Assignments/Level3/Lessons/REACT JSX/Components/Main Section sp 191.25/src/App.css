@@ -1,6 +1,6 @@
 #root {
   max-width: 1280px;
-  margin: auto;
+  margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
@@ -36,13 +36,8 @@ nav > img {
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
-
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-h1 {
-  font-size: smaller;
 }
 
 @keyframes logo-spin {
