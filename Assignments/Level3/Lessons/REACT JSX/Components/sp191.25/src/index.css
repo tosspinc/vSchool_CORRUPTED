@@ -23,15 +23,20 @@ a:hover {
   color: #535bf2;
 }
 
+/*sets the styling for the body of the page.*/
 body {
   /*margin: 0;*/
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  display: flex;        /*allows the body of the page to change automatically.*/
+  place-items: center;  /*places items on page in the center.*/  
+  min-width: 320px;     /*sets the minimum width of the body to 320 pixels.*/ 
   min-height: 100vh;
   background-color: teal;
   color: antiquewhite;
+  background-image: url(./public/images/TosspiLogo2.jpg);
+  background-repeat: no-repeat; /*the background image does not repeat in the body.*/
+  background-position: right 42%;  /*places image at 42% of the background height.*/
 }
+
 
 /*changes the title color and font size of the main section.*/
 .main--title {
