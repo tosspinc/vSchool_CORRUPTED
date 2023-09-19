@@ -1,21 +1,37 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+/*sets the styling for the body of the page.*/
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, Helvetica, sans-serif;
+  display: flex;        /*allows the body of the page to change automatically.*/
+  place-items: center;  /*places items on page in the center.*/  
+  min-width: 320px;     /*sets the minimum width of the body to 320 pixels.*/ 
+  min-height: 100vh;
+  background-color: antiquewhite;
 }
 
+/*styles the navbar*/
+nav {
+  display: flex;
+  align-items: center;
+  padding-left: 0px;
+  padding-right: 10px; 
+  padding-bottom: .5px;
+  margin-top: .5px;
+  height: 80px;
+  background-color: teal;
+  color: rgb(236, 156, 44);
+}
+
+/*styles the image inside the navbar*/
+nav > img {
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 0px;
+  height: 70px;
+  }
+
+
 a {
-  font-weight: 500;
+  font-weight: 400;
   color: #646cff;
   text-decoration: inherit;
 }
@@ -23,22 +39,39 @@ a:hover {
   color: #535bf2;
 }
 
-/*sets the styling for the body of the page.*/
-body {
-  /*margin: 0;*/
-  display: flex;        /*allows the body of the page to change automatically.*/
-  place-items: center;  /*places items on page in the center.*/  
-  min-width: 320px;     /*sets the minimum width of the body to 320 pixels.*/ 
-  min-height: 100vh;
-  background-color: antiquewhite;
-  color: antiquewhite;
+.TosspiLogo {
+  height: 50px;
 }
-
-
 
 /*small phone image inside contact square.*/
 .contact-phone > img {
   height: 25px;
+}
+
+.contacts > img {
+  height: 25px;
+} 
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+h1 {
+  font-size: smaller;
+}
+
+main {
+  padding: 57px 27px;
 }
 
 /*square with contact information in it.*/
@@ -50,6 +83,7 @@ body {
   height: 210px;
   width: 300px;
 }
+
 .contact-card > img {
   height: 60px;
   width: 150px;
@@ -75,7 +109,7 @@ body {
 /*changes font size and bullets color.*/
 .main--facts > li::marker {
   font-size: 1.2rem;
-  color: yellow;
+  color: teal;
 }
 
 /*sets the styling of the button*/
@@ -100,6 +134,29 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+
+/*allows the defined logo to spin or rotate.*/
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*for mobile and keeps the defined logo spinning forever (infinite)*/
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -109,6 +166,6 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: rgb(236, 156, 44);
   }
 }
