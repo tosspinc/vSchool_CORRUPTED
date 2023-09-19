@@ -45,7 +45,11 @@ a:hover {
 
 /*small phone image inside contact square.*/
 .contact-phone > img {
-  height: 25px;
+  display: inline;
+  height: 35px;
+  padding-top: 20px;
+  padding-left: 15px;
+  padding-right: 3px;
 }
 
 .contacts > img {
@@ -58,6 +62,7 @@ a:hover {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
@@ -70,23 +75,38 @@ h1 {
   font-size: smaller;
 }
 
+h2 {
+  padding-left: 5px;
+}
+
 main {
   padding: 57px 27px;
 }
 
 /*square with contact information in it.*/
 .contact-card {
+  display: inline-flex;
   background-color: lightgoldenrodyellow;
   color: black;
-  border: 3px black solid;
-  padding: 10px;
-  height: 210px;
-  width: 300px;
+  border: 1.5px black solid;
+  padding: 5px;
+  height: 80px;
+  width: 550px;
 }
 
+/*styles the phone number placement*/
+.contact-phone > p {
+  display: inline;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+/*styles the phone image.*/
 .contact-card > img {
+  padding-top: 10px;
+  padding-right: 8px;
   height: 60px;
-  width: 150px;
+  width: 120px;
 }
 
 /*changes the title color and font size of the main section.*/

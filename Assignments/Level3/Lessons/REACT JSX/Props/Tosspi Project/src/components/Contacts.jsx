@@ -6,7 +6,7 @@ export default function Contact() {
             <img src='../images/TosspiFoundation.jpg'/>
             <h2>The Tosspi Foundation</h2>
             <div className='contact-phone'>
-                <img src='../images/PhoneIcon.png' />
+                <img src='../images/PhoneIcon.png' /> 
                 <p>801-347-5153</p>
             </div>
         </div>
