@@ -16,7 +16,7 @@ export default function App() {
         punchline="He just ransomware."
       />
       <Jokes 
-        setup="Why don't pirates travel on mountain roads with curves?."
+        setup="Why don't pirates travel on mountain roads with curves?"
         punchline="Scurvy."
       />
       <Jokes 
