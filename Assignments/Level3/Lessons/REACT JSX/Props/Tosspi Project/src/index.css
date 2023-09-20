@@ -40,36 +40,26 @@ a:hover {
   color: #535bf2;
 }
 
-.TosspiLogo {
-  height: 50px;
-}
+.contacts > img {
+  height: 10px;
+} 
 
 /*small phone image inside contact square.*/
 .contact-phone > img {
   display: inline;
-  height: 35px;
-  padding-top: 20px;
+  height: 30px;
+  padding-top: 2px;
   padding-left: 15px;
   padding-right: 3px;
 }
 
-.contacts > img {
-  height: 25px;
-} 
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/*small email icon inside contact square.*/
+.contact-email > img {
+  display: inline;
+  height: 30px;
+  padding-top: 2px;
+  padding-left: 15px;
+  padding-right: 3px;
 }
 
 h1 {
@@ -86,13 +76,16 @@ main {
 
 /*square with contact information in it.*/
 .contact-card {
-  display: inline-flex;
-  background-color: lightgoldenrodyellow;
-  color: black;
-  border: 1.5px black solid;
+  flex-direction: row;  /*puts contact cards in a row.*/
+  box-shadow: 1px 1px 2px black;  /*gives a shadow of 1px and 2px and color is black.*/
+  border-radius: 10%; /*gives a radius on the edges of box at 10%.*/
+  background-color: lightgoldenrodyellow; 
+  color: black;   /*text color*/
+  border: 1.8px black solid;   /*sets border of contact card.*/
   padding: 5px;
-  height: 80px;
-  width: 550px;
+  margin-left: 25px;  /*gives a margin of 25px from left side of dom*/
+  height: 230px; /*sets the height of the contact box to 220px.*/
+  width: 300px;  /*sets the width of the contact box to 300px.*/
 }
 
 /*styles the phone number placement*/
@@ -100,19 +93,27 @@ main {
   display: inline;
   padding-left: 5px;
   padding-top: 5px;
+  margin-left: 5px;
 }
 
-/*styles the phone image.*/
+/*styles the nonprofit contact image.*/
 .contact-card > img {
-  padding-top: 10px;
   padding-right: 8px;
   height: 60px;
   width: 120px;
+  margin-left: 85px;
+}
+
+/*contact email address*/
+.contact-email > p {
+  display: inline;
+  padding-left: 5px;
+  padding-top: 1px;
 }
 
 /*changes the title color and font size of the main section.*/
 .main--title {
-  font-size: 42px;
+  font-size: 40px;
   line-height: 1.5rem;
   color: black;
 }
