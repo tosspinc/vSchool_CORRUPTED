@@ -135,7 +135,7 @@ main {
 }
 
 /*sets the styling of the button*/
-button {
+/*button {
   border-radius: 8px;
   border: 5px solid transparent;
   padding: 0.5em 1.2em;
@@ -145,27 +145,26 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
-}
+}*/
 
 /*when mouse hovers over button border color changes to orange.*/
-button:hover {
+/*button:hover {
   border-color: orange;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
+}*/
 
 /*allows the defined logo to spin or rotate.*/
-@keyframes logo-spin {
+/*@keyframes logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+}*/
 
 /*for mobile and keeps the defined logo spinning forever (infinite)*/
 @media (prefers-reduced-motion: no-preference) {
@@ -177,7 +176,6 @@ button:focus-visible {
 .card {
   padding: 2em;
 }
-
 
 @media (prefers-color-scheme: light) {
   :root {
